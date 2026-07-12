@@ -26,7 +26,7 @@ export const InlineMath = ({ math }) => {
     }
   }, [math]);
 
-  return <span className="inline-math" dangerouslySetInnerHTML={{ __html: html }} />;
+  return <span className="inline-math" dir="ltr" dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
 export const BlockMath = ({ math }) => {
@@ -46,6 +46,7 @@ export const BlockMath = ({ math }) => {
   return (
     <span 
       className="block-math-container" 
+      dir="ltr"
       style={{ 
         display: 'block',
         overflowX: 'auto', 
