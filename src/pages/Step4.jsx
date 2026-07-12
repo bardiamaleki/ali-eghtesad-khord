@@ -1,5 +1,5 @@
 import React from 'react';
-import { InlineMath, BlockMath } from 'react-katex';
+import { InlineMath, BlockMath } from '../components/Math';
 import { 
   Shuffle, 
   Boxes, 
@@ -213,10 +213,10 @@ const Step4 = () => {
           جدول زیر مقایسه دقیق متغیرها و نتایج تعادلی هر چهار مدل الیگوپولی همگن را تحت فرض تقاضای خطی <InlineMath math="P = A - B(q_1 + q_2)" /> و هزینه‌های نهایی یکسان و ثابت <InlineMath math="MC_1 = MC_2 = c" /> نشان می‌دهد:
         </p>
         
-        <div style={{ overflowX: 'auto', marginBottom: '2rem' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', background: 'var(--card-bg)', border: '1px solid var(--card-border)', borderRadius: '12px', borderStyle: 'hidden', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)' }}>
+        <div className="glass-panel" style={{ overflowX: 'auto', marginBottom: '2rem', borderRadius: '12px' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', background: 'transparent' }}>
             <thead>
-              <tr style={{ borderBottom: '2px solid var(--card-border)', background: 'rgba(59, 130, 246, 0.1)' }}>
+              <tr style={{ borderBottom: '1px solid var(--card-border)', background: 'rgba(59, 130, 246, 0.05)' }}>
                 <th style={{ padding: '1rem', fontWeight: '800', color: 'var(--primary-hover)' }}>مدل الیگوپولی</th>
                 <th style={{ padding: '1rem', fontWeight: '800' }}>متغیر تصمیم</th>
                 <th style={{ padding: '1rem', fontWeight: '800' }}>شرط تعادل ریاضی</th>

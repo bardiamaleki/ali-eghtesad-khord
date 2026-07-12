@@ -1,5 +1,5 @@
 import React from 'react';
-import { InlineMath, BlockMath } from 'react-katex';
+import { InlineMath, BlockMath } from '../components/Math';
 import { BookOpen, TrendingUp, Scale, Grid } from 'lucide-react';
 
 const Step0 = () => {
