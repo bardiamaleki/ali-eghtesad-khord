@@ -85,7 +85,7 @@ const Subpage1 = () => {
         وقتی عامل <strong>زمان (Time)</strong> وارد مدل می‌شود، متغیرها به صورت پویا (پیوسته یا گسسته) رفتار می‌کنند:
       </p>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
         {/* Cobweb Model */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--danger)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>الف) مدل تار عنکبوتی (با وقفه / گسسته)</h4>
@@ -112,49 +112,90 @@ const Subpage1 = () => {
         </div>
       </div>
 
-      {/* Comparative analysis */}
-      <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem', background: 'rgba(255, 255, 255, 0.02)' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.75rem' }}>
-          تحلیل مقایسه‌ای سه نوع پایداری در مدل تار عنکبوتی (صفحه ۸۳ جزوه)
-        </h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--success)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(16, 185, 129, 0.02)' }}>
-            <h5 style={{ color: 'var(--success)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۱. پایداری همگرا (نوسانات میرا)</h5>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
-                اگر قدر مطلق شیب تقاضا بیشتر از شیب عرضه باشد (<InlineMath math="|a| > A" />)، نوسانات قیمت به مرور ضعیف شده و قیمت به تعادل متمایل می‌شود.
-              </p>
-              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
-                <img src="/svg/81-nemodar.svg" alt="پایداری همگرا" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+      {/* Re-designed Cobweb Stability Section — vertical cards, full-width images */}
+      <div style={{ marginBottom: '3rem' }}>
+        <h3 style={{ color: 'var(--primary)', textAlign: 'center', fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+          تحلیل مقایسه‌ای سه نوع پایداری در مدل تار عنکبوتی
+        </h3>
+        <p style={{ color: 'var(--text-muted)', textAlign: 'center', fontSize: '0.85rem', marginBottom: '2rem' }}>(صفحه ۸۳ جزوه)</p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+          {/* Card 1: Convergent */}
+          <div className="glass-panel" style={{ borderRight: '6px solid var(--success)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(16, 185, 129, 0.04)' }}>
+            {/* Header row */}
+            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ background: 'var(--success)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۱</span>
+                <h4 style={{ color: 'var(--success)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>پایداری همگرا (نوسانات میرا)</h4>
+                <div style={{ marginRight: 'auto', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span style={{ color: 'var(--success)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
+                  <span style={{ color: 'var(--success)', fontWeight: 'bold' }}><InlineMath math="|a| > A" /></span>
+                </div>
               </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+                اگر قدر مطلق شیب تقاضا <strong>بیشتر</strong> از شیب عرضه باشد، نوسانات قیمت هر دوره ضعیف‌تر می‌شود و قیمت به سمت تعادل همگرا می‌کند.
+              </p>
+              <div style={{ background: 'rgba(16, 185, 129, 0.08)', borderRadius: '8px', padding: '0.6rem 1rem' }}>
+                <p style={{ color: 'var(--success)', fontSize: '0.82rem', margin: 0, fontWeight: '500' }}>✅ تعادل پایدار — بازار خود به خود اصلاح می‌شود</p>
+              </div>
+            </div>
+            {/* Full-width image */}
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+              <img src="/svg/81-nemodar.svg" alt="نمودار پایداری همگرا" style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(16, 185, 129, 0.25))' }} />
             </div>
           </div>
 
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--warning)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245, 158, 11, 0.02)' }}>
-            <h5 style={{ color: 'var(--warning)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۲. نوسان مستمر (خنثی)</h5>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
-                اگر قدر مطلق شیب تقاضا با شیب عرضه برابر باشد (<InlineMath math="|a| = A" />)، دامنه نوسان قیمت ثابت مانده و نوسان مستمر دور تعادل ایجاد می‌شود.
-              </p>
-              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
-                <img src="/svg/82-nemodar.svg" alt="نوسانات مستمر خنثی" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+          {/* Card 2: Neutral */}
+          <div className="glass-panel" style={{ borderRight: '6px solid var(--warning)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(245, 158, 11, 0.04)' }}>
+            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ background: 'var(--warning)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۲</span>
+                <h4 style={{ color: 'var(--warning)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>نوسان مستمر (خنثی)</h4>
+                <div style={{ marginRight: 'auto', background: 'rgba(245, 158, 11, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span style={{ color: 'var(--warning)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
+                  <span style={{ color: 'var(--warning)', fontWeight: 'bold' }}><InlineMath math="|a| = A" /></span>
+                </div>
               </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+                اگر قدر مطلق شیب تقاضا <strong>دقیقاً برابر</strong> شیب عرضه باشد، دامنه نوسان قیمت ثابت مانده و قیمت در یک چرخه مستمر دور تعادل می‌چرخد.
+              </p>
+              <div style={{ background: 'rgba(245, 158, 11, 0.08)', borderRadius: '8px', padding: '0.6rem 1rem' }}>
+                <p style={{ color: 'var(--warning)', fontSize: '0.82rem', margin: 0, fontWeight: '500' }}>⚠️ تعادل خنثی — بازار نه همگرا، نه واگرا می‌شود</p>
+              </div>
+            </div>
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+              <img src="/svg/82-nemodar.svg" alt="نمودار نوسان مستمر خنثی" style={{ width: '100%', maxWidth: '800px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(245, 158, 11, 0.25))' }} />
             </div>
           </div>
 
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--danger)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(239, 68, 68, 0.02)' }}>
-            <h5 style={{ color: 'var(--danger)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۳. پایداری واگرا (نوسانات فزاینده)</h5>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
-                اگر قدر مطلق شیب تقاضا کمتر از شیب عرضه باشد (<InlineMath math="|a| < A" />)، دامنه نوسان قیمت سال به سال افزایش یافته و از تعادل دور می‌شود.
+          {/* Card 3: Divergent */}
+          <div className="glass-panel" style={{ borderRight: '6px solid var(--danger)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(239, 68, 68, 0.04)' }}>
+            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ background: 'var(--danger)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۳</span>
+                <h4 style={{ color: 'var(--danger)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>پایداری واگرا (نوسانات فزاینده)</h4>
+                <div style={{ marginRight: 'auto', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span style={{ color: 'var(--danger)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
+                  <span style={{ color: 'var(--danger)', fontWeight: 'bold' }}><InlineMath math="|a| < A" /></span>
+                </div>
+              </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+                اگر قدر مطلق شیب تقاضا <strong>کمتر</strong> از شیب عرضه باشد، دامنه نوسان سال به سال تشدید و فزاینده می‌شود و قیمت از تعادل فاصله می‌گیرد.
               </p>
-              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
-                <img src="/svg/83-nemodar.svg" alt="پایداری واگرا" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+              <div style={{ background: 'rgba(239, 68, 68, 0.08)', borderRadius: '8px', padding: '0.6rem 1rem' }}>
+                <p style={{ color: 'var(--danger)', fontSize: '0.82rem', margin: 0, fontWeight: '500' }}>❌ تعادل ناپایدار — بازار به تعادل باز نمی‌گردد</p>
               </div>
             </div>
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+              <img src="/svg/83-nemodar.svg" alt="نمودار پایداری واگرا" style={{ width: '100%', maxWidth: '400px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(239, 68, 68, 0.25))' }} />
+            </div>
           </div>
+
         </div>
       </div>
+
+
 
       <h3 style={{ color: 'var(--primary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Zap size={20} />
