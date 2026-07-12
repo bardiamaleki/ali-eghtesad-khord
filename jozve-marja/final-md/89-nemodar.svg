@@ -1,0 +1,66 @@
+<svg width="550" height="420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrow marker definition for axes -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <style>
+    .axis { stroke: #333; stroke-width: 2; fill: none; }
+    .line-demand { stroke: #1e40af; stroke-width: 3; fill: none; }
+    .line-mr { stroke: #dc2626; stroke-width: 3; fill: none; }
+    .dashed { stroke-dasharray: 6,6; stroke: #4b5563; stroke-width: 1.5; }
+    .label-p { fill: #dc2626; font-weight: bold; }
+    .label-q { fill: #dc2626; font-weight: bold; }
+    text { font-family: Tahoma, 'Vazirmatn', sans-serif; font-size: 14px; fill: #111827; }
+    .persian-text { font-size: 12px; fill: #4b5563; text-anchor: middle; }
+    .label-blue { fill: #1e40af; font-weight: bold; }
+    .label-red { fill: #dc2626; font-weight: bold; }
+    .text-center { text-anchor: middle; }
+  </style>
+
+  <!-- Main graph group -->
+  <g>
+    <!-- Y-axis (Price - P) -->
+    <line x1="80" y1="300" x2="80" y2="40" class="axis" marker-end="url(#arrow)" />
+    <!-- X-axis (Quantity - Q) -->
+    <line x1="80" y1="300" x2="480" y2="300" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Labels for Axes -->
+    <text x="55" y="45" class="label-p">P</text>
+    <text x="490" y="305" class="label-q">Q</text>
+
+    <!-- Demand Curve (D) -->
+    <line x1="80" y1="100" x2="430" y2="275" class="line-demand" />
+    <text x="440" y="280" class="label-blue">D</text>
+
+    <!-- Marginal Revenue Curve (MR) -->
+    <line x1="80" y1="100" x2="330" y2="350" class="line-mr" />
+    <text x="340" y="360" class="label-red">MR</text>
+
+    <!-- Midpoint Dot on Demand Curve -->
+    <circle cx="280" cy="200" r="5" fill="#111827" />
+
+    <!-- Vertical dashed line from D midpoint to X-axis / MR intersection -->
+    <line x1="280" y1="200" x2="280" y2="300" class="dashed" />
+
+    <!-- MR = 0 Label -->
+    <text x="235" y="325" class="label-blue">MR = 0</text>
+
+    <!-- |ep| = 1 Label at midpoint -->
+    <text x="290" y="190" class="label-blue">|e<tspan font-size="10" baseline-shift="sub">p</tspan>| = 1</text>
+
+    <!-- |ep| > 1 Area Labels -->
+    <text x="160" y="115" class="label-blue text-center">|e<tspan font-size="10" baseline-shift="sub">p</tspan>| &gt; 1</text>
+    <text x="160" y="95" class="persian-text">تولیدکننده تولید می‌کند</text>
+    <!-- Indicator line for |ep| > 1 -->
+    <line x1="160" y1="120" x2="160" y2="135" stroke="#1e40af" stroke-width="1.5" />
+
+    <!-- |ep| < 1 Area Labels -->
+    <text x="405" y="235" class="label-blue text-center">|e<tspan font-size="10" baseline-shift="sub">p</tspan>| &lt; 1</text>
+    <text x="405" y="215" class="persian-text">تولیدکننده تولید نمی‌کند</text>
+    <!-- Indicator line for |ep| < 1 -->
+    <line x1="405" y1="240" x2="405" y2="260" stroke="#1e40af" stroke-width="1.5" />
+  </g>
+</svg>

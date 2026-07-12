@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <style>
+    .axis-label { font-family: 'Arial', sans-serif; font-size: 14px; fill: black; }
+    .curve-label { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; fill: blue; }
+    .red-label { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; fill: red; }
+    .tick-label { font-family: 'Arial', sans-serif; font-size: 12px; fill: black; }
+    .point-label { font-family: 'Arial', sans-serif; font-size: 11px; fill: black; }
+    .persian-text { font-family: 'Vazir', 'Arial', sans-serif; font-size: 12px; fill: black; }
+  </style>
+
+  <!-- Left Diagram (L) -->
+  <g transform="translate(50, 50)">
+    <!-- Axes -->
+    <line x1="0" y1="300" x2="350" y2="300" stroke="black" stroke-width="2" />
+    <line x1="0" y1="300" x2="0" y2="0" stroke="black" stroke-width="2" />
+    <text x="360" y="310" class="axis-label">L</text>
+    <text x="-30" y="20" class="axis-label">w</text>
+    
+    <!-- Demand curves (VMP_L) shifting right -->
+    <!-- VMP_L (leftmost) -->
+    <path d="M 50,50 C 100,150 150,250 200,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="40" y="45" class="curve-label">VMP_L</text>
+    
+    <!-- VMP'_L (middle) -->
+    <path d="M 100,50 C 150,150 200,250 250,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="90" y="45" class="curve-label">VMP'_L</text>
+    
+    <!-- VMP''_L (rightmost) -->
+    <path d="M 150,50 C 200,150 250,250 300,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="140" y="45" class="curve-label">VMP''_L</text>
+    
+    <!-- LRLD Curve (red, flatter) -->
+    <!-- Connects A(90, 120) and D(230, 210) and extends -->
+    <line x1="90" y1="120" x2="260" y2="228" stroke="red" stroke-width="2.5" />
+    <text x="265" y="235" class="red-label">LRLD</text>
+    <text x="265" y="250" class="persian-text" fill="red">بلندمدت</text>
+    
+    <!-- Points -->
+    <!-- Point A (on VMP_L at w_0) -->
+    <circle cx="90" cy="120" r="4" fill="black" />
+    <text x="75" y="115" class="point-label" font-weight="bold">A</text>
+
+    <!-- Point C (on VMP_L at w_1) -->
+    <circle cx="130" cy="210" r="4" fill="black" />
+    <text x="120" y="205" class="point-label" font-weight="bold">C</text>
+
+    <!-- Point B (on VMP'_L at w_1) -->
+    <circle cx="180" cy="210" r="4" fill="black" />
+    <text x="175" y="205" class="point-label" font-weight="bold">B</text>
+
+    <!-- Point D (on VMP''_L at w_1) -->
+    <circle cx="230" cy="210" r="4" fill="black" />
+    <text x="235" y="205" class="point-label" font-weight="bold">D</text>
+    
+    <!-- Price lines (horizontal dashed) -->
+    <line x1="0" y1="120" x2="90" y2="120" stroke="black" stroke-dasharray="4,4" />
+    <text x="-25" y="125" class="tick-label">w₀</text>
+    
+    <line x1="0" y1="210" x2="230" y2="210" stroke="black" stroke-dasharray="4,4" />
+    <text x="-25" y="215" class="tick-label">w₁</text>
+
+    <!-- Vertical dashed projection lines -->
+    <line x1="90" y1="120" x2="90" y2="300" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="130" y1="210" x2="130" y2="300" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="180" y1="210" x2="180" y2="300" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="230" y1="210" x2="230" y2="300" stroke="gray" stroke-dasharray="3,3" />
+
+    <!-- Labels below axis -->
+    <text x="82" y="318" class="tick-label">L_A</text>
+    <text x="122" y="318" class="tick-label">L_C</text>
+    <text x="172" y="318" class="tick-label">L_B</text>
+    <text x="222" y="318" class="tick-label">L_D</text>
+  </g>
+  
+  <!-- Right Diagram (K) -->
+  <g transform="translate(450, 50)">
+    <!-- Axes -->
+    <line x1="0" y1="300" x2="300" y2="300" stroke="black" stroke-width="2" />
+    <line x1="0" y1="300" x2="0" y2="0" stroke="black" stroke-width="2" />
+    <text x="310" y="310" class="axis-label">K</text>
+    <text x="-20" y="20" class="axis-label">r</text>
+    
+    <!-- Demand curves (VMP_K) shifting left -->
+    <!-- VMP''_K (leftmost) -->
+    <path d="M 50,50 C 100,150 150,250 200,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="40" y="45" class="curve-label">VMP''_K</text>
+    
+    <!-- VMP'_K (middle) -->
+    <path d="M 100,50 C 150,150 200,250 250,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="90" y="45" class="curve-label">VMP'_K</text>
+    
+    <!-- VMP_K (rightmost) -->
+    <path d="M 150,50 C 200,150 250,250 300,300" fill="none" stroke="blue" stroke-width="2" />
+    <text x="140" y="45" class="curve-label">VMP_K</text>
+    
+    <!-- Points at rental rate r_1 -->
+    <!-- Point 3 (on leftmost at r_1) -->
+    <circle cx="110" cy="180" r="4" fill="black" />
+    <text x="105" y="172" class="point-label" font-weight="bold">3</text>
+
+    <!-- Point 2 (on middle at r_1) -->
+    <circle cx="160" cy="180" r="4" fill="black" />
+    <text x="155" y="172" class="point-label" font-weight="bold">2</text>
+
+    <!-- Point 1 (on rightmost at r_1) -->
+    <circle cx="210" cy="180" r="4" fill="black" />
+    <text x="215" y="172" class="point-label" font-weight="bold">1</text>
+    
+    <!-- Rate line (horizontal dashed) -->
+    <line x1="0" y1="180" x2="210" y2="180" stroke="black" stroke-dasharray="4,4" />
+    <text x="-20" y="185" class="tick-label">r₁</text>
+
+    <!-- Vertical dashed projection lines -->
+    <line x1="110" y1="180" x2="110" y2="300" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="210" y1="180" x2="210" y2="300" stroke="gray" stroke-dasharray="3,3" />
+
+    <!-- Labels below axis -->
+    <text x="102" y="318" class="tick-label">k₂</text>
+    <text x="202" y="318" class="tick-label">k₁</text>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+<svg viewBox="-40 0 540 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="50" y1="350" x2="50" y2="50" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+  
+  <text x="460" y="355" font-family="Arial" font-size="16">Q</text>
+  <text x="40" y="45" font-family="Arial" font-size="16" text-anchor="end">P</text>
+  <text x="40" y="365" font-family="Arial" font-size="16" text-anchor="end">O</text>
+  
+  <!-- Demand & MR -->
+  <line x1="50" y1="70" x2="400" y2="320" stroke="blue" stroke-width="2" />
+  <text x="410" y="315" font-family="Arial" fill="blue" font-size="16">D</text>
+  
+  <line x1="50" y1="70" x2="250" y2="350" stroke="blue" stroke-width="2" />
+  <text x="260" y="345" font-family="Arial" fill="blue" font-size="16">MR</text>
+  
+  <!-- MC and MC' -->
+  <!-- MC -->
+  <path d="M 50 300 Q 150 321 250 100" fill="none" stroke="black" stroke-width="2" />
+  <text x="260" y="105" font-family="Arial" fill="black" font-size="16">MC</text>
+  
+  <!-- MC' -->
+  <path d="M 50 200 Q 150 170 250 50" fill="none" stroke="black" stroke-width="2" />
+  <text x="260" y="55" font-family="Arial" fill="black" font-size="16">MC'</text>
+  
+  <!-- AC and AC' -->
+  <!-- AC -->
+  <path d="M 50 210 Q 200 300 380 160" fill="none" stroke="red" stroke-width="2" />
+  <text x="360" y="155" font-family="Arial" fill="red" font-size="16">AC</text>
+  
+  <!-- AC' -->
+  <path d="M 50 175 Q 200 265 380 125" fill="none" stroke="red" stroke-width="2" />
+  <text x="360" y="115" font-family="Arial" fill="red" font-size="16">AC'</text>
+  
+  <!-- Equilibrium Qbt (MC intersects MR) -->
+  <line x1="170" y1="350" x2="170" y2="155" stroke="black" stroke-dasharray="4" />
+  <text x="170" y="370" font-family="Arial" font-size="16" text-anchor="middle">Qbt</text>
+  
+  <!-- Points at Qbt -->
+  <text x="180" y="150" font-family="Arial" fill="black" font-size="16">E</text>
+  <line x1="50" y1="155" x2="170" y2="155" stroke="black" stroke-dasharray="4" />
+  <text x="40" y="160" font-family="Arial" fill="black" font-size="16" text-anchor="end">Pbt</text>
+  
+  <text x="180" y="245" font-family="Arial" fill="black" font-size="16">H</text>
+  <line x1="50" y1="245" x2="170" y2="245" stroke="black" stroke-dasharray="4" />
+  <text x="40" y="250" font-family="Arial" fill="black" font-size="16" text-anchor="end">G</text>
+  
+  <!-- Equilibrium Qat (MC' intersects MR) -->
+  <line x1="120" y1="350" x2="120" y2="120" stroke="black" stroke-dasharray="4" />
+  <text x="120" y="370" font-family="Arial" font-size="16" text-anchor="middle">Qat</text>
+  
+  <!-- Points at Qat -->
+  <text x="130" y="115" font-family="Arial" fill="black" font-size="16">F</text>
+  <line x1="50" y1="120" x2="120" y2="120" stroke="black" stroke-dasharray="4" />
+  <text x="40" y="125" font-family="Arial" fill="black" font-size="16" text-anchor="end">Pat</text>
+  
+  <text x="130" y="200" font-family="Arial" fill="black" font-size="16">N</text>
+  <line x1="50" y1="205" x2="120" y2="205" stroke="black" stroke-dasharray="4" />
+  <text x="40" y="210" font-family="Arial" fill="black" font-size="16" text-anchor="end">M</text>
+  
+  <!-- Effects labels -->
+  <!-- Allocation effect -->
+  <path d="M 120 380 Q 145 390 170 380" fill="none" stroke="black" stroke-width="1" />
+  <text x="145" y="395" font-family="Arial" font-size="14" text-anchor="middle" direction="rtl">اثر تخصیصی</text>
+  <!-- Distribution effect -->
+  <path d="M 40 120 Q 30 140 40 155" fill="none" stroke="black" stroke-width="1" />
+  <text x="-5" y="142" font-family="Arial" font-size="12" text-anchor="middle" direction="rtl">اثر توزیعی</text>
+  
+  <!-- Rectangles Shading for After Tax Profit -->
+  <defs>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="gray" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect x="50" y="120" width="70" height="85" fill="url(#hatch)" opacity="0.5" />
+</svg>

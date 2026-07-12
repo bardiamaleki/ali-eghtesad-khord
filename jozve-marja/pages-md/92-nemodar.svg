@@ -1,0 +1,80 @@
+<svg width="560" height="420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrow marker definition -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#333" />
+    </marker>
+    <!-- Hatch patterns for rectangles -->
+    <pattern id="hatch_red" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#dc2626" stroke-width="1.2" />
+    </pattern>
+    <pattern id="hatch_blue" width="10" height="10" patternTransform="rotate(-45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#2563eb" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <style>
+    .axis { stroke: #333; stroke-width: 2; fill: none; }
+    .line-demand { stroke: #dc2626; stroke-width: 3.5; fill: none; }
+    .dashed { stroke-dasharray: 5,5; stroke: #4b5563; stroke-width: 1.5; }
+    .label-p { fill: #dc2626; font-weight: bold; }
+    .label-q { fill: #dc2626; font-weight: bold; }
+    text { font-family: Tahoma, 'Vazirmatn', sans-serif; font-size: 14px; fill: #111827; }
+    .label-blue { fill: #2563eb; font-weight: bold; }
+    .label-red { fill: #dc2626; font-weight: bold; }
+    .text-center { text-anchor: middle; }
+    .text-right { text-anchor: end; }
+  </style>
+
+  <!-- Main graph group -->
+  <g>
+    <!-- Hatch Shading inside Rectangles -->
+    <!-- First rectangle (0 to 6, height 15) -->
+    <rect x="70" y="150" width="60" height="150" fill="url(#hatch_red)" />
+    <!-- Second rectangle (6 to 18, height 10) -->
+    <rect x="130" y="200" width="120" height="100" fill="url(#hatch_blue)" />
+
+    <!-- Y-axis (Price - P) -->
+    <line x1="70" y1="300" x2="70" y2="40" class="axis" marker-end="url(#arrow)" />
+    <!-- X-axis (Quantity - Q) -->
+    <line x1="70" y1="300" x2="510" y2="300" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Origin O -->
+    <text x="50" y="318" style="font-weight: bold;">O</text>
+
+    <!-- Labels for Axes -->
+    <text x="45" y="45" class="label-p">P</text>
+    <text x="520" y="305" class="label-q">Q</text>
+
+    <!-- Demand Curve (D) -->
+    <!-- Equation: y = 5/12 * x + 95.83. Starts at x=70, y=125; ends at x=490, y=300 -->
+    <line x1="70" y1="125" x2="490" y2="300" class="line-demand" />
+    <text x="495" y="290" class="label-red">D</text>
+
+    <!-- Y-intercept label A -->
+    <text x="50" y="130" class="label-red" style="font-weight: bold;">A</text>
+
+    <!-- Dashed boundary lines for rectangles -->
+    <!-- Horizontal at y=150 (P1) -->
+    <line x1="70" y1="150" x2="130" y2="150" class="dashed" />
+    <!-- Vertical at x=130 (Q1) -->
+    <line x1="130" y1="150" x2="130" y2="300" class="dashed" />
+    <!-- Horizontal at y=200 (P2) -->
+    <line x1="70" y1="200" x2="250" y2="200" class="dashed" />
+    <!-- Vertical at x=250 (Q2) -->
+    <line x1="250" y1="200" x2="250" y2="300" class="dashed" />
+
+    <!-- Labels on Y-axis (Price values) -->
+    <text x="60" y="155" class="text-right label-red">15, P<tspan font-size="10" baseline-shift="sub">1</tspan></text>
+    <text x="60" y="205" class="text-right label-red">10, P<tspan font-size="10" baseline-shift="sub">2</tspan></text>
+
+    <!-- Labels on X-axis (Quantity values) -->
+    <text x="130" y="322" class="text-center label-blue">6, Q<tspan font-size="10" baseline-shift="sub">1</tspan></text>
+    <text x="250" y="322" class="text-center label-blue">18, Q<tspan font-size="10" baseline-shift="sub">2</tspan></text>
+
+    <!-- Points labels H, H', K -->
+    <text x="135" y="145" class="label-blue" style="font-weight: bold;">H</text>
+    <text x="255" y="195" class="label-blue" style="font-weight: bold;">H'</text>
+    <text x="112" y="195" class="label-blue" style="font-weight: bold;">K</text>
+  </g>
+</svg>

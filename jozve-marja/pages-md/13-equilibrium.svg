@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="40" y1="180" x2="40" y2="20" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="40" y1="180" x2="280" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="25" y="25" font-family="Arial" font-size="14">Y</text>
+  <text x="285" y="185" font-family="Arial" font-size="14">X</text>
+  
+  <!-- Budget line (Blue) -->
+  <line x1="40" y1="80" x2="160" y2="180" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="162" y="178" font-family="Arial" font-size="12" fill="#1d4ed8">I</text>
+
+  <!-- Indifference curve (Red) -->
+  <path d="M 60 60 Q 80 150 180 160" stroke="#dc2626" stroke-width="2" fill="none" />
+  
+  <!-- Tangency point -->
+  <circle cx="100" cy="130" r="3" fill="black" />
+  <text x="106" y="126" font-family="Arial" font-size="14" font-weight="bold">e</text>
+</svg>

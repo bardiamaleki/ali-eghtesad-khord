@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <style>
+    .axis-label { font-family: 'Arial', sans-serif; font-size: 14px; fill: black; }
+    .curve-label { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: red; }
+  </style>
+
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="black" stroke-width="2" />
+  <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="2" />
+  
+  <text x="360" y="255" class="axis-label">K</text>
+  <text x="30" y="60" class="axis-label">L</text>
+  
+  <!-- L-shaped isoquant Q1 -->
+  <path d="M 100,100 L 100,200 L 250,200" fill="none" stroke="red" stroke-width="2.5" />
+  <text x="260" y="204" class="curve-label">Q₁</text>
+  
+  <!-- L-shaped isoquant Q2 -->
+  <path d="M 150,50 L 150,150 L 300,150" fill="none" stroke="red" stroke-width="2.5" />
+  <text x="310" y="154" class="curve-label">Q₂</text>
+</svg>

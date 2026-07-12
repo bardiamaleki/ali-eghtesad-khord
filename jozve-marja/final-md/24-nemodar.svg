@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="100%" height="100%">
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="50" y2="20" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="50" y1="250" x2="450" y2="250" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  
+  <!-- Labels -->
+  <text x="30" y="30" font-family="Arial" font-size="16">P</text>
+  <text x="460" y="265" font-family="Arial" font-size="16">Q</text>
+  <text x="250" y="100" font-family="Arial" font-size="16" fill="blue">D</text>
+  
+  <!-- Upward Demand Curve -->
+  <line x1="100" y1="200" x2="300" y2="50" stroke="blue" stroke-width="2" />
+  
+  <!-- Arrow Def -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+</svg>
