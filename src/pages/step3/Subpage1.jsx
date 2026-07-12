@@ -124,11 +124,11 @@ const Subpage1 = () => {
           {/* Card 1: Convergent */}
           <div className="glass-panel" style={{ borderRight: '6px solid var(--success)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(16, 185, 129, 0.04)' }}>
             {/* Header row */}
-            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ padding: '1.2rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <span style={{ background: 'var(--success)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۱</span>
                 <h4 style={{ color: 'var(--success)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>پایداری همگرا (نوسانات میرا)</h4>
-                <div style={{ marginRight: 'auto', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <div style={{ marginRight: 'auto', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.25rem' }}>
                   <span style={{ color: 'var(--success)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
                   <span style={{ color: 'var(--success)', fontWeight: 'bold' }}><InlineMath math="|a| > A" /></span>
                 </div>
@@ -141,18 +141,18 @@ const Subpage1 = () => {
               </div>
             </div>
             {/* Full-width image */}
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', display: 'flex', justifyContent: 'center' }}>
               <img src="/svg/81-nemodar.svg" alt="نمودار پایداری همگرا" style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(16, 185, 129, 0.25))' }} />
             </div>
           </div>
 
           {/* Card 2: Neutral */}
           <div className="glass-panel" style={{ borderRight: '6px solid var(--warning)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(245, 158, 11, 0.04)' }}>
-            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ padding: '1.2rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <span style={{ background: 'var(--warning)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۲</span>
                 <h4 style={{ color: 'var(--warning)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>نوسان مستمر (خنثی)</h4>
-                <div style={{ marginRight: 'auto', background: 'rgba(245, 158, 11, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <div style={{ marginRight: 'auto', background: 'rgba(245, 158, 11, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.25rem' }}>
                   <span style={{ color: 'var(--warning)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
                   <span style={{ color: 'var(--warning)', fontWeight: 'bold' }}><InlineMath math="|a| = A" /></span>
                 </div>
@@ -164,18 +164,18 @@ const Subpage1 = () => {
                 <p style={{ color: 'var(--warning)', fontSize: '0.82rem', margin: 0, fontWeight: '500' }}>⚠️ تعادل خنثی — بازار نه همگرا، نه واگرا می‌شود</p>
               </div>
             </div>
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-              <img src="/svg/82-nemodar.svg" alt="نمودار نوسان مستمر خنثی" style={{ width: '100%', maxWidth: '800px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(245, 158, 11, 0.25))' }} />
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', display: 'flex', justifyContent: 'center', overflowX: 'auto' }}>
+              <img src="/svg/82-nemodar.svg" alt="نمودار نوسان مستمر خنثی" style={{ width: '100%', minWidth: '400px', maxWidth: '800px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(245, 158, 11, 0.25))' }} />
             </div>
           </div>
 
           {/* Card 3: Divergent */}
           <div className="glass-panel" style={{ borderRight: '6px solid var(--danger)', borderRadius: '16px', overflow: 'hidden', background: 'rgba(239, 68, 68, 0.04)' }}>
-            <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ padding: '1.2rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <span style={{ background: 'var(--danger)', color: '#fff', borderRadius: '50%', width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1rem', flexShrink: 0 }}>۳</span>
                 <h4 style={{ color: 'var(--danger)', margin: 0, fontWeight: 'bold', fontSize: '1.05rem' }}>پایداری واگرا (نوسانات فزاینده)</h4>
-                <div style={{ marginRight: 'auto', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <div style={{ marginRight: 'auto', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '10px', padding: '0.3rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.25rem' }}>
                   <span style={{ color: 'var(--danger)', fontSize: '0.8rem', fontWeight: 'bold' }}>شرط:</span>
                   <span style={{ color: 'var(--danger)', fontWeight: 'bold' }}><InlineMath math="|a| < A" /></span>
                 </div>
@@ -187,7 +187,7 @@ const Subpage1 = () => {
                 <p style={{ color: 'var(--danger)', fontSize: '0.82rem', margin: 0, fontWeight: '500' }}>❌ تعادل ناپایدار — بازار به تعادل باز نمی‌گردد</p>
               </div>
             </div>
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', display: 'flex', justifyContent: 'center' }}>
               <img src="/svg/83-nemodar.svg" alt="نمودار پایداری واگرا" style={{ width: '100%', maxWidth: '400px', height: 'auto', display: 'block', filter: 'drop-shadow(0 4px 16px rgba(239, 68, 68, 0.25))' }} />
             </div>
           </div>
