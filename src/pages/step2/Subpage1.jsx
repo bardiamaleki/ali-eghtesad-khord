@@ -83,14 +83,14 @@ const Subpage1 = () => {
         </div>
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
-        <div style={{ flex: '1', minWidth: '300px' }}>
-          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', marginBottom: '3rem' }}>
+        <div style={{ flex: '1.2', minWidth: '320px', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', margin: 0 }}>
             بنگاه عقلایی همیشه در <strong>مرحله دوم تولید</strong> فعالیت می‌کند. در مرحله اول، بنگاه با استخدام کارگر بیشتر می‌تواند بازدهی متوسط کل نیروهایش را بالا ببرد، بنابراین توقف در آن غیرمنطقی است. در مرحله سوم نیز تولید نهایی منفی است و سود کاهش می‌یابد.
           </p>
         </div>
-        <div style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-          <img src="/svg/8-tp-mp-ap.svg" alt="مراحل تولید کوتاه‌مدت" style={{ maxWidth: '100%', maxHeight: '280px' }} />
+        <div className="glass-panel" style={{ flex: '1', minWidth: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.015)', padding: '2rem 1.5rem', borderRadius: '16px' }}>
+          <img src="/svg/8-tp-mp-ap.svg" alt="مراحل تولید کوتاه‌مدت" style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'contain' }} />
         </div>
       </div>
 
@@ -124,9 +124,9 @@ const Subpage1 = () => {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-        <img src="/svg/10-producer-equilibrium.svg" alt="تعادل تولید بلندمدت" style={{ maxWidth: '100%', maxHeight: '250px' }} />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>نقطه تعادل تولیدکننده در محل مماس شدن منحنی تولید یکسان و خط هم‌هزینه</p>
+      <div className="image-showcase">
+        <img src="/svg/10-producer-equilibrium.svg" alt="تعادل تولید بلندمدت" />
+        <div className="image-showcase-caption">نقطه تعادل تولیدکننده در محل مماس شدن منحنی تولید یکسان و خط هم‌هزینه</div>
       </div>
 
       <h3 style={{ color: 'var(--success)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
