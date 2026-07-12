@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Share2, Scissors, Activity, HelpCircle } from 'lucide-react';
+import { Share2, Scissors, Activity, HelpCircle, TrendingUp, AlertTriangle } from 'lucide-react';
 
 const Subpage3 = () => {
   return (
@@ -95,43 +95,121 @@ const Subpage3 = () => {
         <strong style={{ color: 'var(--text-main)' }}>اثر کل (Total Effect) = اثر جانشینی + اثر درآمدی</strong>
       </p>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '1.5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', marginTop: '2rem' }}>
         {/* Normal Good */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', width: '100%' }}>
-          <div style={{ flex: '1', minWidth: '300px' }}>
-            <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>الف) کالای نرمال (Normal Good)</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-              اگر قیمت کالا کاهش یابد، اثر جانشینی باعث افزایش مصرف می‌شود. از طرف دیگر، به دلیل افزایش قدرت خرید واقعی، اثر درآمدی نیز مصرف را افزایش می‌دهد. <strong>هر دو اثر هم‌جهت هستند</strong> و تقاضای کل شدیداً رشد می‌کند.
-            </p>
-          </div>
-          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای نرمال" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+        <div className="glass-panel" style={{ padding: '2rem', borderRight: '4px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', fontSize: '1.2rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold' }}>
+            <TrendingUp size={22} />
+            الف) کالای نرمال (Normal Good)
+          </h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+            <div style={{ flex: '1.3', minWidth: '320px', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', margin: 0 }}>
+                اگر قیمت کالا کاهش یابد، اثر جانشینی باعث افزایش مصرف می‌شود. از طرف دیگر، به دلیل افزایش قدرت خرید واقعی، اثر درآمدی نیز مصرف را افزایش می‌دهد. <strong>هر دو اثر هم‌جهت هستند</strong> و تقاضای کل شدیداً رشد می‌کند.
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '10px', border: '1px solid var(--card-border)' }}>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر جانشینی (SE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies x \uparrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--success)' }}>جهت مثبت (+)</span>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر درآمدی (IE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies I/P_x \uparrow \implies x \uparrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--success)' }}>جهت مثبت (+)</span>
+                </div>
+                <div style={{ gridColumn: '1 / -1', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '0.5rem', marginTop: '0.25rem' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر کل (Total Effect):</span>
+                  <div style={{ margin: '0.25rem 0', fontWeight: 'bold', color: 'var(--text-main)' }}>
+                    <InlineMath math="TE = SE + IE \implies x \uparrow\uparrow" />
+                  </div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>منحنی تقاضا نزولی است (قانون تقاضا برقرار است).</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
+              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای نرمال" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            </div>
           </div>
         </div>
 
         {/* Inferior Good */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', flexDirection: 'row-reverse', width: '100%' }}>
-          <div style={{ flex: '1', minWidth: '300px' }}>
-            <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>ب) کالای پست (Inferior Good)</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-              با کاهش قیمت، اثر جانشینی مصرف را افزایش می‌دهد. اما اثر درآمدی (به دلیل افزایش قدرت خرید و پست بودن کالا) تمایل به کاهش مصرف دارد. در اینجا، <strong>اثر جانشینی بزرگتر از اثر درآمدی است</strong>؛ در نتیجه، تقاضای کل همچنان افزایش می‌یابد (منحنی تقاضا نزولی است).
-            </p>
-          </div>
-          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای پست" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+        <div className="glass-panel" style={{ padding: '2rem', borderRight: '4px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', fontSize: '1.2rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold' }}>
+            <Activity size={22} />
+            ب) کالای پست (Inferior Good)
+          </h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+            <div style={{ flex: '1.3', minWidth: '320px', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', margin: 0 }}>
+                با کاهش قیمت، اثر جانشینی مصرف را افزایش می‌دهد. اما اثر درآمدی (به دلیل افزایش قدرت خرید و پست بودن کالا) تمایل به کاهش مصرف دارد. در اینجا، <strong>اثر جانشینی بزرگتر از اثر درآمدی است</strong>؛ در نتیجه، تقاضای کل همچنان افزایش می‌یابد (منحنی تقاضا نزولی است).
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '10px', border: '1px solid var(--card-border)' }}>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر جانشینی (SE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies x \uparrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--success)' }}>جهت مثبت (+)</span>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر درآمدی (IE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies I/P_x \uparrow \implies x \downarrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--danger)' }}>جهت منفی (-)</span>
+                </div>
+                <div style={{ gridColumn: '1 / -1', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '0.5rem', marginTop: '0.25rem' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر کل (Total Effect):</span>
+                  <div style={{ margin: '0.25rem 0', fontWeight: 'bold', color: 'var(--text-main)' }}>
+                    <InlineMath math="|SE| > |IE| \implies TE > 0 \implies x \uparrow" />
+                  </div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>منحنی تقاضا همچنان نزولی است (قانون تقاضا برقرار است).</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
+              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای پست" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            </div>
           </div>
         </div>
 
         {/* Giffen Good */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', width: '100%' }}>
-          <div style={{ flex: '1', minWidth: '300px' }}>
-            <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>ج) کالای گیفن (Giffen Good)</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-              نوعی کالای شدیداً پست است. با کاهش قیمت، اثر جانشینی مصرف را بالا می‌برد اما اثر درآمدی منفی آن‌قدر قوی است که اثر جانشینی را خنثی کرده و مصرف کل کاهش می‌یابد! <strong>اثر درآمدی بزرگتر از اثر جانشینی است</strong> و منحنی تقاضا صعودی می‌شود.
-            </p>
-          </div>
-          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای گیفن" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+        <div className="glass-panel" style={{ padding: '2rem', borderRight: '4px solid var(--danger)' }}>
+          <h4 style={{ color: 'var(--danger)', fontSize: '1.2rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold' }}>
+            <AlertTriangle size={22} />
+            ج) کالای گیفن (Giffen Good)
+          </h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+            <div style={{ flex: '1.3', minWidth: '320px', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', margin: 0 }}>
+                نوعی کالای شدیداً پست است. با کاهش قیمت، اثر جانشینی مصرف را بالا می‌برد اما اثر درآمدی منفی آن‌قدر قوی است که اثر جانشینی را خنثی کرده و مصرف کل کاهش می‌یابد! <strong>اثر درآمدی بزرگتر از اثر جانشینی است</strong> و منحنی تقاضا صعودی می‌شود.
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '10px', border: '1px solid var(--card-border)' }}>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر جانشینی (SE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies x \uparrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--success)' }}>جهت مثبت (+)</span>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر درآمدی (IE):</span>
+                  <div style={{ margin: '0.25rem 0' }}><InlineMath math="P_x \downarrow \implies I/P_x \uparrow \implies x \downarrow\downarrow" /></div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--danger)' }}>جهت منفی شدید (--)</span>
+                </div>
+                <div style={{ gridColumn: '1 / -1', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '0.5rem', marginTop: '0.25rem' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>اثر کل (Total Effect):</span>
+                  <div style={{ margin: '0.25rem 0', fontWeight: 'bold', color: 'var(--text-main)' }}>
+                    <InlineMath math="|IE| > |SE| \implies TE < 0 \implies x \downarrow" />
+                  </div>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--danger)' }}>قانون تقاضا نقض شده و منحنی تقاضا صعودی است!</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
+              <img src="/svg/24-nemodar.svg" alt="اثر قیمت در کالای گیفن" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            </div>
           </div>
         </div>
       </div>
