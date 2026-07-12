@@ -218,44 +218,44 @@ function AppContent() {
               {/* Stepped Roadmap */}
               <div className="glass-panel" style={{ padding: '2rem' }}>
                 <h2 style={{ marginBottom: '1.5rem', fontSize: '1.6rem', color: 'var(--primary-hover)' }}>
-                  🚀 مراحل ۵ گانه تسلط (Mastery Roadmap)
+                  🚀 مراحل ۵ گانه تسلط <span dir="ltr" style={{ display: 'inline-block' }}>(Mastery Roadmap)</span>
                 </h2>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ background: 'var(--primary)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>گام ۰</span>
+                  <div className="roadmap-step">
+                    <span className="step-badge" style={{ background: 'var(--primary)' }}>گام ۰</span>
                     <div>
                       <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>موتور ریاضیات اقتصاد (بهینه‌سازی مقید)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>یادگیری ابزار ریاضی لاگرانژ، شرایط مرتبه اول (F.O.C) و تشکیل دترمینان هشین مرزی (S.O.C) برای درک بقیه مباحث.</p>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ background: 'var(--secondary)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>گام ۱</span>
+                  <div className="roadmap-step">
+                    <span className="step-badge" style={{ background: 'var(--secondary)' }}>گام ۱</span>
                     <div>
                       <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>معماری رفتار مصرف‌کننده (پایه و اساس)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>مطلوبیت، خط بودجه، توابع تقاضای مارشالی و هیکسی، دوگانگی، لم شپارد، معادله اسلاتسکی و سیستم مخارج خطی (LES).</p>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ background: 'var(--accent)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>گام ۲</span>
+                  <div className="roadmap-step">
+                    <span className="step-badge" style={{ background: 'var(--accent)' }}>گام ۲</span>
                     <div>
                       <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>رفتار تولیدکننده و هزینه‌ها (قانون آینه)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>بررسی تقارن کامل رفتار تولیدکننده با مصرف‌کننده، توابع هزینه کل، نهایی و متوسط، مسیر توسعه و تابع تولید CES.</p>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ background: 'var(--success)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>گام ۳</span>
+                  <div className="roadmap-step">
+                    <span className="step-badge" style={{ background: 'var(--success)' }}>گام ۳</span>
                     <div>
                       <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>تعادل، پایداری و قدرت انحصار (کلاسیک‌ها)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>تعادل رقابت کامل و انحصار کامل، درجات تبعیض قیمت، تحلیل اثر ۴ نوع مالیات بر انحصارگر و استثمار انحصار خرید.</p>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ background: 'var(--warning)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>گام ۴</span>
+                  <div className="roadmap-step">
+                    <span className="step-badge" style={{ background: 'var(--warning)' }}>گام ۴</span>
                     <div>
                       <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>استراتژی و جنگ بنگاه‌ها (الیگوپولی و نظریه بازی)</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>رقابت انحصاری، مدل‌های همگن الیگوپولی (کورنو، برتراند، استاکلبرگ، کارتل)، تقاضای شکسته سویزی و انحصار دوجانبه.</p>
