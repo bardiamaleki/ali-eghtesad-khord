@@ -48,6 +48,24 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: var(--primary-hover);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -98,9 +116,10 @@ a {
 .main-content {
   flex: 1;
   margin-right: 280px;
+  margin-left: 0;
   padding: 2.5rem 3rem;
-  max-width: 1200px;
   min-width: 0;
+  width: 100%;
 }
 
 /* Mobile Header & Buttons */
@@ -148,7 +167,9 @@ a {
   
   .main-content {
     margin-right: 0;
+    margin-left: 0;
     padding: 1.5rem 1.25rem;
+    width: 100%;
   }
   
   .app-container {
@@ -167,6 +188,31 @@ a {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--card-border);
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mobile-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobile-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0 0 2px 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+  }
+
+  .mobile-progress-fill {
+    height: 100%;
+    background: linear-gradient(to left, var(--secondary), var(--primary));
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-close-btn {
@@ -223,9 +269,10 @@ a {
 }
 
 .chapter-link.active {
-  background: rgba(59, 130, 246, 0.08);
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(167, 139, 250, 0.08) 100%);
   color: var(--primary-hover);
   border-right: 3px solid var(--primary);
+  box-shadow: inset 0 0 12px rgba(96, 165, 250, 0.08), 0 0 8px rgba(96, 165, 250, 0.12);
 }
 
 .submenu-container {
@@ -270,12 +317,31 @@ a {
 
 
 .formula-box {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 14px;
   margin: 1.5rem 0;
   border-right: 4px solid var(--accent);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-right: 4px solid var(--accent);
   overflow-x: auto;
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.formula-box:hover {
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.1), inset 0 0 30px rgba(167, 139, 250, 0.03);
+}
+
+.formula-box > p:first-child,
+.formula-box > strong:first-child {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
 .example-box {
@@ -296,14 +362,29 @@ a {
   direction: ltr;
 }
 
+.nav-prev-btn,
+.nav-next-btn {
+  padding: 0.65rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.25s ease;
+}
+
 .nav-prev-btn:hover {
   transform: translateX(4px);
   color: var(--primary-hover) !important;
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.12);
 }
 
 .nav-next-btn:hover {
   transform: translateX(-4px);
   color: var(--primary-hover) !important;
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.12);
 }
 
 /* --- Global Mobile Optimization Overrides --- */
@@ -444,21 +525,31 @@ a {
 
 .roadmap-step {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   align-items: flex-start;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 1.25rem;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.roadmap-step:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .step-badge {
   color: white;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   flex-shrink: 0;
   align-self: flex-start;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .responsive-table-wrapper {

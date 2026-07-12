@@ -113,15 +113,30 @@ function AppContent() {
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const closeDrawer = () => setIsDrawerOpen(false);
 
+  // Calculate progress for mobile header
+  const stepsWithContent = MENU_ITEMS.filter(i => i.subpages);
+  const currentStepIndex = stepsWithContent.findIndex(item =>
+    item.subpages && item.subpages.some(sub => location.pathname.startsWith(sub.path))
+  );
+  const progressPercent = currentStepIndex === -1
+    ? (location.pathname === '/' ? 0 : 100)
+    : Math.round(((currentStepIndex + 1) / stepsWithContent.length) * 100);
+  const currentStepLabel = currentStepIndex === -1 ? 'صفحه اصلی' : stepsWithContent[currentStepIndex].title;
+
   return (
     <div className="app-container">
       {/* Mobile Header (App Bar) */}
       <header className="mobile-header">
-        <button className="mobile-menu-btn" onClick={toggleDrawer} aria-label="منو">
-          <Menu size={24} />
-        </button>
-        <span style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-main)' }}>اقتصاد خرد</span>
-        <div style={{ width: '40px' }}></div> {/* Spacer to keep title centered */}
+        <div className="mobile-header-row">
+          <button className="mobile-menu-btn" onClick={toggleDrawer} aria-label="منو">
+            <Menu size={24} />
+          </button>
+          <span style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-main)' }}>{currentStepLabel}</span>
+          <div style={{ width: '40px' }}></div>
+        </div>
+        <div className="mobile-progress-bar">
+          <div className="mobile-progress-fill" style={{ width: `${progressPercent}%` }} />
+        </div>
       </header>
 
       {/* Drawer Backdrop for mobile */}
