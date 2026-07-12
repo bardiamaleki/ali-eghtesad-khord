@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Share2, Repeat, Scissors, Activity } from 'lucide-react';
+import { Share2, Scissors, Activity } from 'lucide-react';
 
 const Subpage3 = () => {
   return (
@@ -59,8 +59,8 @@ const Subpage3 = () => {
               در صورت کاهش قیمت، اثر جانشینی باعث افزایش مصرف می‌شود. چون قدرت خرید واقعی زیاد شده، اثر درآمدی نیز مصرف کالای نرمال را افزایش می‌دهد. <strong>هر دو اثر هم‌جهت هستند</strong> و تقاضا به شدت افزایش می‌یابد.
             </p>
           </div>
-          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar-normal.svg" alt="کالای نرمال" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+            <img src="/svg/25-nemodar.svg" alt="کالای نرمال" style={{ maxWidth: '100%', maxHeight: '200px' }} />
           </div>
         </div>
 
@@ -71,8 +71,8 @@ const Subpage3 = () => {
               اثر جانشینی (مثل همیشه) تقاضا را زیاد می‌کند. اما چون کالا پست است، افزایش قدرت خرید باعث کاهش مصرف می‌شود. با این حال، چون <strong>اثر جانشینی بزرگتر از اثر درآمدی</strong> است، در نهایت مصرف افزایش می‌یابد. (منحنی تقاضا همچنان نزولی است).
             </p>
           </div>
-          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar-inferior.svg" alt="کالای پست" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+            <img src="/svg/25-nemodar.svg" alt="کالای پست" style={{ maxWidth: '100%', maxHeight: '200px' }} />
           </div>
         </div>
 
@@ -83,19 +83,50 @@ const Subpage3 = () => {
               یک کالای به شدت پست است که در آن <strong>اثر درآمدی بزرگتر از اثر جانشینی</strong> است. کاهش قیمت منجر به کاهش مقدار تقاضا می‌شود! (منحنی تقاضای مارشالی در اینجا صعودی است).
             </p>
           </div>
-          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
-            <img src="/svg/25-nemodar-giffen.svg" alt="کالای گیفن" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+            <img src="/svg/25-nemodar.svg" alt="کالای گیفن" style={{ maxWidth: '100%', maxHeight: '200px' }} />
           </div>
         </div>
       </div>
 
-      <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem' }}>۳. معادلات اسلاتسکی (Slutsky Equations)</h3>
+      <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem' }}>۳. معادلات اسلاتسکی (Slutsky Equations) و اثبات ماتریسی</h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
         معادله اسلاتسکی، ارتباط ریاضی بین تابع تقاضای مارشالی (که قابل مشاهده است) و تابع تقاضای هیکسی (که غیرقابل مشاهده است) را نشان می‌دهد.
       </p>
 
       <div className="formula-box">
-        <BlockMath math="\frac{\partial x_j^{ND}}{\partial P_j} = \underbrace{\frac{\partial x_j^{CD}}{\partial P_j}}_{\text{اثر جانشینی}} - \underbrace{x_j \frac{\partial x_j^{ND}}{\partial I}}_{\text{اثر درآمدی}}" />
+        <BlockMath math="\frac{\partial x_i^{ND}}{\partial P_j} = \underbrace{\frac{\partial x_i^{CD}}{\partial P_j}}_{\text{اثر جانشینی}} - \underbrace{x_j \frac{\partial x_i^{ND}}{\partial I}}_{\text{اثر درآمدی}}" />
+      </div>
+
+      <div className="example-box" style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>اثبات ریاضی پیشرفته به روش ماتریسی و کرامر (صفحات ۳۰-۳۴ جزوه):</h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          مسئله بهینه‌سازی مصرف‌کننده را به صورت زیر در نظر بگیرید:
+          <BlockMath math="\max U(x_1, x_2) \quad \text{S.t} \quad I = P_1 x_1 + P_2 x_2" />
+          تابع لاگرانژ مربوطه به شکل زیر است:
+          <BlockMath math="\mathcal{L} = U(x_1, x_2) + \lambda (I - P_1 x_1 - P_2 x_2)" />
+          شرایط مرتبه اول (F.O.C) عبارتند از:
+          <BlockMath math="\mathcal{L}_1 = U_1 - \lambda P_1 = 0" />
+          <BlockMath math="\mathcal{L}_2 = U_2 - \lambda P_2 = 0" />
+          <BlockMath math="\mathcal{L}_\lambda = I - P_1 x_1 - P_2 x_2 = 0" />
+          با دیفرانسیل‌گیری کامل از سیستم فوق نسبت به تمام متغیرها (<InlineMath math="x_1, x_2, \lambda" />) و پارامترها (<InlineMath math="P_1, P_2, I" />) داریم:
+          <BlockMath math="U_{11} dx_1 + U_{12} dx_2 - P_1 d\lambda = \lambda dP_1" />
+          <BlockMath math="U_{21} dx_1 + U_{22} dx_2 - P_2 d\lambda = \lambda dP_2" />
+          <BlockMath math="-P_1 dx_1 - P_2 dx_2 = -dI + x_1 dP_1 + x_2 dP_2" />
+          این سیستم را می‌توان به فرم ماتریسی زیر نمایش داد که ماتریس ضرایب همان **ماتریس هشین مرزی** (<InlineMath math="\bar{H}" />) است:
+          <BlockMath math="\begin{pmatrix} U_{11} & U_{12} & -P_1 \\ U_{21} & U_{22} & -P_2 \\ -P_1 & -P_2 & 0 \end{pmatrix} \begin{pmatrix} dx_1 \\ dx_2 \\ d\lambda \end{pmatrix} = \begin{pmatrix} \lambda dP_1 \\ \lambda dP_2 \\ -dI + x_1 dP_1 + x_2 dP_2 \end{pmatrix}" />
+          برای یافتن اثر تغییر قیمت کالا ۱ روی مقدار آن (<InlineMath math="\partial x_1 / \partial P_1" />) با فرض ثابت بودن قیمت کالا ۲ و درآمد (<InlineMath math="dP_2=0, dI=0" />)، بردار سمت راست به صورت <InlineMath math="(\lambda dP_1, 0, x_1 dP_1)^T" /> در می‌آید. با استفاده از **قاعده کرامر** برای حل مجهول اول (<InlineMath math="dx_1" />):
+          <BlockMath math="dx_1 = \frac{\begin{vmatrix} \lambda dP_1 & U_{12} & -P_1 \\ 0 & U_{22} & -P_2 \\ x_1 dP_1 & -P_2 & 0 \end{vmatrix}}{|\bar{H}|} \implies \frac{\partial x_1}{\partial P_1} = \lambda \frac{\bar{H}_{11}}{|\bar{H}|} + x_1 \frac{\bar{H}_{31}}{|\bar{H}|}" />
+          جایی که <InlineMath math="\bar{H}_{ij}" /> همسازه‌های ماتریس هشین مرزی هستند.
+          حالا برای پیدا کردن اثر درآمد بر مصرف کالا ۱ (<InlineMath math="\partial x_1 / \partial I" />) با فرض ثبات قیمت‌ها (<InlineMath math="dP_1=0, dP_2=0" />)، بردار سمت راست به صورت <InlineMath math="(0, 0, -dI)^T" /> در می‌آید. طبق قاعده کرامر:
+          <BlockMath math="dx_1 = \frac{\begin{vmatrix} 0 & U_{12} & -P_1 \\ 0 & U_{22} & -P_2 \\ -dI & -P_2 & 0 \end{vmatrix}}{|\bar{H}|} \implies \frac{\partial x_1}{\partial I} = -\frac{\bar{H}_{31}}{|\bar{H}|} \implies \frac{\bar{H}_{31}}{|\bar{H}|} = -\frac{\partial x_1}{\partial I}" />
+          با جایگذاری این نتیجه در رابطه تغییر قیمت اول خواهیم داشت:
+          <BlockMath math="\frac{\partial x_1}{\partial P_1} = \lambda \frac{\bar{H}_{11}}{|\bar{H}|} - x_1 \frac{\partial x_1}{\partial I}" />
+          جمله اول در واقع اثر تغییر قیمت بر تقاضای جبرانی (با ثابت نگه داشتن مطلوبیت <InlineMath math="\bar{U}" />) است:
+          <BlockMath math="\left. \frac{\partial x_1}{\partial P_1} \right|_{\bar{U}} = \lambda \frac{\bar{H}_{11}}{|\bar{H}|}" />
+          بنابراین، رابطه نهایی اسلاتسکی حاصل می‌شود:
+          <BlockMath math="\frac{\partial x_1}{\partial P_1} = \left. \frac{\partial x_1}{\partial P_1} \right|_{\bar{U}} - x_1 \frac{\partial x_1}{\partial I}" />
+        </p>
       </div>
 
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginTop: "1rem" }}>

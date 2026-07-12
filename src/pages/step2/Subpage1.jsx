@@ -124,9 +124,21 @@ const Subpage1 = () => {
           <li><InlineMath math="\rho" /> : پارامتر جانشینی</li>
           <li><InlineMath math="\sigma = \frac{1}{1+\rho}" /> : کشش جانشینی</li>
         </ul>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '0.5rem' }}>
-          <strong>نکته تستی:</strong> تابع کاب‌داگلاس (<InlineMath math="Q = A K^\alpha L^\beta" />) یک حالت خاص از CES است که در آن کشش جانشینی همواره یک است (<InlineMath math="\sigma = 1" />).
-        </p>
+        <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+          <strong>اثبات ریاضی رابطه CES و کاب-داگلاس (صفحه ۷۷ جزوه):</strong>
+          <p style={{ lineHeight: '1.8', marginTop: '0.5rem' }}>
+            زمانی که پارامتر جانشینی <InlineMath math="\rho \to 0" /> میل کند، کشش جانشینی برابر یک می‌شود (<InlineMath math="\sigma = 1" />) که نشان‌دهنده ترجیحات کاب-داگلاس است. اثبات این موضوع با استفاده از تعریف حد و قاعده هوپیتال انجام می‌شود. ابتدا از طرفین لگاریتم می‌گیریم:
+            <BlockMath math="\ln Q = \ln A - \frac{\ln [\gamma K^{-\rho} + (1-\gamma) L^{-\rho}]}{\rho}" />
+            با میل دادن حد به سمت صفر (<InlineMath math="\rho \to 0" />)، کسر فوق مبهم <InlineMath math="\frac{0}{0}" /> می‌شود. با اعمال قاعده هوپیتال نسبت به <InlineMath math="\rho" /> داریم:
+            <BlockMath math="\lim_{\rho \to 0} \frac{\frac{\partial}{\partial \rho} \ln [\gamma K^{-\rho} + (1-\gamma) L^{-\rho}]}{\frac{\partial}{\partial \rho} \rho} = \lim_{\rho \to 0} \frac{-\gamma K^{-\rho} \ln K - (1-\gamma) L^{-\rho} \ln L}{\gamma K^{-\rho} + (1-\gamma) L^{-\rho}}" />
+            با جایگذاری <InlineMath math="\rho = 0" /> در حد فوق، کسر ساده می‌شود:
+            <BlockMath math="= -\gamma \ln K - (1-\gamma) \ln L" />
+            بنابراین حد لگاریتم تولید کل به صورت زیر در می‌آید:
+            <BlockMath math="\lim_{\rho \to 0} \ln Q = \ln A + \gamma \ln K + (1-\gamma) \ln L" />
+            با گرفتن نمایی (Anti-log) از طرفین، به فرم کلاسیک تابع کاب-داگلاس با بازدهی ثابت نسبت به مقیاس می‌رسیم:
+            <BlockMath math="Q = A K^\gamma L^{1-\gamma}" />
+          </p>
+        </div>
       </div>
 
     </div>

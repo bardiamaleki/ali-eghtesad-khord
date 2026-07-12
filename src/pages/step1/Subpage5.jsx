@@ -15,10 +15,29 @@ const Subpage5 = () => {
       </p>
 
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem' }}>۱. طبقه‌بندی توابع مطلوبیت</h3>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginTop: '1.5rem' }}>
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--primary)' }}>
+          <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>۱. توابع همگن (Homogeneous Utility) و هموتتیک (Homothetic)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            یک تابع مطلوبیت همگن از درجه <InlineMath math="k" /> است اگر با ضرب تمام نهاده‌ها در عدد مثبت <InlineMath math="\lambda" />، مطلوبیت کل به اندازه <InlineMath math="\lambda^k" /> برابر شود:
+            <BlockMath math="U(\lambda x_1, \lambda x_2) = \lambda^k U(x_1, x_2)" />
+            یک تابع **هموتتیک** نیز تبدیل یکنواخت (صعودی) از یک تابع همگن است (مثلاً <InlineMath math="U = \ln(x_1 x_2)" /> هموتتیک است ولی همگن نیست).
+          </p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
+            <strong>ویژگی‌های اساسی (صفحه ۴۷-۴۸ جزوه):</strong>
+          </p>
+          <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+            <li>در توابع همگن، مطلوبیت‌های نهایی کالاها (<InlineMath math="MU" />) همگن از درجه <InlineMath math="k-1" /> هستند.</li>
+            <li>در تمام توابع همگن و هموتتیک، **نرخ نهایی جانشینی (MRS) همگن از درجه صفر است**؛ یعنی شیب منحنی‌های بی‌تفاوتی در امتداد هر شعاعی از مبدأ ثابت است:
+              <BlockMath math="MRS(\lambda x_1, \lambda x_2) = MRS(x_1, x_2)" />
+            </li>
+            <li>این موضوع باعث می‌شود که مسیر درآمد-مصرف (ICC) و مسیر توسعه در این توابع همواره یک **خط مستقیم عبورکننده از مبدأ** باشد.</li>
+          </ul>
+        </div>
+
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--secondary)' }}>
-          <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>الف) تابع مطلوبیت مجزا (Separable Utility)</h4>
+          <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>۲. تابع مطلوبیت مجزا (Separable Utility)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
             در این تابع، کل مطلوبیت تبدیلی از مجموع مطلوبیت‌های جداگانه است. با این حال، به دلیل وجود تابع کلی <InlineMath math="f" />، مطلوبیت نهایی کالاها همچنان به هم مرتبط است.
           </p>
@@ -26,7 +45,7 @@ const Subpage5 = () => {
         </div>
 
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--accent)' }}>
-          <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>ب) تابع دقیقاً مجزا (Strongly Separable)</h4>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>۳. تابع دقیقاً مجزا (Strongly Separable)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
             تابع کلی تبدیلی از مجموع توابعی است که هر کدام منحصراً به یک کالا بستگی دارند. در اینجا مطلوبیت نهایی هر کالا مستقل از مصرف سایر کالاها است.
           </p>
@@ -34,7 +53,7 @@ const Subpage5 = () => {
         </div>
 
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>
-          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>ج) تابع مطلوبیت جمع‌پذیر (Additive Utility)</h4>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>۴. تابع مطلوبیت جمع‌پذیر (Additive Utility)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
             ساده‌ترین حالت که مطلوبیت کل صرفاً حاصل جمع مطلوبیت‌های تک‌تک کالاهاست. هر تابع مجزا، در واقع یک تبدیل یکنواخت از یک تابع جمع‌پذیر است.
           </p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { BookOpen, TrendingUp, Compass, Grid } from 'lucide-react';
+import { BookOpen, Compass } from 'lucide-react';
 
 const Subpage2 = () => {
   return (

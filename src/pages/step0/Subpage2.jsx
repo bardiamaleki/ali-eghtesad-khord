@@ -25,9 +25,9 @@ const Subpage2 = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1rem' }}>
           <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--success)' }}>
-            <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>۱. در مسئله حداکثرسازی مقید:</h4>
+            <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>۱. در مسئله حداکثرسازی مقید (تابع شبه‌مقعر):</h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              دترمینان ماتریس هشین مرزی باید <strong>بزرگتر از صفر</strong> باشد:
+              دترمینان ماتریس هشین مرزی باید <strong>بزرگتر از صفر</strong> باشد. این شرط معادل با **شبه‌مقعر بودن اکید (Strict Quasi-Concavity)** تابع در همسایگی نقطه تعادل است:
             </p>
             <BlockMath math="|\bar{H}| > 0" />
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
@@ -36,13 +36,19 @@ const Subpage2 = () => {
             <div style={{ fontSize: '0.85rem', direction: 'ltr', color: 'var(--text-main)', marginTop: '0.5rem' }}>
               <BlockMath math="|\bar{H}| = 2\mathcal{L}_{xy}g_x g_y - \mathcal{L}_{xx}g_y^2 - \mathcal{L}_{yy}g_x^2 > 0" />
             </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
+              *نکته کنکوری:* اگر تابع هدف مطلوبیت مصرف‌کننده باشد، مثبت بودن دترمینان هشین مرزی نشان‌دهنده نزولی بودن نرخ نهایی جانشینی (نزولی بودن MRS) و محدب بودن منحنی‌های بی‌تفاوتی نسبت به مبدأ است.
+            </p>
           </div>
           <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--danger)' }}>
-            <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>۲. در مسئله حداقل‌سازی مقید:</h4>
+            <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>۲. در مسئله حداقل‌سازی مقید (تابع شبه‌محدب):</h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              دترمینان ماتریس هشین مرزی باید <strong>کوچکتر از صفر</strong> باشد:
+              دترمینان ماتریس هشین مرزی باید <strong>کوچکتر از صفر</strong> باشد. این شرط معادل با **شبه‌محدب بودن اکید (Strict Quasi-Convexity)** تابع هزینه در نقطه بهینه است:
             </p>
             <BlockMath math="|\bar{H}| < 0" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
+              در مسائل حداقل‌سازی هزینه تولید یا مخارج مصرف‌کننده، این شرط منفی بودن تضمین می‌کند که منحنی‌های هم‌هزینه نسبت به مبدأ محدب بوده و نقطه مماس حاصله، هزینه را حداقل می‌کند.
+            </p>
           </div>
         </div>
 

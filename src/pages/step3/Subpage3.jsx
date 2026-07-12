@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { DollarSign, Landmark, Coins, TrendingDown } from 'lucide-react';
+import { DollarSign, Landmark, Coins } from 'lucide-react';
 
 const Subpage3 = () => {
   return (
@@ -60,42 +60,28 @@ const Subpage3 = () => {
         </p>
       </div>
 
-      <h3 style={{ color: 'var(--primary)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <TrendingDown size={20} />
-        ۲. انحصار خرید (Monopsony)
-      </h3>
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        تا اینجا فرض بر این بود که در بازار محصول انحصار وجود دارد. اما ممکن است یک بنگاه، <strong>تنها خریدار</strong> یک نهاده تولیدی (مثلاً نیروی کار در یک شهر کوچک) باشد. به این حالت <strong>مونوپسونی</strong> می‌گویند.
-      </p>
-
-      <div className="glass-panel" style={{ padding: '1.5rem', borderLeft: '4px solid var(--danger)', marginBottom: '1.5rem' }}>
-        <h4 style={{ color: 'var(--text-main)', marginBottom: '1rem' }}>حالت اول: خریدار انحصاری نهاده، اما فروشنده رقابتی کالا</h4>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          بنگاه تنها خریدار نیروی کار است، اما محصول خود را در یک بازار رقابتی با قیمت ثابت <InlineMath math="\bar{P}" /> می‌فروشد. چون بنگاه تنها خریدار نهاده است، برای استخدام کارگر بیشتر باید دستمزد بیشتری بپردازد، پس تابع عرضه نهاده صعودی است (<InlineMath math="r = g(x)" />).
-        </p>
-        
-        <BlockMath math="\text{Max } \pi = P \cdot q(x) - g(x) \cdot x" />
-        <BlockMath math="\text{FOC:} \quad P \cdot \frac{\partial q}{\partial x} - \left[ g(x) + x g'(x) \right] = 0" />
-        <BlockMath math="\implies VMP_x = MFC_x" />
-
-        <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', marginTop: '1rem' }}>
-          <li><InlineMath math="VMP_x" /> : ارزش تولید نهایی نهاده.</li>
-          <li><InlineMath math="MFC_x" /> : هزینه نهایی عامل تولید. چون تابع عرضه نهاده صعودی است، شیب <InlineMath math="MFC" /> دو برابر شیب منحنی عرضه نیروی کار است (در حالت خطی).</li>
-        </ul>
-      </div>
-
-      <div className="glass-panel" style={{ padding: '1.5rem', borderLeft: '4px solid var(--warning)' }}>
-        <h4 style={{ color: 'var(--text-main)', marginBottom: '1rem' }}>حالت دوم: انحصار دوجانبه (خریدار انحصاری نهاده و فروشنده انحصاری کالا)</h4>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          این بدترین حالت برای عوامل تولید (مثل کارگران) است. بنگاه هم در بازار نهاده تنها خریدار است و هم در بازار محصول تنها فروشنده است.
-        </p>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          در اینجا، بنگاه به جای ارزش کالا با <strong>درآمد نهایی (MR)</strong> سر و کار دارد. شرط تعادل استخدام نهاده به شکل زیر است:
-        </p>
-        
-        <BlockMath math="MRP_x = MFC_x" />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', textAlign: 'center', marginTop: '0.5rem' }}>
-          یعنی درآمد نهایی فیزیکی نهاده (<InlineMath math="MR \cdot MP_x" />) برابر با هزینه نهایی عامل تولید شود.
+      <div className="example-box" style={{ marginTop: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <DollarSign size={18} />
+          تحلیل دیفرانسیلی و ایستای مقایسه‌ای مالیات بر فروش (صفحه ۹۸ جزوه)
+        </h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          در مالیات بر فروش، درصدی از کل درآمد کسر می‌شود. می‌خواهیم اثر تغییر نرخ مالیات (<InlineMath math="t" />) را بر مقدار تعادلی تولید (<InlineMath math="Q" />) بررسی کنیم:
+          <BlockMath math="\max \pi = TR(1-t) - TC" />
+          شرط مرتبه اول (F.O.C):
+          <BlockMath math="(1-t)MR - MC = 0" />
+          با دیفرانسیل‌گیری کامل از شرط تعادل نسبت به مقدار تولید و نرخ مالیات داریم:
+          <BlockMath math="(1-t)MR' dQ - MR dt - MC' dQ = 0 \implies \left[ (1-t)MR' - MC' \right] dQ = MR dt" />
+          با تقسیم طرفین بر <InlineMath math="dt" />، رابطه زیر به دست می‌آید:
+          <BlockMath math="\frac{dQ}{dt} = \frac{MR}{(1-t)MR' - MC'}" />
+          <strong>تحلیل علامت کسر:</strong>
+          <ul style={{ paddingRight: '1.5rem', marginTop: '0.5rem', lineHeight: '1.6' }}>
+            <li>صورت کسر مثبت است (<InlineMath math="MR > 0" />)، زیرا انحصارگر همواره در ناحیه باکشش منحنی تقاضا که درآمد نهایی مثبت است تولید می‌کند.</li>
+            <li>مخرج کسر منفی است، زیرا طبق شرط مرتبه دوم حداکثرسازی سود (S.O.C)، باید داشته باشیم: <InlineMath math="(1-t)MR' - MC' < 0" />.</li>
+          </ul>
+          بنابراین، حاصل تقسیم همواره منفی است:
+          <BlockMath math="\frac{dQ}{dt} < 0" />
+          این نتیجه ثابت می‌کند که افزایش نرخ مالیات بر فروش همواره باعث **کاهش مقدار تولید تعادلی** و افزایش قیمت مصرف‌کننده خواهد شد (اثر تخصیصی شدید).
         </p>
       </div>
 

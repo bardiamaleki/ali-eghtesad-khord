@@ -1,96 +1,112 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { ArrowLeftRight, CheckCircle2, XCircle, Handshake } from 'lucide-react';
+import { Store, AlignLeft, Layers, HelpCircle } from 'lucide-react';
 
 const Subpage1 = () => {
   return (
     <div className="glass-panel" style={{ padding: '2rem' }}>
       <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.5rem", borderBottom: "1px solid var(--card-border)", paddingBottom: "0.5rem", color: "var(--primary)" }}>
-        <ArrowLeftRight style={{ color: 'var(--primary)' }} />
-        انحصار دوجانبه (Bilateral Monopoly) و مباحث تکمیلی
+        <Store style={{ color: 'var(--primary)' }} />
+        ۱. بازار رقابت انحصاری (مدل چمبرلین)
       </h2>
 
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        زمانی که در یک بازار، یک <strong>فروشنده انحصاری (Monopolist)</strong> در مقابل یک <strong>خریدار انحصاری (Monopsonist)</strong> قرار می‌گیرد، ساختار بازار را <strong>انحصار دوجانبه</strong> می‌گویند. در این وضعیت، دیگر منحنی عرضه و تقاضای مستقلی وجود ندارد که نقطه تعادل را تعیین کند، بلکه قدرت چانه‌زنی طرفین تعیین‌کننده قیمت و مقدار خواهد بود.
+        بازار رقابت انحصاری شبیه‌ساز ویژگی‌های هر دو بازار رقابت کامل و انحصار کامل است. در این بازار تعداد تولیدکنندگان به اندازه کافی زیاد است (گروه تولیدکنندگان)، به طوری که فعالیت یک فروشنده تأثیر مستقیمی بر بقیه ندارد؛ اما به علت **تمایز محصولات**، هر بنگاه با منحنی تقاضای نزولی مخصوص به خود مواجه است.
       </p>
 
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <CheckCircle2 size={20} />
-        ۱. فرض‌های مدل پایه انحصار دوجانبه
+        <AlignLeft size={20} />
+        ۱. دو نوع منحنی تقاضا (تقاضای مورد انتظار و موثر)
       </h3>
-      <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '2rem' }}>
-        <li>فروشنده انحصاری یک نهاده (مثل یک قطعه خاص صنعتی) تولید می‌کند.</li>
-        <li>تنها یک خریدار برای آن قطعه وجود دارد. خریدار این قطعه را به عنوان عامل تولید برای محصول نهایی خودش (<InlineMath math="q_1" />) استفاده می‌کند.</li>
-        <li>کالای نهاییِ خریدار در یک بازار رقابتی و با قیمت ثابت <InlineMath math="P_1" /> فروخته می‌شود.</li>
-        <li>نهاده‌های مورد نیاز فروشنده انحصاری هم در بازارهای رقابتی با قیمت ثابت تأمین می‌شوند.</li>
-      </ul>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        در این بازار با دو نوع منحنی تقاضای متمایز روبرو هستیم (صفحات ۱۰۳-۱۰۴ جزوه):
+      </p>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>تقاضای مورد انتظار یا صوری (dd)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            منحنی تقاضای تصوری بنگاه با این فرض که با کاهش قیمت خود می‌تواند سهم بازار سایرین را جذب کند بدون اینکه رقبا عکس‌العملی نشان دهند (قیمت سایرین ثابت فرض می‌شود). این منحنی بسیار باکشش‌تر و مسطح‌تر است:
+            <BlockMath math="P_k = A_k - a_k \cdot q_k - \sum_{i \neq k} b_{ki} \bar{q}_i" />
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>تقاضای واقعی یا موثر (DD)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            منحنی تقاضای واقعی متناسب با سهم بازار. اگر یک بنگاه برای جذب مشتری قیمت را کاهش دهد، سایر رقبا نیز برای حفظ مشتریان خود قیمت‌ها را کاهش می‌دهند. با فرض تقارن و تشابه رفتار تمام بنگاه‌ها (<InlineMath math="q_i = q_k" />)، منحنی DD پرشیب‌تر است:
+            <BlockMath math="P_k = A - [a + (n-1)b] q_k" />
+          </p>
+        </div>
+      </div>
+
+      <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+        <img src="/svg/103-nemodar.svg" alt="نمودار تقاضای موثر و صوری" style={{ maxWidth: '100%', maxHeight: '250px' }} />
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>تقاطع منحنی تقاضای صوری (dd) و تقاضای موثر بازار (DD)</p>
+      </div>
 
       <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <XCircle size={20} />
-        ۲. راه حل‌های مرجع در انحصار دوجانبه
+        <Layers size={20} />
+        ۲. تعادل کوتاه مدت و بلند مدت
       </h3>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        نحوه تصمیم‌گیری و بهینه‌سازی بنگاه در افق‌های زمانی مختلف متفاوت است:
+      </p>
       
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        برای پیش‌بینی رفتار طرفین، سه راه حل (سناریو) ممکن بررسی می‌شود:
-      </p>
+      <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+        <li><strong>تعادل کوتاه‌مدت:</strong> بنگاه بر اساس منحنی تقاضای مورد انتظار (<InlineMath math="dd" />) خود تصمیم می‌گیرد، زیرا تصور می‌کند تغییر قیمت او توسط رقبا رصد نمی‌شود. بنابراین سود خود را با شرط <InlineMath math="MR_{dd} = MC" /> به حداکثر می‌رساند.</li>
+        <li><strong>تعادل بلندمدت:</strong> ورود و خروج آزادانه بنگاه‌ها سود اقتصادی را صفر می‌کند. در نقطه تعادل نهایی، منحنی تقاضای صوری (<InlineMath math="dd" />) بر منحنی هزینه متوسط بلندمدت (<InlineMath math="LAC" />) مماس می‌شود (<InlineMath math="P = LAC" /> و <InlineMath math="MR_{dd} = LMC" />) و همزمان تقاضای صوری و موثر متقاطع هستند (<InlineMath math="P_{dd} = P_{DD}" />).</li>
+      </ul>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--danger)' }}>
-          <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>الف) انحصار فروش (فروشنده رهبر)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            فروشنده بر بازار مسلط است. او با در نظر گرفتن عکس‌العمل خریدار، سود خود را حداکثر می‌کند. در این حالت قیمت بالا و مقدار محدود می‌شود. شرط تعادل:
-          </p>
-          <BlockMath math="MR_S = MC_S" />
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', margin: '2rem 0' }}>
+        <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+          <img src="/svg/105-nemodar1.svg" alt="تعادل کوتاه‌مدت" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>تعادل کوتاه مدت با شرط MR = MC روی تقاضای dd</p>
         </div>
-
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--warning)' }}>
-          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>ب) انحصار خرید (خریدار رهبر)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            خریدار مسلط است. او عکس‌العمل فروشنده را در نظر گرفته و سود خود را حداکثر می‌سازد. در این حالت قیمت نهاده پایین و به نفع خریدار است. شرط تعادل:
-          </p>
-          <BlockMath math="VMP_B = MFC_B" />
-        </div>
-
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)' }}>
-          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>ج) راه حل شبه‌رقابتی</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            هر دو طرف قیمت‌پذیر فرض می‌شوند و قدرتی برای تغییر قیمت ندارند. نقطه تعادل جایی است که تمایل به پرداخت با هزینه نهایی برابر می‌شود. شرط تعادل:
-          </p>
-          <BlockMath math="VMP = MC_S" />
+        <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px' }}>
+          <img src="/svg/105-nemodar2.svg" alt="تعادل بلندمدت" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>تعادل بلندمدت با مماس شدن dd بر منحنی LAC</p>
         </div>
       </div>
 
-      <div className="glass-panel" style={{ padding: '1.5rem', borderColor: 'var(--primary)', marginBottom: '2rem' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>مقایسه نتایج سه راه حل:</h4>
-        <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          <li>
-            <strong>مقدار تولید:</strong> مقدار در راه حل شبه‌رقابتی <strong>بیشتر</strong> از دو حالت دیگر است (<InlineMath math="q_C > q_S \text{ و } q_B" />).
-          </li>
-          <li>
-            <strong>قیمت تعادلی:</strong> قیمت در انحصار فروش بسیار بالاست (<InlineMath math="P_S" />)، در انحصار خرید بسیار پایین است (<InlineMath math="P_B" />)، و قیمت شبه‌رقابتی بین این دو قرار می‌گیرد.
-          </li>
-        </ul>
-      </div>
-
-      <h3 style={{ color: 'var(--warning)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <Handshake size={20} />
-        ۳. راه حل چانه‌زنی (Bargaining Solution)
-      </h3>
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        از آنجا که در انحصار دوجانبه همواره یک کشمکش بر سر تصاحب سود وجود دارد، معمولاً طرفین تصمیم می‌گیرند به جای رقابت مخرب، <strong>کارتل مشترک</strong> تشکیل دهند. به این معنی که مجموع سود خریدار و فروشنده را با هم بیشینه می‌کنند.
-      </p>
-
-      <BlockMath math="\pi_{Total} = \pi_{Buyer} + \pi_{Seller}" />
-      <BlockMath math="\text{Max } \pi_{Total} \implies \text{شرط شبه رقابتی: } VMP = MC" />
-
-      <div style={{ marginTop: '1.5rem', padding: '1.5rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px', borderRight: '4px solid var(--accent)' }}>
-        <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>محدوده قیمت مورد توافق (چانه‌زنی)</h4>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-          پس از رسیدن به مقدار بهینه (مقدار شبه‌رقابتی)، طرفین باید بر سر قیمت به توافق برسند. قیمت مورد توافق بستگی به قدرت چانه‌زنی دارد، اما همواره بین یک حد پایین (کف مورد قبول فروشنده) و یک حد بالا (سقف مورد قبول خریدار) قرار می‌گیرد:
-        </p>
-        <BlockMath math="\frac{\text{کل هزینه فروشنده}}{Q} \le P \le \frac{\text{کل درآمد خریدار}}{Q}" />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
-          در واقع هیچ‌کدام حاضر نیستند ضرر کنند، پس قیمت در محدوده‌ای قرار می‌گیرد که سود هر دو طرف صفر یا مثبت باشد.
+      <div className="example-box" style={{ marginTop: '2rem' }}>
+        <h4 style={{ color: 'var(--warning)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <HelpCircle size={18} />
+          حل تشریحی مثال تعادل ۱۰۱ بنگاه (صفحه ۱۰۶ جزوه):
+        </h4>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+          در یک گروه تولیدی ۱۰۱ بنگاه همسان وجود دارند. تابع تقاضای معکوس بنگاه <InlineMath math="i" /> و تابع هزینه کل آن عبارت است از:
+          <BlockMath math="P_i = 150 - q_i - 0.02 \sum_{j \neq i}^{101} q_j" />
+          <BlockMath math="C_i = 0.5 q_i^3 - 20 q_i^2 + 270 q_i" />
+          می‌خواهیم قیمت، مقدار و سود تعادلی هر بنگاه را پیدا کنیم.
+          <br /><br />
+          <strong>گام اول: استخراج تقاضای صوری و درآمد نهایی</strong>
+          <br />
+          بنگاه فرض می‌کند تولید سایر بنگاه‌ها (<InlineMath math="\sum_{j \neq i} q_j" />) در اثر تصمیمات او تغییر نمی‌کند. بنابراین، شیب تقاضای صوری او برابر با <InlineMath math="-1" /> است. درآمد نهایی صوری (<InlineMath math="MR_i" />) با دو برابر کردن شیب به دست می‌آید:
+          <BlockMath math="MR_i = 150 - 2 q_i - 0.02 \sum_{j \neq i}^{101} q_j" />
+          <strong>گام دوم: اعمال فرض تقارن تعادلی</strong>
+          <br />
+          در نقطه تعادل، رفتار همه بنگاه‌ها یکسان است، یعنی <InlineMath math="q_j = q_i" /> برای همه رقبا. از آنجا که ۱۰۰ بنگاه دیگر وجود دارد:
+          <BlockMath math="MR_i = 150 - 2 q_i - 0.02 (100 q_i) = 150 - 4 q_i" />
+          <strong>گام سوم: مساوی قرار دادن هزینه نهایی و درآمد نهایی</strong>
+          <br />
+          تابع هزینه نهایی (MC) با مشتق‌گیری از تابع هزینه به دست می‌آید:
+          <BlockMath math="MC_i = 1.5 q_i^2 - 40 q_i + 270" />
+          شرط تعادل:
+          <BlockMath math="MR_i = MC_i \implies 150 - 4 q_i = 1.5 q_i^2 - 40 q_i + 270" />
+          <BlockMath math="1.5 q_i^2 - 36 q_i + 120 = 0 \quad \xrightarrow{\div 1.5} \quad q_i^2 - 24 q_i + 80 = 0" />
+          با تجزیه عبارت درجه دو:
+          <BlockMath math="(q_i - 20)(q_i - 4) = 0 \implies q_i = 20 \quad (\text{مقدار تولید تعادلی})" />
+          <strong>گام چهارم: محاسبه قیمت و سود تعادلی</strong>
+          <br />
+          قیمت تعادلی بازار با قرار دادن مقدار در تابع تقاضا به دست می‌آید:
+          <BlockMath math="P_i = 150 - 20 - 0.02 (100 \times 20) = 130 - 40 = 90" />
+          هزینه کل برای مقدار تولید ۲۰ واحد:
+          <BlockMath math="C_i(20) = 0.5(8000) - 20(400) + 270(20) = 4000 - 8000 + 5400 = 1400" />
+          درآمد کل:
+          <BlockMath math="TR_i(20) = P_i \cdot q_i = 90 \times 20 = 1800" />
+          سود نهایی هر بنگاه:
+          <BlockMath math="\pi_i = TR_i - C_i = 1800 - 1400 = 400" />
         </p>
       </div>
 
