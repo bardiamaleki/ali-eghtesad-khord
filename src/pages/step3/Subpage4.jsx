@@ -1,62 +1,162 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
+import { Store, Users, Handshake, Target, Swords } from 'lucide-react';
 
 const Subpage4 = () => {
   return (
     <div className="glass-panel" style={{ padding: '2rem' }}>
-      <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.5rem", borderBottom: "1px solid var(--card-border)", paddingBottom: "0.5rem", color: "var(--primary)", marginTop: "2rem" }}>انحصار خرید</h2>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>کالا:</strong></p>
-<ul style={{ listStyleType: "disc", paddingRight: "2rem", marginBottom: "1rem", color: "var(--text-muted)", lineHeight: "1.8" }}>
-<li>رقابت <InlineMath math={"\\leftarrow \\bar{P}"} /></li>
-<li>انحصاری <InlineMath math={"\\leftarrow MR"} /> (بازار فروش انحصاری)</li>
-</ul>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>نهاده (نیروی کار):</strong></p>
-<ul style={{ listStyleType: "disc", paddingRight: "2rem", marginBottom: "1rem", color: "var(--text-muted)", lineHeight: "1.8" }}>
-<li>رقابت <InlineMath math={"\\leftarrow \\bar{P}"} /></li>
-<li>انحصاری <InlineMath math={"\\leftarrow MR"} /></li>
-</ul>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>انحصارگر در بازار رقابتی بفروشد / در بازار انحصاری بفروشد.</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>انحصار در خرید نهاده وجود دارد اما کالا دو حالت دارد <InlineMath math={"\\leftarrow"} /> رقابت / انحصار</p>
-<h4 style={{ color: "var(--accent)", marginTop: "1.5rem", marginBottom: "1rem" }}>حالت اول: محصول را در بازار رقابتی بفروش برساند <InlineMath math={"\\leftarrow"} /> نهاده انحصاری</h4>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>قیمت ثابت است <InlineMath math={"\\leftarrow \\bar{P}"} /></p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><InlineMath math={"q = q(x)"} /> : تابع تولید خریدار <InlineMath math={"x"} /></p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><InlineMath math={"r = g(x)"} /> (قیمت نهاده) : تابع عرضه فروشندگان <InlineMath math={"x"} /> و <InlineMath math={"g' &gt; 0"} /></p>
-<div className="formula-box"><BlockMath math={"\\pi = TR - TC = P \\cdot q(x) - r \\cdot x = P \\cdot q(x) - g(x) \\cdot x"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>در اینجا <InlineMath math={"P \\cdot q(x)"} /> فروش کالا است و <InlineMath math={"g(x) \\cdot x"} /> قیمت نهاده تابعی از عرضه است.</p>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial \\pi}{\\partial x} = 0 \\Rightarrow P \\cdot \\frac{\\partial q}{\\partial x} - [g(x) + g'(x) \\cdot x] = 0"} /></div>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial TC}{\\partial x} = MFC_x"} /></div>
+      <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.5rem", borderBottom: "1px solid var(--card-border)", paddingBottom: "0.5rem", color: "var(--primary)" }}>
+        <Store style={{ color: 'var(--primary)' }} />
+        رقابت انحصاری و انحصار چندجانبه (Oligopoly)
+      </h2>
 
-<div className="formula-box"><BlockMath math={"P \\cdot MP_x = MFC_x \\Rightarrow VMP_x = MFC_x \\quad (\\text{شرط اول})"} /></div>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial^2 \\pi}{\\partial x^2} \\le 0 \\Rightarrow \\frac{\\partial VMP_x}{\\partial x} \\le \\frac{\\partial MFC_x}{\\partial x} \\quad (\\text{شرط دوم})"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>شرط اول: ارزش کار برابر است با هزینه نهایی</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>برخورد <InlineMath math={"VMP"} /> با <InlineMath math={"MFC"} /> مقدار <InlineMath math={"x"} /> را به ما می‌دهد (تقاضای نیروی کار).</p>
-<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/assets/101-nemodar.svg" alt="نمودار بازار کار" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', background: 'white', padding: '1rem' }} /></div>
-<div className="formula-box"><BlockMath math={"MFC_x = \\frac{\\partial (g(x) \\cdot x)}{\\partial x} = g'(x) \\cdot x + g(x)"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>مشتق آن:</p>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial MFC_x}{\\partial x} = g'(x) + g''(x) \\cdot x + g'(x) = 2g'(x) + g''(x) \\cdot x"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>در صورتی که تابع عرضه خطی باشد (<InlineMath math={"g''(x) = 0"} />):</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>شیب <InlineMath math={"MFC_x = 2 g'(x)"} /> (دو برابر شیب عرضه)</p>
-<h4 style={{ color: "var(--accent)", marginTop: "1.5rem", marginBottom: "1rem" }}>حالت دوم: انحصار انحصار <InlineMath math={"\\leftarrow"} /> بدترین حالت برای عامل تولید</h4>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>هم انحصار در فروش کالا وجود دارد و هم در خرید نهاده.</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>تعادل جایی است که درآمد نهایی = هزینه نهایی عامل تولید.</p>
-<div className="formula-box"><BlockMath math={"MRP_x = MFC_x"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>درآمد نهایی فروش کالا <InlineMath math={"\\leftarrow MRP_x"} /></p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>هزینه نهایی عامل تولید <InlineMath math={"\\leftarrow MFC_x"} /></p>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        در دنیای واقعی، اکثر بازارها در طیفی بین رقابت کامل و انحصار مطلق قرار دارند. دو ساختار مهم در این طیف عبارتند از <strong>رقابت انحصاری (Monopolistic Competition)</strong> و <strong>انحصار چندجانبه (Oligopoly)</strong>.
+      </p>
 
-<div className="formula-box"><BlockMath math={"Max \\pi = TR - TC = TR(q(x)) - r \\cdot x = TR(q(x)) - g(x) \\cdot x"} /></div>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial \\pi}{\\partial x} = 0 \\Rightarrow \\frac{\\partial TR}{\\partial q} \\cdot \\frac{\\partial q}{\\partial x} - [g'(x) \\cdot x + g(x)] = 0"} /></div>
-<div className="formula-box"><BlockMath math={"MRP_x = MFC_x \\quad (\\text{شرط اول})"} /></div>
-<div className="formula-box"><BlockMath math={"\\frac{\\partial^2 \\pi}{\\partial x^2} \\le 0 \\Rightarrow \\frac{\\partial MRP_x}{\\partial x} \\le \\frac{\\partial MFC_x}{\\partial x} \\quad (\\text{شرط دوم})"} /></div>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>اگر انحصارگر خرید، کالایی را که تولید کرده در بازار انحصاری بفروشد، هم مقدار نهاده کمتری می‌خرد و هم دستمزد کمتری به آن نهاده می‌دهد (نسبت به حالتی که کالای تولید شده را در بازار رقابتی بفروشد).</p>
-<hr style={{ borderTop: "1px solid var(--card-border)", margin: "2rem 0" }} />
-<h3 style={{ color: "var(--secondary)", marginTop: "1.5rem", marginBottom: "1rem" }}>جلسه نهم</h3>
-<h4 style={{ color: "var(--accent)", marginTop: "1.5rem", marginBottom: "1rem" }}>بازار رقابت انحصاری:</h4>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>بازار رقابت کامل <InlineMath math={"\\longleftarrow"} /> بازار رقابت انحصاری <InlineMath math={"\\longleftarrow"} /> بازار انحصار چند جانبه <InlineMath math={"\\longleftarrow"} /> بازار انحصار کامل</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>تعداد تولیدکننده:</strong></p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>بی‌شمار تولید کننده <InlineMath math={"\\longleftarrow"} /> بی‌شمار تولید کننده <InlineMath math={"\\dots \\longleftarrow"} /> ۱ تولید کننده</p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>هدف:</strong></p>
-<p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>هدف تولید کننده <InlineMath math={"\\longrightarrow"} /> Max سود</p>
+      <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Store size={20} />
+        ۱. بازار رقابت انحصاری (مدل چمبرلین)
+      </h3>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        این بازار ویژگی‌هایی از هر دو ساختار حدی دارد: تعداد بنگاه‌ها زیاد است (مثل رقابت کامل) اما کالاها همگن نیستند و <strong>تمایز محصول</strong> وجود دارد (مثل انحصار). به دلیل وجود تمایز، هر بنگاه کمی قدرت انحصاری روی قیمت کالای خودش دارد.
+      </p>
 
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>دو نوع منحنی تقاضا در رقابت انحصاری:</h4>
+          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+            <li>
+              <strong>تقاضای مورد انتظار (<InlineMath math="d" />):</strong> بنگاه تصور می‌کند با کاهش قیمت می‌تواند سهم بازار را بگیرد و رقبا واکنشی نشان نمی‌دهند. شیب این منحنی کم است.
+            </li>
+            <li>
+              <strong>تقاضای موثر (<InlineMath math="D" />):</strong> در واقعیت وقتی یک بنگاه قیمت را کم می‌کند، رقبا نیز همان کار را می‌کنند تا سهمشان را از دست ندهند. این تقاضا پرشیب‌تر است و رفتار واقعی بازار را نشان می‌دهد.
+            </li>
+          </ol>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>تعادل‌های کوتاه‌مدت و بلندمدت:</h4>
+          <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+            <li>
+              <strong>کوتاه‌مدت:</strong> بر اساس منحنی تقاضای مورد انتظار (<InlineMath math="d" />) شکل می‌گیرد: <InlineMath math="MR_d = MC" />
+            </li>
+            <li>
+              <strong>بلندمدت:</strong> با ورود بنگاه‌های جدید، سود اقتصادی صفر می‌شود. منحنی تقاضای موثر (<InlineMath math="D" />) بر منحنی هزینه متوسط بلندمدت (<InlineMath math="LAC" />) مماس می‌شود.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="example-box" style={{ marginBottom: '3rem' }}>
+        <h4 style={{ color: 'var(--warning)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          مثال عددی: تعادل ۱۰۱ بنگاه در رقابت انحصاری
+        </h4>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+          فرض کنید در یک صنعت ۱۰۱ بنگاه حضور دارند. توابع تقاضا و هزینه هر بنگاه به شکل زیر است:
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: '1rem 0' }}>
+          <BlockMath math="P_i = 150 - q_i - 0.02 \sum_{j \neq i} q_j" />
+          <BlockMath math="C_i = 0.5 q_i^3 - 20 q_i^2 + 270 q_i" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+          در شرایط تقاضای موثر (بلندمدت) فرض می‌کنیم تمام رقبا رفتاری مشابه دارند، یعنی تولیدشان برابر با <InlineMath math="q_i" /> است. بنابراین مجموع تولید ۱۰۰ بنگاه دیگر برابر است با <InlineMath math="100 q_i" />.
+        </p>
+        <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', marginTop: '1rem' }}>
+          <BlockMath math="MR_i = 150 - 2 q_i - 0.02(100 q_i) \implies MR_i = 150 - 4 q_i" />
+          <BlockMath math="MC_i = 1.5 q_i^2 - 40 q_i + 270" />
+          <BlockMath math="MR_i = MC_i \implies 150 - 4 q_i = 1.5 q_i^2 - 40 q_i + 270" />
+          <BlockMath math="\implies q_i = 20 \quad , \quad P_i = 90 \quad , \quad \pi = 400" />
+        </div>
+      </div>
+
+      <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '12px' }}>
+        <img src="/svg/105-nemodar2.svg" alt="تعادل بلندمدت رقابت انحصاری" style={{ maxWidth: '100%', maxHeight: '250px' }} />
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>
+          در تعادل بلندمدت، مماس شدن منحنی‌ها در نقطه حداقل <InlineMath math="LAC" /> رخ نمی‌دهد؛ به این تفاوت <strong>ظرفیت مازاد (Excess Capacity)</strong> می‌گویند.
+        </p>
+      </div>
+
+      <h3 style={{ color: 'var(--accent)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Users size={20} />
+        ۲. بازار انحصار چندجانبه (Oligopoly)
+      </h3>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        بازاری با <strong>تعداد معدودی تولیدکننده (دو یا چند بنگاه)</strong>. ویژگی اصلی این بازار <strong>وابستگی متقابل (Mutual Interdependence)</strong> است؛ یعنی سود هر بنگاه مستقیماً به رفتار سایر رقبا بستگی دارد.
+      </p>
+
+      <h4 style={{ color: 'var(--text-main)', marginTop: '2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Target size={18} style={{ color: 'var(--danger)' }} />
+        مدل‌های انحصار چندجانبه با کالای همگن:
+      </h4>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+        <div className="glass-panel" style={{ padding: '1rem', borderTop: '3px solid var(--danger)' }}>
+          <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>مدل کورنو (Cournot)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            هر بنگاه <strong>مقدار تولید رقیب را ثابت فرض می‌کند</strong>. توابع عکس‌العمل <em>مقداری</em> (<InlineMath math="q_1 = f(q_2)" />) به دست می‌آید. شرط تعادل:
+          </p>
+          <BlockMath math="P + q_i \frac{\partial P}{\partial q_i} = MC_i" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+            نکته: اگر تعداد بنگاه‌ها بسیار زیاد شود (<InlineMath math="n \to \infty" />)، مدل کورنو به بازار رقابت کامل نزدیک می‌شود.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '1rem', borderTop: '3px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>مدل استاکلبرگ (Stackelberg)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            مدل <strong>رهبر و پیرو</strong>. بنگاه رهبر با آگاهی از تابع عکس‌العمل پیرو، آن را در تابع سود خود جاگذاری کرده و سودش را حداکثر می‌کند. سود رهبر بیشتر از مدل کورنو است.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '1rem', borderTop: '3px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>مدل برتراند (Bertrand)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            برخلاف کورنو، در اینجا متغیر رقابت <strong>قیمت</strong> است. هر بنگاه قیمت رقیب را ثابت فرض می‌کند. توابع عکس‌العمل قیمتی (<InlineMath math="P_1 = f(P_2)" />) شکل می‌گیرد. در کالای همگن جنگ قیمتی به <InlineMath math="P = MC" /> ختم می‌شود.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '1rem', borderTop: '3px solid var(--primary)' }}>
+          <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>تبانی و کارتل (Collusion)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            بنگاه‌ها با هم سازش کرده و مانند <strong>یک انحصارگر کل</strong> عمل می‌کنند تا سود مشترک ماکزیمم شود. شرط تعادل:
+          </p>
+          <BlockMath math="MR_{Total} = MC_1 = MC_2" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>این مدل بالاترین سود ترکیبی را برای صنعت ایجاد می‌کند اما احتمال تقلب در آن بالاست.</p>
+        </div>
+      </div>
+
+      <div className="example-box" style={{ marginBottom: '3rem', borderRight: '4px solid var(--primary)' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>
+          مثال عددی: راه حل تبانی (سازش) بین دو بنگاه
+        </h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          تابع تقاضای بازار <InlineMath math="P = 100 - Q" /> است که در آن <InlineMath math="Q = q_1 + q_2" />. هزینه دو بنگاه متفاوت است:
+        </p>
+        <BlockMath math="TC_1 = 0.25 q_1^2 + 2 q_1 \implies MC_1 = 0.5 q_1 + 2" />
+        <BlockMath math="TC_2 = 0.5 q_2^2 + 2 \implies MC_2 = q_2" />
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '1rem' }}>
+          در حالت تبانی، می‌خواهیم سود کل (<InlineMath math="\pi = \pi_1 + \pi_2" />) را بیشینه کنیم. شرط تعادل این است که درآمد نهایی بازار با هزینه نهایی هر دو کارخانه برابر باشد:
+        </p>
+        <BlockMath math="MR = 100 - 2Q = 100 - 2(q_1 + q_2)" />
+        <BlockMath math="MC_1 = MC_2 \implies 0.5 q_1 + 2 = q_2" />
+        <BlockMath math="MR = MC_2 \implies 100 - 2(q_1 + q_2) = q_2 \implies 100 - 2q_1 - 3q_2 = 0" />
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '1rem' }}>با جایگذاری <InlineMath math="q_2" /> در معادله آخر:</p>
+        <BlockMath math="100 - 2q_1 - 3(0.5 q_1 + 2) = 0 \implies q_1 = 26.86 \quad , \quad q_2 = 15.43" />
+        <BlockMath math="Q_{Total} = 42.29 \quad , \quad P = 100 - 42.29 = 57.71" />
+        <p style={{ color: 'var(--success)', textAlign: 'center', marginTop: '1rem', fontWeight: 'bold' }}>
+          سود بنگاه اول: <InlineMath math="\pi_1 = 1316.1" /> و سود بنگاه دوم: <InlineMath math="\pi_2 = 769.5" />
+        </p>
+      </div>
+
+      <h4 style={{ color: 'var(--text-main)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Swords size={18} style={{ color: 'var(--accent)' }} />
+        مدل‌های انحصار چندجانبه با کالای غیرهمگن:
+      </h4>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8" }}>
+        ۱. <strong>سهمیه‌بندی بازار (Market Sharing):</strong> تولیدکنندگان تغییرات تولید رقبا را با یک نسبت ثابت دنبال می‌کنند (<InlineMath math="q_2 = k q \implies q_2 = \frac{k}{1-k} q_1" />). <br />
+        ۲. <strong>تقاضای شکسته (Kinked Demand):</strong> برای توضیح <em>چسبندگی قیمت‌ها</em> استفاده می‌شود. رقبا کاهش قیمت را پاسخ می‌دهند (بخش کم‌کشش) اما افزایش قیمت را نادیده می‌گیرند (بخش باکشش).
+      </p>
 
     </div>
   );
