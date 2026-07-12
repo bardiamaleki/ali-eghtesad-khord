@@ -103,8 +103,10 @@ a {
   min-width: 0;
 }
 
-/* Mobile Header */
-.mobile-header {
+/* Mobile Header & Buttons */
+.mobile-header,
+.mobile-menu-btn,
+.mobile-close-btn {
   display: none;
 }
 
@@ -200,12 +202,6 @@ a {
   }
 }
 
-.mobile-menu-btn {
-  display: none;
-}
-.mobile-close-btn {
-  display: none;
-}
 
 /* Chapter & Subpage Links */
 .chapter-link {
