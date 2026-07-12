@@ -1,0 +1,60 @@
+<svg width="550" height="420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrow marker definition for axes -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#333" />
+    </marker>
+    <!-- Arrow marker definition for indicators -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#1e40af" />
+    </marker>
+    <!-- Grid pattern for shading -->
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="10" y2="0" stroke="#3b82f6" stroke-width="0.75" />
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#3b82f6" stroke-width="0.75" />
+    </pattern>
+  </defs>
+
+  <style>
+    .axis { stroke: #333; stroke-width: 2; fill: none; }
+    .line-demand { stroke: #dc2626; stroke-width: 3.5; fill: none; }
+    .label-p { fill: #dc2626; font-weight: bold; }
+    .label-q { fill: #dc2626; font-weight: bold; }
+    text { font-family: Tahoma, 'Vazirmatn', sans-serif; font-size: 15px; fill: #111827; }
+    .persian-text { font-size: 13px; fill: #1e40af; font-weight: bold; }
+    .label-blue { fill: #1e40af; font-weight: bold; }
+    .label-red { fill: #dc2626; font-weight: bold; }
+    .text-center { text-anchor: middle; }
+  </style>
+
+  <!-- Main graph group -->
+  <g>
+    <!-- Grid Shading under Demand Curve -->
+    <polygon points="70,100 70,300 380,300" fill="url(#grid)" />
+
+    <!-- Y-axis (Price - P) -->
+    <line x1="70" y1="300" x2="70" y2="40" class="axis" marker-end="url(#arrow)" />
+    <!-- X-axis (Quantity - Q) -->
+    <line x1="70" y1="300" x2="480" y2="300" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Origin O -->
+    <text x="50" y="320" style="font-weight: bold;">O</text>
+
+    <!-- Labels for Axes -->
+    <text x="45" y="45" class="label-p">P</text>
+    <text x="490" y="305" class="label-q">Q</text>
+
+    <!-- Demand Curve (D) -->
+    <line x1="70" y1="100" x2="380" y2="300" class="line-demand" />
+    <!-- Label D near the curve end -->
+    <text x="385" y="290" class="label-blue">D</text>
+
+    <!-- Intercept labels A and B -->
+    <text x="45" y="105" class="label-red">A</text>
+    <text x="375" y="325" class="label-red">B</text>
+
+    <!-- 'Demand Function' label and pointer -->
+    <text x="290" y="145" class="persian-text">تابع تقاضا</text>
+    <line x1="285" y1="150" x2="245" y2="175" stroke="#1e40af" stroke-width="1.5" marker-end="url(#arrow-blue)" />
+  </g>
+</svg>

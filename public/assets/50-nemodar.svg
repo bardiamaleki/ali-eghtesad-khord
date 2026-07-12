@@ -1,0 +1,107 @@
+<svg width="650" height="320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles for text and layout -->
+  <style>
+    .axis-label { font-family: 'Vazir', 'Arial', sans-serif; font-size: 14px; fill: black; }
+    .tick-label { font-family: 'Vazir', 'Arial', sans-serif; font-size: 11px; fill: black; }
+    .red-label { font-family: 'Vazir', 'Arial', sans-serif; font-size: 11px; fill: red; }
+    .blue-label { font-family: 'Vazir', 'Arial', sans-serif; font-size: 11px; fill: blue; }
+    .legend-text { font-family: 'Vazir', 'Arial', sans-serif; font-size: 12px; }
+  </style>
+
+  <!-- LEFT GRAPH (Commodity Space) -->
+  <g transform="translate(10, 10)">
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="300" y2="240" stroke="black" stroke-width="2" />
+    <line x1="50" y1="240" x2="50" y2="30" stroke="black" stroke-width="2" />
+    <text x="310" y="245" class="axis-label">q₁</text>
+    <text x="30" y="35" class="axis-label">q₂</text>
+
+    <!-- Subsistence levels dashed lines (left graph) -->
+    <line x1="50" y1="190" x2="80" y2="190" stroke="red" stroke-dasharray="3,3" />
+    <line x1="80" y1="240" x2="80" y2="190" stroke="red" stroke-dasharray="3,3" />
+    <circle cx="80" cy="190" r="4" fill="red" />
+    
+    <!-- Ticks & Labels on Axes -->
+    <text x="75" y="255" class="red-label">γ₁</text>
+    <text x="35" y="194" class="red-label">γ₂</text>
+
+    <!-- Budget Lines (blue) -->
+    <!-- BL 1: from M(50, 104) to N(220, 240) -->
+    <line x1="50" y1="104" x2="220" y2="240" stroke="blue" stroke-width="1.5" />
+    <!-- BL 2: from M'(50, 44) to N'(289, 240) -->
+    <line x1="50" y1="44" x2="295" y2="240" stroke="blue" stroke-width="1.5" stroke-dasharray="none" />
+    
+    <text x="35" y="108" class="blue-label">M</text>
+    <text x="35" y="48" class="blue-label">M'</text>
+    <text x="215" y="255" class="blue-label">N</text>
+    <text x="295" y="255" class="blue-label">N'</text>
+
+    <!-- Indifference Curves (red) -->
+    <!-- IC 1 through E(120, 160) -->
+    <path d="M 85,117 C 100,144 140,176 175,186" fill="none" stroke="red" stroke-width="1.5" />
+    <!-- IC 2 through E'(160, 130) -->
+    <path d="M 125,87 C 140,114 180,146 215,156" fill="none" stroke="red" stroke-width="1.5" />
+
+    <!-- Equilibrium Points -->
+    <circle cx="120" cy="160" r="3.5" fill="black" />
+    <text x="112" y="152" class="tick-label">E</text>
+    
+    <circle cx="160" cy="130" r="3.5" fill="black" />
+    <text x="152" y="122" class="tick-label">E'</text>
+
+    <!-- ICC Curve on Left Graph (blue) -->
+    <line x1="80" y1="190" x2="200" y2="100" stroke="blue" stroke-width="2" />
+
+    <!-- Dashed projection lines to X-axis -->
+    <line x1="120" y1="160" x2="120" y2="240" stroke="gray" stroke-dasharray="2,2" />
+    <line x1="160" y1="130" x2="160" y2="240" stroke="gray" stroke-dasharray="2,2" />
+    
+    <text x="115" y="255" class="tick-label">q₁¹</text>
+    <text x="155" y="255" class="tick-label">q₁²</text>
+
+    <!-- Persian label below left graph -->
+    <text x="70" y="285" class="legend-text" fill="black">حداقل معاش (γ₁)</text>
+  </g>
+
+  <!-- RIGHT GRAPH (ICC space with income/subsistence) -->
+  <g transform="translate(350, 10)">
+    <!-- Axes -->
+    <line x1="50" y1="240" x2="270" y2="240" stroke="black" stroke-width="2" />
+    <line x1="50" y1="240" x2="50" y2="30" stroke="black" stroke-width="2" />
+    <text x="280" y="245" class="axis-label">q₁</text>
+    <text x="30" y="35" class="axis-label">q₂</text>
+
+    <!-- Subsistence levels -->
+    <line x1="50" y1="190" x2="80" y2="190" stroke="red" stroke-width="1.5" />
+    <line x1="80" y1="240" x2="80" y2="190" stroke="red" stroke-width="1.5" />
+    <circle cx="80" cy="190" r="4" fill="red" />
+    <text x="75" y="255" class="red-label">γ₁</text>
+    <text x="35" y="194" class="red-label">γ₂</text>
+
+    <!-- ICC Curve (red) -->
+    <line x1="80" y1="190" x2="200" y2="100" stroke="red" stroke-width="2.5" />
+    <text x="205" y="95" class="red-label" font-weight="bold">ICC</text>
+
+    <!-- Equilibrium Projections (blue dots) -->
+    <circle cx="120" cy="160" r="4" fill="blue" />
+    <circle cx="160" cy="130" r="4" fill="blue" />
+
+    <!-- Dashed projection lines -->
+    <line x1="120" y1="160" x2="120" y2="240" stroke="gray" stroke-dasharray="2,2" />
+    <line x1="160" y1="130" x2="160" y2="240" stroke="gray" stroke-dasharray="2,2" />
+    <text x="115" y="255" class="tick-label">q₁¹</text>
+    <text x="155" y="255" class="tick-label">q₁²</text>
+
+    <line x1="50" y1="160" x2="120" y2="160" stroke="gray" stroke-dasharray="2,2" />
+    <line x1="50" y1="130" x2="160" y2="130" stroke="gray" stroke-dasharray="2,2" />
+
+    <!-- Persian label below right graph -->
+    <text x="70" y="285" class="legend-text" fill="black">حداقل معاش (γ₂)</text>
+  </g>
+
+  <!-- Cross-graph horizontal projection dashed lines -->
+  <!-- Connecting left Y-axis and left E, E' to right graph -->
+  <line x1="130" y1="170" x2="410" y2="170" stroke="gray" stroke-dasharray="3,3" opacity="0.5" />
+  <line x1="170" y1="140" x2="450" y2="140" stroke="gray" stroke-dasharray="3,3" opacity="0.5" />
+  <line x1="90" y1="200" x2="410" y2="200" stroke="red" stroke-dasharray="3,3" opacity="0.4" />
+</svg>

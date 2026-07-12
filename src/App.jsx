@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'katex/dist/katex.min.css';
 
-import Step0 from './pages/Step0';
-import Step1 from './pages/Step1';
-import Step2 from './pages/Step2';
-import Step3 from './pages/Step3';
-import Step4 from './pages/Step4';
+import Step0Layout from './pages/step0/index';
+import Step1Layout from './pages/step1/index';
+import Step2Layout from './pages/step2/index';
+import Step3Layout from './pages/step3/index';
+import Step4Layout from './pages/step4/index';
 
 // The subagents will create and import their pages here.
 // App.jsx will serve as the layout wrapper.
@@ -127,11 +127,11 @@ function App() {
               </div>
             } />
             {/* Routes to be defined by subagents */}
-            <Route path="/step0" element={<Step0 />} />
-            <Route path="/step1" element={<Step1 />} />
-            <Route path="/step2" element={<Step2 />} />
-            <Route path="/step3" element={<Step3 />} />
-            <Route path="/step4" element={<Step4 />} />
+            <Route path="/step0/*" element={<Step0Layout />} />
+            <Route path="/step1/*" element={<Step1Layout />} />
+            <Route path="/step2/*" element={<Step2Layout />} />
+            <Route path="/step3/*" element={<Step3Layout />} />
+            <Route path="/step4/*" element={<Step4Layout />} />
           </Routes>
         </main>
       </div>
