@@ -134,18 +134,18 @@ const Subpage2 = () => {
         مقایسه نتایج مدل‌های مختلف به خوبی پویایی و قدرت انحصاری بنگاه‌ها را به تصویر می‌کشد:
       </p>
 
-      <div style={{ overflowX: 'auto', marginTop: '1rem' }}>
-        <table className="glass-panel" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+      <div className="responsive-table-wrapper">
+        <table className="glass-panel responsive-table">
           <thead>
             <tr style={{ borderBottom: '2px solid var(--card-border)', color: 'var(--primary)' }}>
               <th style={{ padding: '0.75rem' }}>مدل بازار</th>
-              <th style={{ padding: '0.75rem' }}>تولید بنگاه ۱ (<InlineMath math="q_1" />)</th>
-              <th style={{ padding: '0.75rem' }}>تولید بنگاه ۲ (<InlineMath math="q_2" />)</th>
-              <th style={{ padding: '0.75rem' }}>تولید کل (<InlineMath math="Q" />)</th>
-              <th style={{ padding: '0.75rem' }}>قیمت بازار (<InlineMath math="P" />)</th>
-              <th style={{ padding: '0.75rem' }}>سود بنگاه ۱ (<InlineMath math="\pi_1" />)</th>
-              <th style={{ padding: '0.75rem' }}>سود بنگاه ۲ (<InlineMath math="\pi_2" />)</th>
-              <th style={{ padding: '0.75rem' }}>سود کل (<InlineMath math="\pi_T" />)</th>
+              <th style={{ padding: '0.75rem' }}>تولید بنگاه ۱ <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="q_1" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>تولید بنگاه ۲ <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="q_2" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>تولید کل <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="Q" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>قیمت بازار <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="P" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>سود بنگاه ۱ <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="\pi_1" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>سود بنگاه ۲ <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="\pi_2" />)</span></th>
+              <th style={{ padding: '0.75rem' }}>سود کل <span style={{ whiteSpace: 'nowrap' }}>(<InlineMath math="\pi_T" />)</span></th>
             </tr>
           </thead>
           <tbody>

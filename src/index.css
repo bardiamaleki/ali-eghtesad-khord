@@ -422,6 +422,24 @@ a {
   .main-content * {
     min-width: 0 !important;
   }
+
+  /* Force all inline flex-wrap layouts inside main content to stack as columns on mobile */
+  .main-content div[style*="display: flex"][style*="flex-wrap: wrap"],
+  .main-content div[style*="display:flex"][style*="flex-wrap:wrap"],
+  .main-content div[style*="display: flex"][style*="flex-wrap:wrap"],
+  .main-content div[style*="display:flex"][style*="flex-wrap: wrap"] {
+    flex-direction: column !important;
+  }
+
+  /* Optimize table layouts on mobile */
+  .responsive-table {
+    min-width: 750px !important;
+    font-size: 0.85rem !important;
+  }
+  .responsive-table td, 
+  .responsive-table th {
+    padding: 0.5rem 0.25rem !important;
+  }
 }
 
 .roadmap-step {
@@ -443,3 +461,28 @@ a {
   align-self: flex-start;
 }
 
+.responsive-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsive-table-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+.responsive-table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.responsive-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
