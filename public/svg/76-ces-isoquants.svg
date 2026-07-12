@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f1f5f9" />
+    </marker>
+  </defs>
+
+  <!-- Graph 1: Simple Substitutes (Left) -->
+  <g transform="translate(0,0)">
+    <line x1="40" y1="240" x2="240" y2="240" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="40" y1="240" x2="40" y2="40" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="245" y="245" font-family="Arial" font-size="14">L</text>
+    <text x="35" y="35" font-family="Arial" font-size="14" text-anchor="end">K</text>
+    
+    <path d="M 60 80 Q 80 200 200 220" fill="none" stroke="blue" stroke-width="2" />
+    <path d="M 80 60 Q 120 180 220 200" fill="none" stroke="blue" stroke-width="2" />
+    
+    <text x="225" y="200" font-family="Arial" font-size="14">Q2</text>
+    <text x="205" y="220" font-family="Arial" font-size="14">Q1</text>
+    <text x="140" y="270" font-family="Arial" font-size="14" text-anchor="middle">ساده به طور نسبی</text>
+    <text x="140" y="290" font-family="Arial" font-size="14" text-anchor="middle">جانشین هم</text>
+    <text x="140" y="310" font-family="Arial" font-size="14" text-anchor="middle">هستند</text>
+    <text x="140" y="330" font-family="Arial" font-size="14" font-style="italic" text-anchor="middle">0 &lt; γ &lt; ∞</text>
+  </g>
+
+  <!-- Graph 2: Perfect Complements (Middle) -->
+  <g transform="translate(300,0)">
+    <line x1="40" y1="240" x2="240" y2="240" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="40" y1="240" x2="40" y2="40" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="245" y="245" font-family="Arial" font-size="14">L</text>
+    <text x="35" y="35" font-family="Arial" font-size="14" text-anchor="end">K</text>
+    
+    <polyline points="100,60 100,160 240,160" fill="none" stroke="blue" stroke-width="2" />
+    
+    <text x="140" y="270" font-family="Arial" font-size="14" text-anchor="middle">L, K مکمل هم هستند</text>
+    <text x="140" y="290" font-family="Arial" font-size="14" font-style="italic" text-anchor="middle">γ = 0</text>
+  </g>
+
+  <!-- Graph 3: Perfect Substitutes (Right) -->
+  <g transform="translate(600,0)">
+    <line x1="40" y1="240" x2="240" y2="240" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="40" y1="240" x2="40" y2="40" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="245" y="245" font-family="Arial" font-size="14">L</text>
+    <text x="35" y="35" font-family="Arial" font-size="14" text-anchor="end">K</text>
+    
+    <line x1="40" y1="80" x2="200" y2="240" stroke="blue" stroke-width="2" />
+    
+    <text x="140" y="270" font-family="Arial" font-size="14" text-anchor="middle">ساده جانشین کامل</text>
+    <text x="140" y="290" font-family="Arial" font-size="14" text-anchor="middle">هستند</text>
+    <text x="140" y="310" font-family="Arial" font-size="14" font-style="italic" text-anchor="middle">γ = ∞</text>
+  </g>
+</svg>

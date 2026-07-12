@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f1f5f9" />
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="40" y1="360" x2="380" y2="360" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="40" y1="360" x2="40" y2="20" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Axis labels -->
+  <text x="380" y="380" font-family="Arial" font-size="16" font-style="italic">q1</text>
+  <text x="15" y="30" font-family="Arial" font-size="16" font-style="italic">q2</text>
+
+  <!-- PPF Curve (Quarter-ellipse centered at 40,360) -->
+  <path d="M 40 180 A 160 180 0 0 1 200 360" fill="none" stroke="red" stroke-width="2" />
+
+  <!-- Isorevenue lines (Blue, parallel with slope 1.2) -->
+  <!-- Inner line (x-intercept = 170) -->
+  <line x1="40" y1="204" x2="170" y2="360" stroke="blue" stroke-width="2" />
+  
+  <!-- Tangent line (x-intercept = 259.3, tangent at 156.7, 236.9) -->
+  <line x1="40" y1="96.9" x2="259.3" y2="360" stroke="blue" stroke-width="2" />
+
+  <!-- Tangency point -->
+  <circle cx="156.7" cy="236.9" r="4" fill="#f1f5f9" />
+
+  <!-- X-axis labels for TR -->
+  <text x="170" y="380" font-family="Arial" font-size="14" font-style="italic" text-anchor="middle">TR</text>
+  <text x="259.3" y="380" font-family="Arial" font-size="14" font-style="italic" text-anchor="middle">TR'</text>
+</svg>

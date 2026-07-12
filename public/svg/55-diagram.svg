@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <style>
+    .axis-label { font-family: 'Arial', sans-serif; font-size: 14px; fill: black; }
+    .title-text { font-family: 'Vazir', 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: black; text-anchor: middle; }
+    .curve-label { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; fill: black; }
+    .point-label { font-family: 'Arial', sans-serif; font-size: 12px; fill: black; }
+    .cost-label { font-family: 'Vazir', 'Arial', sans-serif; font-size: 11px; fill: blue; }
+  </style>
+
+  <!-- Titles -->
+  <text x="190" y="30" class="title-text">۱) حداکثر کردن تولید با هزینه ثابت</text>
+  <text x="590" y="30" class="title-text">۲) حداقل کردن هزینه با تولید ثابت</text>
+
+  <!-- Left Diagram: Maximize Q given C -->
+  <g transform="translate(10, 20)">
+    <!-- Axes -->
+    <line x1="60" y1="240" x2="310" y2="240" stroke="#f1f5f9" stroke-width="2" />
+    <line x1="60" y1="240" x2="60" y2="40" stroke="#f1f5f9" stroke-width="2" />
+    <text x="320" y="245" class="axis-label">L</text>
+    <text x="45" y="45" class="axis-label">K</text>
+    
+    <!-- Isocost line -->
+    <line x1="60" y1="113" x2="214" y2="240" stroke="blue" stroke-width="2" />
+    <text x="205" y="255" class="cost-label">C/P_L</text>
+    <text x="20" y="117" class="cost-label">C/P_K</text>
+    
+    <!-- Isoquants (convex to origin using Q) -->
+    <!-- Q1 (tangent to Isocost at E(140, 179)) -->
+    <path d="M 90,55 Q 90,220 290,220" fill="none" stroke="#f1f5f9" stroke-width="2" />
+    <text x="295" y="222" class="curve-label">Q₁</text>
+    
+    <!-- Q2 (higher, no intersection) -->
+    <path d="M 120,55 Q 120,190 290,190" fill="none" stroke="#f1f5f9" stroke-width="2" />
+    <text x="295" y="192" class="curve-label">Q₂</text>
+    
+    <!-- Tangency point -->
+    <circle cx="140" cy="179" r="4.5" fill="red" />
+    <text x="145" y="174" class="point-label">E</text>
+    
+    <!-- Projections -->
+    <line x1="140" y1="179" x2="140" y2="240" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="60" y1="179" x2="140" y2="179" stroke="gray" stroke-dasharray="3,3" />
+    <text x="135" y="255" class="point-label">L*</text>
+    <text x="45" y="183" class="point-label">K*</text>
+  </g>
+
+  <!-- Right Diagram: Minimize C given Q -->
+  <g transform="translate(410, 20)">
+    <!-- Axes -->
+    <line x1="60" y1="240" x2="310" y2="240" stroke="#f1f5f9" stroke-width="2" />
+    <line x1="60" y1="240" x2="60" y2="40" stroke="#f1f5f9" stroke-width="2" />
+    <text x="320" y="245" class="axis-label">L</text>
+    <text x="45" y="45" class="axis-label">K</text>
+    
+    <!-- Isoquant (Q) -->
+    <path d="M 90,55 Q 90,220 290,220" fill="none" stroke="#f1f5f9" stroke-width="2" />
+    <text x="295" y="222" class="curve-label">Q</text>
+    
+    <!-- Isocost lines (parallel) -->
+    <!-- C1 (inner) -->
+    <line x1="60" y1="138" x2="184" y2="240" stroke="blue" stroke-width="1.5" opacity="0.6" />
+    <text x="180" y="255" class="cost-label" opacity="0.6">C₁</text>
+    
+    <!-- C2 (tangent) -->
+    <line x1="60" y1="113" x2="214" y2="240" stroke="blue" stroke-width="2" />
+    <text x="210" y="255" class="cost-label">C₂</text>
+    
+    <!-- C3 (outer) -->
+    <line x1="60" y1="88" x2="245" y2="240" stroke="blue" stroke-width="1.5" opacity="0.6" />
+    <text x="240" y="255" class="cost-label" opacity="0.6">C₃</text>
+    
+    <!-- Tangency point -->
+    <circle cx="140" cy="179" r="4.5" fill="red" />
+    <text x="145" y="174" class="point-label">E</text>
+    
+    <!-- Projections -->
+    <line x1="140" y1="179" x2="140" y2="240" stroke="gray" stroke-dasharray="3,3" />
+    <line x1="60" y1="179" x2="140" y2="179" stroke="gray" stroke-dasharray="3,3" />
+    <text x="135" y="255" class="point-label">L*</text>
+    <text x="45" y="183" class="point-label">K*</text>
+  </g>
+</svg>

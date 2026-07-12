@@ -1,0 +1,40 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(50, 50)">
+    <line x1="0" y1="200" x2="200" y2="200" stroke="#f1f5f9" stroke-width="2" />
+    <line x1="0" y1="200" x2="0" y2="0" stroke="#f1f5f9" stroke-width="2" />
+    <text fill="#f1f5f9" x="210" y="205" font-family="Arial" font-size="14">x₁</text>
+    <text fill="#f1f5f9" x="-20" y="10" font-family="Arial" font-size="14">x₂</text>
+    <path d="M 20 20 Q 20 180 180 180" fill="none" stroke="#60a5fa" stroke-width="2" />
+    <text fill="#f1f5f9" x="170" y="170" font-family="Arial" font-size="14">U₁</text>
+    
+    <!-- Dashed lines and ticks -->
+    <line x1="40" y1="200" x2="40" y2="195" stroke="#f1f5f9" stroke-width="2" />
+    <text fill="#f1f5f9" x="40" y="218" font-family="Arial" font-size="12" text-anchor="middle">x₁'</text>
+    
+    <line x1="0" y1="113" x2="5" y2="113" stroke="#f1f5f9" stroke-width="2" />
+    <text fill="#f1f5f9" x="-10" y="117" font-family="Arial" font-size="12" text-anchor="end">x₂'</text>
+    
+    <line x1="40" y1="200" x2="40" y2="113" stroke="#f1f5f9" stroke-dasharray="3,3" stroke-width="1" />
+    <line x1="40" y1="113" x2="0" y2="113" stroke="#f1f5f9" stroke-dasharray="3,3" stroke-width="1" />
+  </g>
+  
+  <!-- Middle Equations and Curly Brace -->
+  <g transform="translate(250, 50)">
+    <text fill="#f1f5f9" x="35" y="95" font-family="Vazir, Arial, sans-serif" font-size="12" text-anchor="end">خود تابع تقاضا</text>
+    <text fill="#f1f5f9" x="35" y="125" font-family="Vazir, Arial, sans-serif" font-size="12" text-anchor="end">عکس تابع تقاضا</text>
+    
+    <text fill="#f1f5f9" x="45" y="110" font-family="Arial" font-size="32" text-anchor="middle" dominant-baseline="middle">{</text>
+    
+    <text fill="#f1f5f9" x="60" y="95" font-family="Arial" font-size="13" text-anchor="start">x₁ = f(P₁)</text>
+    <text fill="#f1f5f9" x="60" y="125" font-family="Arial" font-size="13" text-anchor="start">P₁ = f(x₁)</text>
+  </g>
+  
+  <g transform="translate(350, 50)">
+    <line x1="0" y1="200" x2="200" y2="200" stroke="#f1f5f9" stroke-width="2" />
+    <line x1="0" y1="200" x2="0" y2="0" stroke="#f1f5f9" stroke-width="2" />
+    <text fill="#f1f5f9" x="210" y="205" font-family="Arial" font-size="14">x₁</text>
+    <text fill="#f1f5f9" x="-20" y="10" font-family="Arial" font-size="14">P₁</text>
+    <line x1="20" y1="20" x2="180" y2="180" stroke="#60a5fa" stroke-width="2" />
+    <text x="100" y="-15" font-family="Vazir, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#f1f5f9">توابع تقاضا دو طرفه هستند</text>
+  </g>
+</svg>

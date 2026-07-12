@@ -1,0 +1,39 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f1f5f9"/>
+    </marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="50" y1="250" x2="50" y2="50" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="360" y="255" fill="#f1f5f9" font-family="Arial" font-size="14">q_k</text>
+  <text x="35" y="45" fill="#f1f5f9" font-family="Arial" font-size="14">P</text>
+
+  <!-- Curves -->
+  <!-- d (expected demand, flat) -->
+  <line x1="60" y1="90" x2="260" y2="190" stroke="#64b5f6" stroke-width="2"/>
+  <text x="270" y="200" fill="#64b5f6" font-family="Arial" font-size="14">d (مورد انتظار)</text>
+
+  <!-- D (effective demand, steep) -->
+  <line x1="110" y1="55" x2="170" y2="205" stroke="#ff5252" stroke-width="2"/>
+  <text x="175" y="210" fill="#ff5252" font-family="Arial" font-size="14">D (موثر)</text>
+
+  <!-- MR (marginal revenue of d) -->
+  <line x1="60" y1="95" x2="190" y2="225" stroke="#69f0ae" stroke-width="2"/>
+  <text x="195" y="230" fill="#69f0ae" font-family="Arial" font-size="14">MR</text>
+
+  <!-- MC -->
+  <path d="M 80 210 Q 140 200 200 90" fill="none" stroke="#e040fb" stroke-width="2"/>
+  <text x="205" y="85" fill="#e040fb" font-family="Arial" font-size="14">MC</text>
+
+  <!-- AC -->
+  <path d="M 80 160 Q 140 200 240 130" fill="none" stroke="#ffd54f" stroke-width="2"/>
+  <text x="245" y="125" fill="#ffd54f" font-family="Arial" font-size="14">AC</text>
+
+  <!-- Equilibrium lines -->
+  <line x1="140" y1="130" x2="140" y2="250" stroke="#b0bec5" stroke-dasharray="4"/>
+  <line x1="50" y1="130" x2="140" y2="130" stroke="#b0bec5" stroke-dasharray="4"/>
+  <circle cx="140" cy="130" r="3" fill="#f1f5f9"/>
+  <text x="145" y="125" fill="#f1f5f9" font-family="Arial" font-size="14">E</text>
+</svg>

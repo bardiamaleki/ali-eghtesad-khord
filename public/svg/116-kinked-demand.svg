@@ -1,0 +1,67 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f1f5f9" />
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="50" y1="250" x2="50" y2="30" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" />
+  
+  <!-- Axis Labels -->
+  <text x="35" y="40" fill="#f1f5f9" font-size="14" font-weight="bold">P</text>
+  <text x="355" y="255" fill="#f1f5f9" font-size="14" font-weight="bold">Q</text>
+
+  <!-- Intersection point E coordinates -->
+  <!-- E is at (140, 125) -->
+  
+  <!-- Dashed lines to axes for E -->
+  <line x1="50" y1="125" x2="140" y2="125" stroke="#b0bec5" stroke-width="1" stroke-dasharray="3" />
+  <line x1="140" y1="125" x2="140" y2="250" stroke="#b0bec5" stroke-width="1" stroke-dasharray="3" />
+  
+  <!-- Labels for E on axes -->
+  <text x="20" y="130" fill="#f1f5f9" font-size="12">P<tspan font-size="8" baseline-shift="sub">E</tspan></text>
+  <text x="132" y="265" fill="#f1f5f9" font-size="12">Q<tspan font-size="8" baseline-shift="sub">E</tspan></text>
+
+  <!-- D: Flatter Demand Curve (Expected) -->
+  <!-- Part 1 (Left of E, part of Kinked Demand): Solid -->
+  <line x1="60" y1="70" x2="140" y2="125" stroke="#64b5f6" stroke-width="2.5" />
+  <!-- Part 2 (Right of E, virtual extension): Dashed -->
+  <line x1="140" y1="125" x2="260" y2="210" stroke="#64b5f6" stroke-width="1.5" stroke-dasharray="4" />
+  <text x="265" y="215" fill="#64b5f6" font-size="14" font-weight="bold">D</text>
+
+  <!-- D': Steeper Demand Curve (Actual) -->
+  <!-- Part 1 (Left of E, virtual extension): Dashed -->
+  <line x1="100" y1="50" x2="140" y2="125" stroke="#e040fb" stroke-width="1.5" stroke-dasharray="4" />
+  <!-- Part 2 (Right of E, part of Kinked Demand): Solid -->
+  <line x1="140" y1="125" x2="200" y2="240" stroke="#e040fb" stroke-width="2.5" />
+  <text x="205" y="245" fill="#e040fb" font-size="14" font-weight="bold">D'</text>
+
+  <!-- MR: Marginal Revenue for D (twice as steep) -->
+  <!-- Part 1 (Left of E): Solid -->
+  <line x1="60" y1="85" x2="140" y2="180" stroke="#64b5f6" stroke-width="2" />
+  <!-- Part 2 (Right of E): Dashed -->
+  <line x1="140" y1="180" x2="180" y2="220" stroke="#64b5f6" stroke-width="1.5" stroke-dasharray="4" />
+  <text x="185" y="222" fill="#64b5f6" font-size="12" font-weight="bold">MR</text>
+
+  <!-- MR': Marginal Revenue for D' (steeper) -->
+  <!-- Part 1 (Left of E): Dashed -->
+  <line x1="80" y1="110" x2="140" y2="205" stroke="#e040fb" stroke-width="1.5" stroke-dasharray="4" />
+  <!-- Part 2 (Right of E): Solid -->
+  <line x1="140" y1="205" x2="165" y2="250" stroke="#e040fb" stroke-width="2" />
+  <text x="170" y="255" fill="#e040fb" font-size="12" font-weight="bold">MR'</text>
+
+  <!-- MC and MC' (both pass through the gap [180, 205] on x=140) -->
+  <!-- MC: lower curve (passes through x=140 around y=197) -->
+  <line x1="70" y1="220" x2="220" y2="170" stroke="#ff5252" stroke-width="2" />
+  <text x="225" y="175" fill="#ff5252" font-size="12" font-weight="bold">MC</text>
+
+  <!-- MC': upper curve (passes through x=140 around y=183) -->
+  <line x1="70" y1="200" x2="220" y2="150" stroke="#ff5252" stroke-width="2" />
+  <text x="225" y="155" fill="#ff5252" font-size="12" font-weight="bold">MC'</text>
+
+  <!-- Point E and label -->
+  <circle cx="140" cy="125" r="4" fill="#f1f5f9" />
+  <text x="145" y="120" fill="#f1f5f9" font-size="14" font-weight="bold">E</text>
+</svg>

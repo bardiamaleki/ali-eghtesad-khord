@@ -1,0 +1,97 @@
+<svg width="600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .axis { stroke: #f1f5f9; stroke-width: 1.5; fill: none; }
+    .line-blue { stroke: blue; stroke-width: 2; fill: none; }
+    .line-red { stroke: red; stroke-width: 2; fill: none; }
+    .dashed { stroke-dasharray: 5,5; stroke: #f1f5f9; fill: none; }
+    text { font-family: Tahoma, sans-serif; font-size: 14px; }
+  </style>
+
+  <!-- Graph 1 (الف) -->
+  <g transform="translate(60, 50)">
+    <text x="250" y="-10" font-weight="bold" fill="#f1f5f9">الف</text>
+    <line x1="0" y1="200" x2="300" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-20" y="20" fill="#f1f5f9">P</text>
+    <text x="310" y="205" fill="#f1f5f9">Q</text>
+    <text x="-35" y="205" fill="#f1f5f9">P=0</text>
+
+    <!-- P<0 axis extension -->
+    <line x1="0" y1="200" x2="0" y2="280" class="axis" style="stroke-dasharray: 3,3;" />
+    
+    <!-- Demand (D) -->
+    <line x1="50" y1="50" x2="100" y2="200" class="line-blue" />
+    <text x="40" y="45" fill="blue">D</text>
+    
+    <!-- Supply (S) -->
+    <line x1="150" y1="200" x2="200" y2="50" class="line-red" />
+    <text x="205" y="45" fill="red">S</text>
+    
+    <!-- intersection below axis -->
+    <line x1="100" y1="200" x2="125" y2="275" stroke="blue" class="dashed" />
+    <line x1="150" y1="200" x2="125" y2="275" stroke="red" class="dashed" />
+    
+    <!-- Projections at price P -->
+    <line x1="0" y1="110" x2="180" y2="110" class="dashed" />
+    <line x1="70" y1="110" x2="70" y2="200" class="dashed" />
+    <line x1="180" y1="110" x2="180" y2="200" class="dashed" />
+    
+    <text x="-15" y="115" fill="#f1f5f9">P</text>
+    <text x="65" y="215" fill="#f1f5f9">Q₁</text>
+    <text x="175" y="215" fill="#f1f5f9">Q₂</text>
+  </g>
+
+  <!-- Graph 2 (ب) -->
+  <g transform="translate(60, 400)">
+    <text x="250" y="-10" font-weight="bold" fill="#f1f5f9">ب</text>
+    <line x1="0" y1="200" x2="300" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-20" y="20" fill="#f1f5f9">P</text>
+    <text x="310" y="205" fill="#f1f5f9">Q</text>
+
+    <!-- Supply (S) -->
+    <line x1="0" y1="100" x2="200" y2="20" class="line-red" />
+    <text x="205" y="25" fill="red">S</text>
+    
+    <!-- Demand (D) -->
+    <line x1="0" y1="150" x2="200" y2="180" class="line-blue" />
+    <text x="205" y="185" fill="blue">D</text>
+    
+    <text x="180" y="70" font-family="Tahoma" font-size="12" fill="#f1f5f9">P_S &gt; P_D</text>
+    
+    <!-- Dashed lines for Q1 -->
+    <line x1="0" y1="80" x2="50" y2="80" class="dashed" />
+    <line x1="0" y1="157.5" x2="50" y2="157.5" class="dashed" />
+    <line x1="50" y1="80" x2="50" y2="200" class="dashed" />
+    
+    <text x="-25" y="85" fill="#f1f5f9">P_s</text>
+    <text x="-25" y="162" fill="#f1f5f9">P_d</text>
+    <text x="45" y="215" fill="#f1f5f9">Q₁</text>
+  </g>
+
+  <!-- Graph 3 (ج) -->
+  <g transform="translate(60, 650)">
+    <text x="250" y="-10" font-weight="bold" fill="#f1f5f9">ج</text>
+    <line x1="0" y1="200" x2="300" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-20" y="20" fill="#f1f5f9">P</text>
+    <text x="310" y="205" fill="#f1f5f9">Q</text>
+    
+    <!-- Supply (S) -->
+    <line x1="50" y1="200" x2="150" y2="50" class="line-red" />
+    <text x="140" y="45" fill="red">S</text>
+    
+    <!-- Demand (D) -->
+    <line x1="150" y1="200" x2="250" y2="50" class="line-blue" />
+    <text x="255" y="45" fill="blue">D</text>
+    
+    <!-- Dashed line -->
+    <line x1="0" y1="125" x2="200" y2="125" class="dashed" />
+    <line x1="100" y1="125" x2="100" y2="200" class="dashed" />
+    <line x1="200" y1="125" x2="200" y2="200" class="dashed" />
+    
+    <text x="-25" y="130" fill="#f1f5f9">P₁</text>
+    <text x="95" y="215" fill="#f1f5f9">Q₁</text>
+    <text x="195" y="215" fill="#f1f5f9">Q₂</text>
+  </g>
+</svg>

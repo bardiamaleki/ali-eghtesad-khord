@@ -1,0 +1,127 @@
+<svg width="600" height="750" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .axis { stroke: #f1f5f9; stroke-width: 1.5; fill: none; }
+    .line-blue { stroke: blue; stroke-width: 2; fill: none; }
+    .line-red { stroke: red; stroke-width: 2; fill: none; }
+    .line-black { stroke: #f1f5f9; stroke-width: 2; fill: none; }
+    .dashed { stroke-dasharray: 5,5; fill: none; }
+    text { font-family: Tahoma, sans-serif; font-size: 14px; }
+  </style>
+
+  <!-- Defs for markers/arrows -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f1f5f9" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="blue" />
+    </marker>
+  </defs>
+
+  <!-- Top Left Graph -->
+  <g transform="translate(50, 50)">
+    <line x1="0" y1="200" x2="200" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-20" y="15" fill="#f1f5f9">P</text>
+    <text x="210" y="205" fill="#f1f5f9">Q</text>
+    
+    <!-- P = AR -->
+    <line x1="0" y1="120" x2="180" y2="120" class="line-red" />
+    <text x="190" y="125" fill="red">P = AR</text>
+    
+    <!-- MC -->
+    <path d="M 15 80 Q 45 160 80 120 T 150 20" class="line-blue" />
+    <text x="155" y="25" fill="blue">MC</text>
+    
+    <!-- First Intersection (Unacceptable) -->
+    <circle cx="33" cy="120" r="3.5" fill="#f1f5f9" />
+    <text x="20" y="105" font-family="Tahoma" font-size="11" fill="#f1f5f9">ق ق غ</text>
+    
+    <!-- Second Intersection (Equilibrium) -->
+    <circle cx="80" cy="120" r="4" fill="red" />
+    <text x="70" y="105" fill="#f1f5f9">P=MC</text>
+    
+    <line x1="80" y1="120" x2="80" y2="200" stroke="#f1f5f9" class="dashed" />
+    <text x="75" y="215" fill="#f1f5f9">Q*</text>
+  </g>
+
+  <!-- Top Right Graph -->
+  <g transform="translate(350, 50)">
+    <line x1="0" y1="200" x2="200" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-25" y="15" fill="#f1f5f9">TR/TC</text>
+    <text x="210" y="205" fill="#f1f5f9">Q</text>
+    
+    <!-- TR -->
+    <line x1="0" y1="200" x2="180" y2="20" class="line-blue" />
+    <text x="185" y="25" fill="blue">TR</text>
+    
+    <!-- TC -->
+    <path d="M 0 150 C 40 120 80 170 150 20" class="line-red" />
+    <text x="155" y="15" fill="red">TC</text>
+    
+    <!-- Intersections -->
+    <circle cx="45" cy="155" r="3.5" fill="#f1f5f9" />
+    <circle cx="120" cy="80" r="3.5" fill="#f1f5f9" />
+    <text x="15" y="145" fill="#f1f5f9">π = 0</text>
+    <text x="130" y="85" fill="#f1f5f9">π = 0</text>
+    
+    <!-- Profit distance arrow -->
+    <path d="M 82 120 L 82 152" stroke="blue" stroke-width="1.5" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)" />
+    <text x="92" y="140" font-family="Tahoma" font-size="11" fill="blue">سود</text>
+
+    <text x="155" y="105" font-family="Tahoma" font-size="12" fill="#f1f5f9">سود اقتصادی</text>
+  </g>
+
+  <!-- Middle Graph (Supply Curve of the Firm) -->
+  <g transform="translate(100, 350)">
+    <line x1="0" y1="300" x2="420" y2="300" class="axis" />
+    <line x1="0" y1="300" x2="0" y2="0" class="axis" />
+    <text x="-15" y="15" fill="#f1f5f9">P</text>
+    <text x="430" y="305" fill="#f1f5f9">Q</text>
+    
+    <!-- AVC Curve -->
+    <path d="M 60 170 C 100 230 180 230 280 120" class="line-red" />
+    <text x="290" y="125" fill="red">AVC</text>
+    
+    <!-- AC Curve -->
+    <path d="M 50 110 C 100 190 220 190 320 80" class="line-blue" />
+    <text x="330" y="85" fill="blue">AC</text>
+    
+    <!-- MC Curve (Dashed below E, Solid above E) -->
+    <path d="M 30 270 Q 80 260 140 215" fill="none" stroke="#f1f5f9" stroke-width="2" stroke-dasharray="5,5" />
+    <path d="M 140 215 C 160 170 200 100 250 40" fill="none" stroke="#f1f5f9" stroke-width="3" />
+    <text x="255" y="35" fill="#f1f5f9">MC = S</text>
+    
+    <!-- Dots E & F -->
+    <circle cx="140" cy="215" r="4" fill="#f1f5f9" />
+    <text x="148" y="225" fill="#f1f5f9">E</text>
+    
+    <circle cx="140" cy="155" r="4" fill="#f1f5f9" />
+    <text x="148" y="150" fill="#f1f5f9">F</text>
+    
+    <!-- Projections and AFC Bracket -->
+    <line x1="140" y1="155" x2="140" y2="215" stroke="#f1f5f9" stroke-width="1.5" />
+    <text x="115" y="190" font-family="Tahoma" font-size="12" fill="#f1f5f9">AFC</text>
+    
+    <line x1="140" y1="215" x2="140" y2="300" stroke="#f1f5f9" class="dashed" />
+    <text x="135" y="320" fill="#f1f5f9">Q₁</text>
+    
+    <line x1="0" y1="155" x2="140" y2="155" stroke="#f1f5f9" class="dashed" />
+    <text x="-20" y="160" fill="#f1f5f9">G</text>
+    
+    <line x1="0" y1="215" x2="140" y2="215" stroke="blue" stroke-width="1.5" />
+    <text x="-95" y="220" fill="blue">P = Min AVC</text>
+    
+    <!-- Price Pt below Min AVC -->
+    <line x1="0" y1="250" x2="100" y2="250" stroke="#f1f5f9" class="dashed" />
+    <text x="-25" y="255" fill="#f1f5f9">P_t</text>
+    <text x="-95" y="280" font-family="Tahoma" font-size="12" fill="red">تولید اتفاق نمی‌افتد</text>
+    
+    <!-- Label and Arrow for Supply Curve -->
+    <text x="220" y="80" font-family="Tahoma" font-size="12" fill="#f1f5f9">منحنی عرضه بنگاه</text>
+    <line x1="215" y1="83" x2="185" y2="108" stroke="#f1f5f9" stroke-width="1" marker-end="url(#arrow)" />
+    
+    <text x="280" y="200" font-family="Tahoma" font-size="12" fill="#f1f5f9">نقطه تعطیل بنگاه = Min AVC</text>
+  </g>
+</svg>

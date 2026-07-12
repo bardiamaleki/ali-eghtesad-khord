@@ -1,0 +1,41 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <line x1="50" y1="350" x2="450" y2="350" stroke="#f1f5f9" stroke-width="2" />
+  <line x1="50" y1="350" x2="50" y2="50" stroke="#f1f5f9" stroke-width="2" />
+  
+  <text fill="#f1f5f9" x="460" y="355" font-family="Arial" font-size="16">x₁</text>
+  <text fill="#f1f5f9" x="25" y="45" font-family="Arial" font-size="16">x₂</text>
+  <text fill="#f1f5f9" x="35" y="365" font-family="Arial" font-size="16">O</text>
+
+  <line x1="50" y1="350" x2="200" y2="100" stroke="#f87171" stroke-width="1.5" />
+  <text x="210" y="95" font-family="Arial" font-size="14" fill="#f87171">R₁</text>
+  
+  <line x1="50" y1="350" x2="300" y2="100" stroke="#f87171" stroke-width="1.5" />
+  <text x="310" y="95" font-family="Arial" font-size="14" fill="#f87171">R₂</text>
+
+  <line x1="50" y1="350" x2="400" y2="150" stroke="#f87171" stroke-width="1.5" />
+  <text x="410" y="145" font-family="Arial" font-size="14" fill="#f87171">R₃</text>
+  
+  <path d="M 80 114 C 110 200 135 250 172.5 280 C 210 310 235 312 260 314" fill="none" stroke="#60a5fa" stroke-width="2" />
+  <path d="M 140 77 C 180 150 215 200 260 230 C 300 255 320 262 340 266" fill="none" stroke="#60a5fa" stroke-width="2" />
+  <path d="M 230 68 C 270 120 305 155 347.5 180 C 380 200 400 210 420 215" fill="none" stroke="#60a5fa" stroke-width="2" />
+
+  <!-- Tangents at A, B, C to show homotheticity -->
+  <line x1="157.5" y1="271" x2="187.5" y2="289" stroke="#f1f5f9" stroke-width="1" />
+  <line x1="245" y1="221" x2="275" y2="239" stroke="#f1f5f9" stroke-width="1" />
+  <line x1="332.5" y1="171" x2="362.5" y2="189" stroke="#f1f5f9" stroke-width="1" />
+
+  <circle cx="172.5" cy="280" r="4" fill="#f1f5f9" />
+  <text fill="#f1f5f9" x="180" y="284" font-family="Arial" font-size="14" text-anchor="start">A</text>
+
+  <circle cx="260" cy="230" r="4" fill="#f1f5f9" />
+  <text fill="#f1f5f9" x="270" y="234" font-family="Arial" font-size="14" text-anchor="start">B</text>
+
+  <circle cx="347.5" cy="180" r="4" fill="#f1f5f9" />
+  <text fill="#f1f5f9" x="357.5" y="184" font-family="Arial" font-size="14" text-anchor="start">C</text>
+
+  <line x1="172.5" y1="280" x2="172.5" y2="350" stroke="#f1f5f9" stroke-dasharray="5,5" stroke-width="1" />
+  <text fill="#f1f5f9" x="172.5" y="368" font-family="Arial" font-size="14" text-anchor="middle">H</text>
+
+  <path d="M 100 350 A 50 50 0 0 0 93.4 325.2" fill="none" stroke="#f1f5f9" stroke-width="1.5" />
+  <text fill="#f1f5f9" x="110" y="340" font-family="Arial" font-size="14" text-anchor="middle">α</text>
+</svg>

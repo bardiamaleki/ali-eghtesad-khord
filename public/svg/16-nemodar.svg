@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="100%" height="100%">
+  <!-- Axes -->
+  <line x1="50" y1="300" x2="50" y2="50" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="50" y1="300" x2="450" y2="300" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text fill="#f1f5f9" x="35" y="60" font-family="Arial" font-size="14">q&#x2082;</text>
+  <text fill="#f1f5f9" x="460" y="305" font-family="Arial" font-size="14">q&#x2081;</text>
+
+  <!-- Budget Line -->
+  <line x1="50" y1="100" x2="300" y2="300" stroke="#60a5fa" stroke-width="1.5" />
+  
+  <!-- IC Curve -->
+  <path d="M 80 50 Q 120 200 280 250" fill="none" stroke="#f87171" stroke-width="1.5" />
+  <text x="240" y="240" font-family="Arial" font-size="14" fill="#f87171">u</text>
+
+  <!-- Tangency Point -->
+  <circle cx="175" cy="200" r="4" fill="#f1f5f9" />
+  
+  <!-- Dashed lines -->
+  <line x1="50" y1="200" x2="175" y2="200" stroke="#f1f5f9" stroke-dasharray="4" stroke-width="0.5" />
+  <line x1="175" y1="300" x2="175" y2="200" stroke="#f1f5f9" stroke-dasharray="4" stroke-width="0.5" />
+  
+  <text fill="#f1f5f9" x="45" y="204" font-family="Arial" font-size="12" text-anchor="end">10</text>
+  <text fill="#f1f5f9" x="45" y="104" font-family="Arial" font-size="12" text-anchor="end">20</text>
+
+  <!-- x-axis ticks -->
+  <text fill="#f1f5f9" x="100" y="320" font-family="Arial" font-size="12" text-anchor="middle">10</text>
+  <line x1="100" y1="300" x2="100" y2="305" stroke="#f1f5f9" stroke-width="1" />
+  
+  <text fill="#f1f5f9" x="150" y="320" font-family="Arial" font-size="12" text-anchor="middle">20</text>
+  <line x1="150" y1="300" x2="150" y2="305" stroke="#f1f5f9" stroke-width="1" />
+  
+  <text fill="#f1f5f9" x="175" y="320" font-family="Arial" font-size="12" text-anchor="middle">25</text>
+  <line x1="175" y1="300" x2="175" y2="305" stroke="#f1f5f9" stroke-width="1" />
+  
+  <text fill="#f1f5f9" x="200" y="320" font-family="Arial" font-size="12" text-anchor="middle">30</text>
+  <line x1="200" y1="300" x2="200" y2="305" stroke="#f1f5f9" stroke-width="1" />
+  
+  <text fill="#f1f5f9" x="250" y="320" font-family="Arial" font-size="12" text-anchor="middle">40</text>
+  <line x1="250" y1="300" x2="250" y2="305" stroke="#f1f5f9" stroke-width="1" />
+  
+  <text fill="#f1f5f9" x="300" y="320" font-family="Arial" font-size="12" text-anchor="middle">50</text>
+  <line x1="300" y1="300" x2="300" y2="305" stroke="#f1f5f9" stroke-width="1" />
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f1f5f9" />
+    </marker>
+  </defs>
+</svg>

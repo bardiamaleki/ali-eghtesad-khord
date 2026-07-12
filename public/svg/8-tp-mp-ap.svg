@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 600" width="650" height="600">
+  <defs>
+    <!-- Arrow marker definition -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#f1f5f9" />
+    </marker>
+    <!-- Hatch pattern for Region II -->
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#d1d5db" stroke-width="1.5" />
+    </pattern>
+  </defs>
+
+  <style>
+    .axis { stroke: #f1f5f9; stroke-width: 2; fill: none; }
+    .line-tp { stroke: #1e40af; stroke-width: 3.5; fill: none; }
+    .line-mp { stroke: #dc2626; stroke-width: 3.5; fill: none; }
+    .line-ap { stroke: #16a34a; stroke-width: 3.5; fill: none; }
+    .tangent { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 4,4; fill: none; }
+    .dashed-link { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 4,4; }
+    text { font-family: Tahoma, 'Vazirmatn', sans-serif; font-size: 14px; fill: #f1f5f9; }
+    .label-title { font-weight: bold; font-size: 15px; }
+    .label-tp-text { fill: #1e40af; font-weight: bold; }
+    .label-mp-text { fill: #dc2626; font-weight: bold; }
+    .label-ap-text { fill: #16a34a; font-weight: bold; }
+    .persian-text { font-size: 12px; fill: #cbd5e1; text-anchor: middle; }
+    .persian-title { font-size: 14px; font-weight: bold; fill: #f1f5f9; text-anchor: middle; }
+  </style>
+
+  <!-- Region II Hatching (Background) -->
+  <polygon points="260,480 260,378.8 280,380.0 300,383.7 320,390.0 320,480" fill="url(#hatch)" />
+
+  <!-- ==================== TOP GRAPH: TP ==================== -->
+  <g>
+    <!-- Y-axis (Quantity - Q) -->
+    <line x1="80" y1="240" x2="80" y2="30" class="axis" marker-end="url(#arrow)" />
+    <!-- X-axis (Labor - L) -->
+    <line x1="80" y1="240" x2="520" y2="240" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Axis Labels -->
+    <text x="55" y="35" class="label-title">Q</text>
+    <text x="530" y="245" class="label-title">L</text>
+    <text x="530" y="265" class="persian-text" style="text-anchor: start;">(استخدام نیروی کار)</text>
+
+    <!-- TP Curve -->
+    <path d="M 80.0,240.0 L 84.0,239.9 L 88.0,239.4 L 92.0,238.7 L 96.0,237.7 L 100.0,236.5 L 104.0,235.0 L 108.0,233.2 L 112.0,231.3 L 116.0,229.1 L 120.0,226.7 L 124.0,224.1 L 128.0,221.3 L 132.0,218.3 L 136.0,215.2 L 140.0,211.9 L 144.0,208.4 L 148.0,204.8 L 152.0,201.1 L 156.0,197.3 L 160.0,193.3 L 164.0,189.3 L 168.0,185.1 L 172.0,180.9 L 176.0,176.6 L 180.0,172.3 L 184.0,167.9 L 188.0,163.5 L 192.0,159.0 L 196.0,154.5 L 200.0,150.0 L 204.0,145.5 L 208.0,141.0 L 212.0,136.5 L 216.0,132.1 L 220.0,127.7 L 224.0,123.4 L 228.0,119.1 L 232.0,114.9 L 236.0,110.7 L 240.0,106.7 L 244.0,102.7 L 248.0,98.9 L 252.0,95.2 L 256.0,91.6 L 260.0,88.1 L 264.0,84.8 L 268.0,81.7 L 272.0,78.7 L 276.0,75.9 L 280.0,73.3 L 284.0,70.9 L 288.0,68.7 L 292.0,66.8 L 296.0,65.0 L 300.0,63.5 L 304.0,62.3 L 308.0,61.3 L 312.0,60.6 L 316.0,60.1 L 320.0,60.0 L 324.0,60.2 L 328.0,60.6 L 332.0,61.4 L 336.0,62.5 L 340.0,64.0 L 344.0,65.8 L 348.0,67.9 L 352.0,70.5 L 356.0,73.4 L 360.0,76.7 L 364.0,80.4 L 368.0,84.5 L 372.0,89.0 L 376.0,94.0 L 380.0,99.4 L 384.0,105.2 L 388.0,111.5 L 392.0,118.3 L 394.0,121.9 L 396.0,125.6 L 400.0,133.3" class="line-tp" />
+    
+    <!-- Tangent line from origin -->
+    <line x1="80" y1="240" x2="300" y2="54.4" class="tangent" />
+
+    <!-- TP Label -->
+    <text x="415" y="140" class="label-tp-text">TP<tspan font-size="10" baseline-shift="sub">L</tspan></text>
+    <text x="450" y="140" class="persian-title" style="text-anchor: start;">تولید کل</text>
+
+    <!-- Dots on TP Curve -->
+    <circle cx="200" cy="150" r="4.5" fill="#f1f5f9" /> <!-- Inflection Point -->
+    <circle cx="260" cy="88.1" r="4.5" fill="#f1f5f9" /> <!-- Tangent Point -->
+    <circle cx="320" cy="60.0" r="4.5" fill="#f1f5f9" /> <!-- Max TP -->
+
+    <!-- Max horizontal line at peak -->
+    <line x1="300" y1="60" x2="340" y2="60" stroke="#e2e8f0" stroke-width="1" />
+    <text x="320" y="50" class="persian-text" style="font-weight: bold;">Max</text>
+
+    <!-- X-axis Labels for Top Graph -->
+    <text x="200" y="255" class="persian-text">L₁</text>
+    <text x="260" y="255" class="persian-text">L₂</text>
+    <text x="320" y="255" class="persian-text">L*</text>
+  </g>
+
+  <!-- ==================== BOTTOM GRAPH: AP & MP ==================== -->
+  <g>
+    <!-- Y-axis (AP, MP) -->
+    <line x1="80" y1="480" x2="80" y2="310" class="axis" marker-end="url(#arrow)" />
+    <!-- X-axis (Labor - L) -->
+    <line x1="80" y1="480" x2="520" y2="480" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Axis Labels -->
+    <text x="45" y="315" class="label-title">MP, AP</text>
+    <text x="530" y="485" class="label-title">L</text>
+
+    <!-- MP Curve -->
+    <path d="M 80.0,480.0 L 84.0,471.1 L 88.0,462.6 L 92.0,454.4 L 96.0,446.4 L 100.0,438.8 L 104.0,431.4 L 108.0,424.3 L 112.0,417.6 L 116.0,411.1 L 120.0,405.0 L 124.0,399.1 L 128.0,393.6 L 132.0,388.3 L 136.0,383.4 L 140.0,378.8 L 144.0,374.4 L 148.0,370.4 L 152.0,366.6 L 156.0,363.1 L 160.0,360.0 L 164.0,357.1 L 168.0,354.6 L 172.0,352.3 L 176.0,350.4 L 180.0,348.8 L 184.0,347.4 L 188.0,346.3 L 192.0,345.6 L 196.0,345.1 L 200.0,345.0 L 204.0,345.1 L 208.0,345.6 L 212.0,346.3 L 216.0,347.4 L 220.0,348.7 L 224.0,350.4 L 228.0,352.3 L 232.0,354.6 L 236.0,357.1 L 240.0,360.0 L 244.0,363.1 L 248.0,366.6 L 252.0,370.3 L 256.0,374.4 L 260.0,378.7 L 264.0,383.4 L 268.0,388.3 L 272.0,393.6 L 276.0,399.1 L 280.0,405.0 L 284.0,411.1 L 288.0,417.6 L 292.0,424.3 L 296.0,431.4 L 300.0,438.7 L 304.0,446.4 L 308.0,454.3 L 312.0,462.6 L 316.0,471.1 L 320.0,480.0 L 324.0,489.1 L 328.0,498.6 L 332.0,508.3 L 336.0,518.4 L 340.0,528.7 L 344.0,539.4 L 348.0,550.3 L 352.0,561.6 L 356.0,573.1 L 360.0,585.0" class="line-mp" />
+    
+    <!-- AP Curve -->
+    <path d="M 80.0,480.0 L 84.0,475.6 L 88.0,471.2 L 92.0,466.9 L 96.0,462.8 L 100.0,458.8 L 104.0,454.8 L 108.0,450.9 L 112.0,447.2 L 116.0,443.6 L 120.0,440.0 L 124.0,436.6 L 128.0,433.2 L 132.0,429.9 L 136.0,426.8 L 140.0,423.8 L 144.0,420.8 L 148.0,417.9 L 152.0,415.2 L 156.0,412.5 L 160.0,410.0 L 164.0,407.6 L 168.0,405.2 L 172.0,402.9 L 176.0,400.8 L 180.0,398.8 L 184.0,396.8 L 188.0,394.9 L 192.0,393.2 L 196.0,391.5 L 200.0,390.0 L 204.0,388.5 L 208.0,387.2 L 212.0,385.9 L 216.0,384.8 L 220.0,383.8 L 224.0,382.8 L 228.0,381.9 L 232.0,381.2 L 236.0,380.5 L 240.0,380.0 L 244.0,379.5 L 248.0,379.2 L 252.0,378.9 L 256.0,378.8 L 260.0,378.8 L 264.0,378.8 L 268.0,378.9 L 272.0,379.2 L 276.0,379.5 L 280.0,380.0 L 284.0,380.5 L 288.0,381.2 L 292.0,381.9 L 296.0,382.8 L 300.0,383.7 L 304.0,384.8 L 308.0,385.9 L 312.0,387.2 L 316.0,388.5 L 320.0,390.0 L 324.0,391.5 L 328.0,393.2 L 332.0,394.9 L 336.0,396.8 L 340.0,398.7 L 344.0,400.8 L 348.0,402.9 L 352.0,405.2 L 356.0,407.5 L 360.0,410.0 L 364.0,412.5 L 368.0,415.2 L 372.0,417.9 L 376.0,420.8 L 380.0,423.7 L 384.0,426.8 L 388.0,429.9 L 392.0,433.2 L 396.0,436.5 L 400.0,440.0" class="line-ap" />
+
+    <!-- Curve Labels -->
+    <text x="365" y="580" class="label-mp-text">MP<tspan font-size="10" baseline-shift="sub">L</tspan></text>
+    <text x="410" y="440" class="label-ap-text">AP<tspan font-size="10" baseline-shift="sub">L</tspan></text>
+
+    <!-- Dots on Bottom Curves -->
+    <circle cx="200" cy="345.0" r="4" fill="#f1f5f9" /> <!-- Max MP -->
+    <circle cx="260" cy="378.8" r="4" fill="#f1f5f9" /> <!-- Max AP / MP-AP Intersection -->
+    <circle cx="320" cy="480.0" r="4" fill="#f1f5f9" /> <!-- MP = 0 -->
+
+    <!-- Max AP Label -->
+    <text x="415" y="325" class="persian-text" style="font-weight: bold; fill: #16a34a;">Max AP</text>
+    <line x1="260" y1="378.8" x2="410" y2="325" stroke="#16a34a" stroke-width="1" stroke-dasharray="2,2" />
+
+    <!-- MPL = 0 Label -->
+    <text x="375" y="505" class="persian-text" style="font-weight: bold; fill: #dc2626;">MP = 0</text>
+    <line x1="320" y1="480" x2="375" y2="500" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2" />
+
+    <!-- Region Labels & Annotations -->
+    <text x="290" y="430" class="persian-text" style="font-weight: bold;">ناحیه اقتصادی</text>
+    <text x="290" y="450" class="persian-text" style="font-weight: bold; font-size: 14px;">II</text>
+
+    <text x="140" y="420" class="persian-text" style="fill: #dc2626;">صعودی</text>
+    <text x="215" y="400" class="persian-text" style="fill: #cbd5e1;">نزولی</text>
+
+    <!-- Bottom Graph Header -->
+    <text x="240" y="300" class="persian-title">تولید نهایی و متوسط</text>
+
+    <!-- X-axis Labels for Bottom Graph -->
+    <text x="200" y="495" class="persian-text">L₁</text>
+    <text x="260" y="495" class="persian-text">L₂</text>
+    <text x="320" y="495" class="persian-text">L*</text>
+  </g>
+
+  <!-- ==================== DOTTED VERTICAL ALIGNMENT LINES ==================== -->
+  <line x1="200" y1="150" x2="200" y2="480" class="dashed-link" />
+  <line x1="260" y1="88.1" x2="260" y2="480" class="dashed-link" />
+  <line x1="320" y1="60.0" x2="320" y2="480" class="dashed-link" />
+</svg>

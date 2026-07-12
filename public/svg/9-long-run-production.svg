@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <line x1="40" y1="20" x2="40" y2="180" stroke="red" stroke-width="1.5" />
+  <line x1="40" y1="180" x2="280" y2="180" stroke="red" stroke-width="1.5" />
+  <text x="25" y="30" font-family="Arial" font-size="14" fill="red">K</text>
+  <text x="285" y="185" font-family="Arial" font-size="14" fill="red">L</text>
+  
+  <path d="M 60 60 Q 80 140 180 160" stroke="blue" stroke-width="2" fill="none" />
+  <text x="190" y="165" font-family="Arial" font-size="14" fill="blue">Q</text>
+  
+  <path d="M 80 40 Q 120 120 220 140" stroke="blue" stroke-width="2" fill="none" />
+  <text x="230" y="145" font-family="Arial" font-size="14" fill="blue">Q'</text>
+</svg>

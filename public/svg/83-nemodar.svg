@@ -1,0 +1,38 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .axis { stroke: #f1f5f9; stroke-width: 1.5; fill: none; }
+    .line-blue { stroke: blue; stroke-width: 2; fill: none; }
+    .line-red { stroke: red; stroke-width: 2; fill: none; }
+    .dashed { stroke-dasharray: 5,5; stroke: #f1f5f9; fill: none; }
+    text { font-family: Tahoma, sans-serif; font-size: 14px; }
+  </style>
+
+  <g transform="translate(50, 50)">
+    <!-- Axes -->
+    <line x1="0" y1="200" x2="200" y2="200" class="axis" />
+    <line x1="0" y1="200" x2="0" y2="0" class="axis" />
+    <text x="-20" y="20" fill="#f1f5f9">P</text>
+    <text x="210" y="205" fill="#f1f5f9">Q</text>
+    
+    <!-- S curve (flat positive) -->
+    <line x1="20" y1="180" x2="180" y2="100" class="line-red" />
+    <text x="190" y="105" fill="red">S</text>
+    
+    <!-- D curve (steep positive) -->
+    <line x1="50" y1="200" x2="130" y2="20" class="line-blue" />
+    <text x="135" y="25" fill="blue">D</text>
+    
+    <!-- Equilibrium Intersection -->
+    <circle cx="70" cy="155" r="4" fill="#f1f5f9" />
+    <text x="80" y="150" fill="#f1f5f9">e</text>
+    
+    <!-- Projections -->
+    <line x1="0" y1="155" x2="70" y2="155" class="dashed" />
+    <text x="-25" y="160" fill="#f1f5f9">P_e</text>
+    
+    <line x1="70" y1="155" x2="70" y2="200" class="dashed" />
+    <text x="65" y="215" fill="#f1f5f9">Q_e</text>
+    
+    <text x="120" y="160" fill="#f1f5f9">δ &lt; 0</text>
+  </g>
+</svg>
