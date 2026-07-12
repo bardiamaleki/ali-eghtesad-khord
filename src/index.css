@@ -523,12 +523,38 @@ a {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
-.katex-display::-webkit-scrollbar-track,
-.formula-box::-webkit-scrollbar-track {
-  background: transparent;
-}
+  .katex-display::-webkit-scrollbar-track,
+  .formula-box::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-@media (max-width: 768px) {
+  /* Global Typography Enhancements for better vertical rhythm (Fixing squished text) */
+  .main-content p,
+  .main-content li,
+  .glass-panel p,
+  .glass-panel li,
+  .example-box p,
+  .example-box li,
+  .formula-box p,
+  .formula-box li {
+    line-height: 2.1 !important;
+  }
+
+  .main-content li,
+  .glass-panel li,
+  .example-box li,
+  .formula-box li {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .main-content li:last-child,
+  .glass-panel li:last-child,
+  .example-box li:last-child,
+  .formula-box li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 768px) {
   /* Force all inline-styled grid layouts inside main content to stack vertically */
   .main-content div[style*="grid-template-columns"],
   .main-content div[style*="gridTemplateColumns"] {
