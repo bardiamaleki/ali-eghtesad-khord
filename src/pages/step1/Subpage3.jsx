@@ -31,6 +31,44 @@ const Subpage3 = () => {
         <li>همیشه نزولی است (قانون تقاضا همواره برقرار است، حتی برای کالای گیفن).</li>
       </ul>
 
+      {/* Comparative Table */}
+      <div className="glass-panel" style={{ padding: '1.5rem', margin: '2rem 0', background: 'rgba(255, 255, 255, 0.01)', border: '1px solid var(--card-border)' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>جدول مقایسه‌ای تقاضای مارشالی در مقابل هیکسی (جبرانی)</h4>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'right', fontSize: '0.9rem' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid var(--card-border)', color: 'var(--primary)' }}>
+                <th style={{ padding: '0.75rem' }}>ویژگی / معیار</th>
+                <th style={{ padding: '0.75rem' }}>تقاضای مارشالی (Marshallian Demand)</th>
+                <th style={{ padding: '0.75rem' }}>تقاضای هیکسی (Hicksian Demand)</th>
+              </tr>
+            </thead>
+            <tbody style={{ color: 'var(--text-muted)' }}>
+              <tr style={{ borderBottom: '1px solid var(--card-border)' }}>
+                <td style={{ padding: '0.75rem', fontWeight: 'bold', color: 'var(--text-main)' }}>۱. هدف بهینه‌سازی</td>
+                <td style={{ padding: '0.75rem' }}>حداکثرسازی مطلوبیت با بودجه محدود (<InlineMath math="\max U \text{ s.t. } I = \sum P_i q_i" />)</td>
+                <td style={{ padding: '0.75rem' }}>حداقل‌سازی مخارج با مطلوبیت معین (<InlineMath math="\min \sum P_i q_i \text{ s.t. } U = \bar{U}" />)</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid var(--card-border)' }}>
+                <td style={{ padding: '0.75rem', fontWeight: 'bold', color: 'var(--text-main)' }}>۲. آرگومان‌های تابع تقاضا</td>
+                <td style={{ padding: '0.75rem' }}>قیمت کالاها و درآمد اسمی: <InlineMath math="q_i(P_1, P_2, I)" /></td>
+                <td style={{ padding: '0.75rem' }}>قیمت کالاها و سطح مطلوبیت معین: <InlineMath math="h_i(P_1, P_2, \bar{U})" /></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid var(--card-border)' }}>
+                <td style={{ padding: '0.75rem', fontWeight: 'bold', color: 'var(--text-main)' }}>۳. اثر درآمدی (Income Effect)</td>
+                <td style={{ padding: '0.75rem' }}>شامل هر دو اثر جانشینی و درآمدی است (تغییر قیمت قدرت خرید را تغییر می‌دهد).</td>
+                <td style={{ padding: '0.75rem' }}>اثر درآمدی حذف (جبران) شده است و فقط اثر جانشینی را نشان می‌دهد.</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '0.75rem', fontWeight: 'bold', color: 'var(--text-main)' }}>۴. وضعیت سطح مطلوبیت</td>
+                <td style={{ padding: '0.75rem' }}>متغیر و وابسته به شرایط بازار (درون‌زا)</td>
+                <td style={{ padding: '0.75rem' }}>ثابت و از پیش‌تعیین‌شده (برون‌زا)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--accent)', margin: '1.5rem 0' }}>
         <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>تابع مخارج (Expenditure Function)</h4>
         <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>

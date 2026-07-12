@@ -78,7 +78,7 @@ const Subpage1 = () => {
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
             از حل معادلات تفاضلی مرتبه اول به مسیر قیمت می‌رسیم. شرط همگرایی (تعادل پایدار) این است که شیب تقاضا (قدر مطلق) از شیب عرضه کمتر باشد:
           </p>
-          <BlockMath math="a < A \quad (\text{یا در واقع } |a| < A)" />
+          <BlockMath math="a < A \quad (\text{یا در واقع } |a| > A)" />
         </div>
 
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--success)' }}>
@@ -95,6 +95,43 @@ const Subpage1 = () => {
             که در آن قیمت تعادلی پایدار <InlineMath math="P_e = \frac{B - b}{a - A}" /> است.
             زمانی که <InlineMath math="t \to \infty" />، اگر <InlineMath math="a - A < 0" /> باشد (چون شیب تقاضا <InlineMath math="a" /> منفی و عرضه <InlineMath math="A" /> مثبت است، این شرط همواره برقرار است)، قیمت به تعادل همگرا می‌شود.
           </p>
+        </div>
+      </div>
+
+      {/* Comparative Analysis of the Three Types of Stability */}
+      <div className="glass-panel" style={{ padding: '1.5rem', marginBottom: '2.5rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>تحلیل مقایسه‌ای سه نوع پایداری در مدل تار عنکبوتی (صفحه ۸۳ جزوه)</h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          در تحلیل پویای گسسته بازار (مدل تار عنکبوتی)، بر اساس شیب نسبی منحنی‌های عرضه (<InlineMath math="A" />) و تقاضا (<InlineMath math="|a|" />)، سه سناریوی مختلف برای نوسانات قیمت و پایداری تعادل وجود دارد:
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          {/* Case 1: Convergent */}
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
+            <h5 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۱. پایداری همگرا (نوسانات میرا)</h5>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
+              اگر کشش تقاضا بیشتر از عرضه باشد یا به عبارتی قدر مطلق شیب تقاضا کمتر از شیب عرضه باشد (<InlineMath math="|a| > A" />)، دامنه نوسانات قیمت دوره به دوره کوچکتر شده و به سمت قیمت تعادلی همگرا می‌شود.
+            </p>
+            <img src="/svg/81-nemodar.svg" alt="پایداری همگرا" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
+          </div>
+
+          {/* Case 2: Continuous */}
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--warning)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
+            <h5 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۲. نوسان مستمر (خنثی)</h5>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
+              اگر قدر مطلق شیب تقاضا دقیقاً برابر با شیب عرضه باشد (<InlineMath math="|a| = A" />)، نوسانات قیمت با دامنه‌ای ثابت و به صورت مداوم دور تعادل تکرار می‌شود و بازار نه همگرا می‌شود و نه واگرا.
+            </p>
+            <img src="/svg/82-nemodar.svg" alt="نوسانات مستمر خنثی" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
+          </div>
+
+          {/* Case 3: Divergent */}
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--danger)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
+            <h5 style={{ color: 'var(--danger)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۳. پایداری واگرا (نوسانات فزاینده)</h5>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
+              اگر کشش عرضه بیشتر از تقاضا باشد یا به عبارتی قدر مطلق شیب تقاضا بزرگتر از شیب عرضه باشد (<InlineMath math="|a| < A" />)، نوسانات قیمت هر دوره بزرگتر شده و مسیر از قیمت تعادلی واگرا می‌شود.
+            </p>
+            <img src="/svg/83-nemodar.svg" alt="پایداری واگرا" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
+          </div>
         </div>
       </div>
 

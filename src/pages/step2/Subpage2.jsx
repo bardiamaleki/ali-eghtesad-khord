@@ -14,9 +14,52 @@ const Subpage2 = () => {
         تولیدکننده برای رسیدن به حداکثر سود، باید تعیین کند که چه مقدار از هر نهاده (مثل نیروی کار و سرمایه) را استخدام کند. این تصمیم‌گیری تقاضا برای عوامل تولید را شکل می‌دهد که به آن <strong>تقاضای مشتق‌شده (Derived Demand)</strong> می‌گویند. تقاضا برای نهاده ناشی از تقاضا برای محصول نهایی است.
       </p>
 
+      {/* Short-Run Cost Curves Section */}
+      <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Calculator size={20} style={{ color: 'var(--secondary)' }} />
+        ۱. منحنی‌های هزینه کوتاه‌مدت و روابط هندسی آن‌ها
+      </h3>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        در کوتاه‌مدت، هزینه‌های بنگاه به دو بخش هزینه‌های ثابت (FC) و هزینه‌های متغیر (VC) تقسیم می‌شوند. از این رو، منحنی‌های هزینه متوسط کل (ATC)، هزینه متوسط متغیر (AVC)، هزینه متوسط ثابت (AFC) و هزینه نهایی (MC) روابط هندسی بسیار مهم و مشخصی با یکدیگر دارند که رفتار تولید را توصیف می‌کنند.
+      </p>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center', margin: '1.5rem 0' }}>
+        <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
+          <img src="/svg/11-total-costs.svg" alt="نمودار هزینه‌های کل کوتاه‌مدت" style={{ maxWidth: '100%', maxHeight: '250px' }} />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>منحنی‌های هزینه کل (TC)، هزینه متغیر (VC) و هزینه ثابت (FC)</p>
+        </div>
+        <div className="glass-panel" style={{ flex: '1', minWidth: '300px', textAlign: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
+          <img src="/svg/11-average-marginal-costs.svg" alt="نمودار هزینه‌های متوسط و نهایی کوتاه‌مدت" style={{ maxWidth: '100%', maxHeight: '250px' }} />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>منحنی‌های هزینه متوسط کل (ATC)، متوسط متغیر (AVC)، متوسط ثابت (AFC) و هزینه نهایی (MC)</p>
+        </div>
+      </div>
+
+      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--primary)', marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>روابط هندسی و تحلیل ریاضی بین منحنی‌های هزینه کوتاه‌مدت:</h4>
+        <ul style={{ listStyleType: "decimal", paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          <li>
+            <strong>رابطه MC با ATC و AVC:</strong> منحنی هزینه نهایی (MC) همواره منحنی‌های هزینه متوسط کل (ATC) و هزینه متوسط متغیر (AVC) را در <strong>نقطه مینیمم آن‌ها</strong> قطع می‌کند:
+            <ul style={{ listStyleType: 'circle', paddingRight: '1.2rem', marginTop: '0.25rem' }}>
+              <li>هرگاه <InlineMath math="MC < ATC" /> باشد، ATC نزولی است.</li>
+              <li>هرگاه <InlineMath math="MC > ATC" /> باشد، ATC صعودی است.</li>
+              <li>هرگاه <InlineMath math="MC = ATC" /> باشد، ATC در کمترین مقدار خود (نقطه مینیمم) قرار دارد. همین رابطه برای AVC نیز دقیقاً برقرار است.</li>
+            </ul>
+          </li>
+          <li style={{ marginTop: '0.5rem' }}>
+            <strong>رفتار هزینه متوسط ثابت (AFC):</strong> با افزایش تولید (<InlineMath math="Q" />)، هزینه متوسط ثابت به دلیل ثابت بودن کل هزینه ثابت (<InlineMath math="FC" />)، همواره نزولی است (<InlineMath math="AFC = FC/Q" />) و از نظر هندسی به شکل یک مجانب مستطیلی است که به محور افقی نزدیک می‌شود اما هرگز آن را قطع نمی‌کند.
+          </li>
+          <li style={{ marginTop: '0.5rem' }}>
+            <strong>فاصله بین ATC و AVC:</strong> رابطه تفاضلی هزینه متوسط به صورت <InlineMath math="ATC - AVC = AFC" /> است. از آنجا که AFC همواره نزولی و مثبت است، با افزایش تولید، فاصله عمودی بین دو منحنی ATC و AVC <strong>به تدریج کاهش می‌یابد</strong>، اما هرگز به صفر نمی‌رسد.
+          </li>
+          <li style={{ marginTop: '0.5rem' }}>
+            <strong>نقطه حداقل (مینیمم):</strong> به دلیل نزولی بودن AFC، منحنی AVC زودتر از ATC به نقطه مینیمم خود می‌رسد؛ به عبارت دیگر، مینیمم AVC در سطح تولیدی کمتر از سطح تولید مربوط به مینیمم ATC رخ می‌دهد.
+          </li>
+        </ul>
+      </div>
+
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Users size={20} />
-        ۱. شرط بهینه استخدام نهاده‌ها (VMP)
+        ۲. شرط بهینه استخدام نهاده‌ها (VMP)
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
         بنگاه تا زمانی به استخدام یک عامل تولید ادامه می‌دهد که <strong>ارزش تولید نهایی (VMP)</strong> آن عامل با <strong>هزینه نهایی (قیمت یا دستمزد)</strong> آن برابر شود.
@@ -34,7 +77,7 @@ const Subpage2 = () => {
         </p>
       </div>
 
-      <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem' }}>۲. مقایسه تقاضای نهاده در کوتاه‌مدت و بلندمدت و اصل لوشاتلیه</h3>
+      <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem' }}>۳. مقایسه تقاضای نهاده در کوتاه‌مدت و بلندمدت و اصل لوشاتلیه</h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
         واکنش بنگاه به تغییر قیمت نهاده‌ها در دوره‌های زمانی مختلف متفاوت است. این تفاوت توسط <strong>اصل لوشاتلیه (Le Chatelier's Principle)</strong> توضیح داده می‌شود: تقاضا برای نهاده در بلندمدت باکشش‌تر (حساس‌تر) از تقاضا در کوتاه‌مدت است.
       </p>
@@ -53,7 +96,7 @@ const Subpage2 = () => {
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
             در بلندمدت، بنگاه می‌تواند ماشین‌آلات را جانشین نیروی کار کند. بنابراین با افزایش دستمزد، علاوه بر کاهش تولید، بنگاه تکنولوژی خود را سرمایه‌برتر می‌کند.
           </p>
-          <BlockMath math="\left( \frac{\partial L}{\partial w} \right)_{\text{Long-Run}} = \frac{f_{KK}}{P \cdot |H|}" />
+          <BlockMath math="\left( \frac{\partial L}{\partial w} \right)_{\text{Long-Run}} = \frac{P \cdot f_{KK}}{|H|}" />
         </div>
       </div>
 
@@ -92,7 +135,7 @@ const Subpage2 = () => {
 
       <h3 style={{ color: 'var(--warning)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Link size={20} />
-        ۳. ارتباط بین عوامل تولید (جانشین و مکمل)
+        ۴. ارتباط بین عوامل تولید (جانشین و مکمل)
       </h3>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
@@ -120,7 +163,7 @@ const Subpage2 = () => {
 
       <h3 style={{ color: 'var(--danger)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Landmark size={20} />
-        ۴. تولید محصولات مشترک (Joint Products) و PPC
+        ۵. تولید محصولات مشترک (Joint Products) و PPC
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
         گاهی یک بنگاه از یک نهاده ثابت (مثلاً مقدار مشخصی زمین یا ماده خام <InlineMath math="\bar{X}" />) برای تولید دو یا چند محصول متفاوت (<InlineMath math="q_1, q_2" />) استفاده می‌کند. در اینجا بنگاه با <strong>منحنی امکانات تولید (PPC)</strong> مواجه است که نشان می‌دهد برای افزایش تولید یک کالا، چقدر باید از تولید کالای دیگر چشم‌پوشی کرد.
@@ -152,7 +195,7 @@ const Subpage2 = () => {
               شرط مرتبه اول (F.O.C): <InlineMath math="P_1 = \mu h_1" /> و <InlineMath math="P_2 = \mu h_2 \implies \frac{P_1}{P_2} = \frac{h_1}{h_2} = MRT" />
               <br />
               شرط مرتبه دوم (S.O.C) برای ماکزیمم مقید: دترمینان هشین مرزی باید مثبت باشد (<InlineMath math="|\bar{H}| > 0" />):
-              <BlockMath math="|\bar{H}| = \begin{vmatrix} -\mu h_{11} & -\mu h_{12} & -h_1 \\ -\mu h_{21} & -\mu h_{22} & -h_2 \\ -h_1 & -h_2 & 0 \end{vmatrix} > 0 \implies -h_{11} h_2^2 + 2 h_{12} h_1 h_2 - h_{22} h_1^2 > 0" />
+              <BlockMath math="|\bar{H}| = \begin{vmatrix} -\mu h_{11} & -\mu h_{12} & -h_1 \\ -\mu h_{21} & -\mu h_{22} & -h_2 \\ -h_1 & -h_2 & 0 \end{vmatrix} > 0 \implies h_{11} h_2^2 - 2 h_{12} h_1 h_2 + h_{22} h_1^2 > 0" />
               این شرط بدین معناست که منحنی مرز امکانات تولید (PPC) باید نسبت به مبدأ **مقعر** باشد.
             </p>
           </div>

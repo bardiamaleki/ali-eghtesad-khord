@@ -73,6 +73,51 @@ const Subpage3 = () => {
         </ol>
       </div>
 
+      <div className="example-box" style={{ marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>مثال عددی تشریحی و کامل: استخراج مسیر توسعه و تابع هزینه برای تابع تولید CES</h4>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+          فرض کنید تابع تولید یک بنگاه از نوع CES (کشش جانشینی ثابت) با مشخصات زیر باشد:
+          <BlockMath math="Q = \left[ 0.5 L^{-1} + 0.5 K^{-1} \right]^{-1}" />
+          در اینجا پارامتر جانشینی <InlineMath math="\rho = -1" /> است که کشش جانشینی آن برابر با <InlineMath math="\sigma = \frac{1}{1-\rho} = \frac{1}{2} = 0.5" /> است. دستمزد نیروی کار را با <InlineMath math="w" /> و نرخ اجاره سرمایه را با <InlineMath math="r" /> نشان می‌دهیم. هدف محاسبه مسیر توسعه و تابع هزینه کل بلندمدت (<InlineMath math="TC" />) است.
+        </p>
+
+        <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2' }}>
+          <li>
+            <strong>محاسبه تولید نهایی نهاده‌ها (MPL و MPK):</strong>
+            <BlockMath math="MP_L = \frac{\partial Q}{\partial L} = - \left[ 0.5 L^{-1} + 0.5 K^{-1} \right]^{-2} \cdot (-0.5 L^{-2}) = 0.5 \left( \frac{Q}{L} \right)^2" />
+            <BlockMath math="MP_K = \frac{\partial Q}{\partial K} = - \left[ 0.5 L^{-1} + 0.5 K^{-1} \right]^{-2} \cdot (-0.5 K^{-2}) = 0.5 \left( \frac{Q}{K} \right)^2" />
+          </li>
+          <li>
+            <strong>تشکیل مسیر توسعه (Expansion Path):</strong>
+            با برابر قرار دادن نرخ نهایی جانشینی فنی (MRTS) با نسبت قیمت نهاده‌ها (<InlineMath math="w/r" />):
+            <BlockMath math="MRTS = \frac{MP_L}{MP_K} = \frac{0.5 \left( \frac{Q}{L} \right)^2}{0.5 \left( \frac{Q}{K} \right)^2} = \left( \frac{K}{L} \right)^2 = \frac{w}{r}" />
+            با گرفتن جذر از طرفین، <strong>مسیر توسعه بهینه</strong> به دست می‌آید:
+            <BlockMath math="\frac{K}{L} = \sqrt{\frac{w}{r}} \Rightarrow K = L \sqrt{\frac{w}{r}}" />
+          </li>
+          <li>
+            <strong>محاسبه توابع تقاضای شرطی (بهینه) نهاده‌ها:</strong>
+            با جایگذاری رابطه مسیر توسعه در تابع تولید داریم:
+            <BlockMath math="Q^{-1} = 0.5 L^{-1} + 0.5 K^{-1} \Rightarrow Q^{-1} = 0.5 L^{-1} + 0.5 \left( L \sqrt{\frac{w}{r}} \right)^{-1}" />
+            <BlockMath math="Q^{-1} = 0.5 L^{-1} \left[ 1 + \sqrt{\frac{r}{w}} \right] = 0.5 L^{-1} \left[ \frac{\sqrt{w} + \sqrt{r}}{\sqrt{w}} \right]" />
+            با معکوس کردن و حل برای <InlineMath math="L" />، تقاضای نیروی کار به دست می‌آید:
+            <BlockMath math="L^* = 0.5 Q \left( \frac{\sqrt{w} + \sqrt{r}}{\sqrt{w}} \right)" />
+            به طور مشابه و با توجه به تقارن مسئله، تقاضای سرمایه به دست می‌آید:
+            <BlockMath math="K^* = 0.5 Q \left( \frac{\sqrt{w} + \sqrt{r}}{\sqrt{r}} \right)" />
+          </li>
+          <li>
+            <strong>استخراج تابع هزینه کل (<InlineMath math="TC" />):</strong>
+            با جایگذاری تقاضاهای بهینه نهاده‌ها در تعریف هزینه کل (<InlineMath math="TC = w L + r K" />):
+            <BlockMath math="TC = w \left[ 0.5 Q \left( \frac{\sqrt{w} + \sqrt{r}}{\sqrt{w}} \right) \right] + r \left[ 0.5 Q \left( \frac{\sqrt{w} + \sqrt{r}}{\sqrt{r}} \right) \right]" />
+            <BlockMath math="TC = 0.5 Q (\sqrt{w} + \sqrt{r}) \sqrt{w} + 0.5 Q (\sqrt{w} + \sqrt{r}) \sqrt{r}" />
+            با فاکتورگیری از عبارت مشترک:
+            <BlockMath math="TC = 0.5 Q (\sqrt{w} + \sqrt{r}) (\sqrt{w} + \sqrt{r}) = 0.5 Q (\sqrt{w} + \sqrt{r})^2" />
+          </li>
+        </ol>
+        <p style={{ color: 'var(--primary)', textAlign: 'center', marginTop: '1rem', fontWeight: 'bold' }}>
+          بنابراین، تابع هزینه کل برای این تابع تولید CES برابر است با: <InlineMath math="TC = 0.5 Q (\sqrt{w} + \sqrt{r})^2" />
+        </p>
+      </div>
+
       <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '12px' }}>
         <img src="/svg/66-expansion-path.svg" alt="مسیر توسعه" style={{ maxWidth: '100%', maxHeight: '250px' }} />
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>

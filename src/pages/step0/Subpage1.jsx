@@ -40,6 +40,59 @@ const Subpage1 = () => {
           <BlockMath math="q_1^{ND} = q_1(P_1, P_2, I) \quad , \quad q_2^{ND} = q_2(P_1, P_2, I)" />
         </p>
 
+        {/* Detailed Mathematical Proof of lambda */}
+        <h4 style={{ color: 'var(--primary)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>اثبات ریاضی تفصیلی ضریب لاگرانژ (<InlineMath math="\lambda = \frac{\partial U^*}{\partial I}" />)</h4>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          به منظور اثبات تفصیلی رابطه <InlineMath math="\lambda = \partial U^* / \partial I" /> از شرایط مرتبه اول (F.O.C) با استفاده از دیفرانسیل‌گیری کامل:
+          فرض کنید تابع مطلوبیت غیرمستقیم مصرف‌کننده در نقطه تعادل برابر با <InlineMath math="U^* = U(q_1^*, q_2^*)" /> باشد که در آن <InlineMath math="q_i^*" /> مقادیر تقاضای بهینه مصرف‌کننده هستند. با دیفرانسیل‌گیری کامل نسبت به درآمد (<InlineMath math="I" />) خواهیم داشت:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="\frac{\partial U^*}{\partial I} = \frac{\partial U}{\partial q_1} \frac{\partial q_1^*}{\partial I} + \frac{\partial U}{\partial q_2} \frac{\partial q_2^*}{\partial I}" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          با استفاده از شرایط F.O.C حداکثرسازی مطلوبیت، داریم: <InlineMath math="\frac{\partial U}{\partial q_i} = \lambda P_i" />. با جایگذاری این شرایط در رابطه دیفرانسیل کامل:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="\frac{\partial U^*}{\partial I} = (\lambda P_1) \frac{\partial q_1^*}{\partial I} + (\lambda P_2) \frac{\partial q_2^*}{\partial I} = \lambda \left[ P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \right]" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          از طرف دیگر، با دیفرانسیل‌گیری کامل نسبت به <InlineMath math="I" /> از محدودیت بودجه در حالت بهینه یعنی <InlineMath math="I = P_1 q_1^* + P_2 q_2^*" /> خواهیم داشت:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="\frac{\partial I}{\partial I} = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \Rightarrow 1 = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I}" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          با جایگذاری عبارت فوق در رابطه مطلوبیت غیرمستقیم، اثبات کامل می‌شود:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="\frac{\partial U^*}{\partial I} = \lambda \cdot [1] \Rightarrow \lambda = \frac{\partial U^*}{\partial I}" />
+        </div>
+
+        {/* Numerical Example */}
+        <h4 style={{ color: 'var(--primary)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>مثال عددی صریح حداکثرسازی مطلوبیت مارشالی</h4>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          فرض کنید تابع مطلوبیت مصرف‌کننده به صورت <InlineMath math="U(q_1, q_2) = q_1 q_2" /> باشد. قیمت کالاها برابر <InlineMath math="P_1 = 2" /> و <InlineMath math="P_2 = 5" /> و درآمد مصرف‌کننده <InlineMath math="I = 100" /> است:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="\max U = q_1 q_2 \quad S.t: \quad 2q_1 + 5q_2 = 100" />
+          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>تشکیل تابع لاگرانژ:</p>
+          <BlockMath math="\mathcal{L} = q_1 q_2 + \lambda [100 - 2q_1 - 5q_2]" />
+          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرایط مرتبه اول (F.O.C):</p>
+          <BlockMath math="\begin{aligned} \frac{\partial \mathcal{L}}{\partial q_1} = 0 &\Rightarrow q_2 - 2\lambda = 0 \Rightarrow q_2 = 2\lambda \\ \frac{\partial \mathcal{L}}{\partial q_2} = 0 &\Rightarrow q_1 - 5\lambda = 0 \Rightarrow q_1 = 5\lambda \\ \frac{\partial \mathcal{L}}{\partial \lambda} = 0 &\Rightarrow 100 - 2q_1 - 5q_2 = 0 \end{aligned}" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
+          با تقسیم دو رابطه اول داریم: <InlineMath math="\frac{q_2}{q_1} = \frac{2}{5} \Rightarrow q_2 = 0.4 q_1" />.
+          با جایگذاری در محدودیت بودجه:
+        </p>
+        <div className="formula-box">
+          <BlockMath math="2q_1 + 5(0.4 q_1) = 100 \Rightarrow 4q_1 = 100 \Rightarrow q_1^* = 25" />
+          <BlockMath math="q_2^* = 0.4(25) = 10" />
+          <BlockMath math="\lambda^* = \frac{q_2^*}{2} = 5" />
+        </div>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          در این حالت، مطلوبیت حداکثر برابر است با <InlineMath math="U^* = 25 \times 10 = 250" /> و ضریب لاگرانژ بهینه <InlineMath math="\lambda^* = 5" /> است که نشان می‌دهد به ازای یک واحد افزایش در درآمد، مطلوبیت به اندازه ۵ واحد افزایش می‌یابد.
+        </p>
+
         {/* Consumer Dual Optimization */}
         <h3 style={{ color: 'var(--primary)', marginTop: '2rem', marginBottom: '1rem' }}>ب) ریاضیات مصرف‌کننده (حالت دوگان / تقاضای جبرانی هیکسی)</h3>
         <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>

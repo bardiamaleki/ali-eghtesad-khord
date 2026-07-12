@@ -126,9 +126,69 @@ const Subpage2 = () => {
         </div>
       </div>
 
+      {/* Advanced Analysis and Proofs Section */}
+      <h3 style={{ color: 'var(--primary)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Award size={20} style={{ color: 'var(--primary)' }} />
+        ۳. تحلیل‌های پیشرفته و اثبات‌های ریاضی الیگوپولی مقداری
+      </h3>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
+        {/* Cournot Convergence Proof */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--primary)', background: 'rgba(255, 255, 255, 0.01)' }}>
+          <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>الف) اثبات ریاضی همگرایی مدل کورنو به رقابت کامل در حالت <InlineMath math="n \to \infty" /></h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            فرض کنید در بازاری با تقاضای معکوس خطی <InlineMath math="P = a - bQ" />، تعداد <InlineMath math="n" /> بنگاه همسان با هزینه نهایی یکسان و ثابت <InlineMath math="MC" /> حضور دارند. سود بنگاه <InlineMath math="i" /> به صورت زیر تعریف می‌شود:
+            <BlockMath math="\pi_i = \left( a - b \sum_{j=1}^n q_j - MC \right) q_i" />
+            شرط مرتبه اول (FOC) برای بیشینه‌سازی سود بنگاه <InlineMath math="i" />:
+            <BlockMath math="\frac{\partial \pi_i}{\partial q_i} = a - b \sum_{j \neq i} q_j - 2bq_i - MC = 0 \implies P - MC = b q_i" />
+            از آنجا که بنگاه‌ها همسان هستند، در تعادل داریم <InlineMath math="q_1 = q_2 = \dots = q_n = q^*" /> و مقدار کل تولید <InlineMath math="Q = n q^*" /> است. با جایگذاری در رابطه فوق:
+            <BlockMath math="P^* - MC = b \left( \frac{Q^*}{n} \right) \implies P^* - MC = \frac{a - P^*}{n}" />
+            با حل این رابطه برای قیمت تعادلی بازار (<InlineMath math="P^*" />) خواهیم داشت:
+            <BlockMath math="P^*(1 + n) = a + n MC \implies P^* = \frac{a}{1+n} + \frac{n}{1+n} MC" />
+            اکنون با حد گرفتن از قیمت تعادلی هنگامی که تعداد بنگاه‌ها به سمت بی‌نهایت میل می‌کند (<InlineMath math="n \to \infty" />):
+            <BlockMath math="\lim_{n \to \infty} P^* = \lim_{n \to \infty} \left( \frac{a}{1+n} + \frac{n}{1+n} MC \right) = 0 + 1 \cdot MC = MC" />
+            به طور مشابه، تولید کل تعادلی بازار برابر است با:
+            <BlockMath math="Q^* = \frac{n}{n+1} \left( \frac{a - MC}{b} \right) \implies \lim_{n \to \infty} Q^* = \frac{a - MC}{b}" />
+            که این نتایج دقیقاً منطبق بر قیمت و مقدار تولید در بازار رقابت کامل است. بنابراین، با افزایش تعداد رقبای کورنو، بازار به رقابت کامل همگرا می‌شود.
+          </p>
+        </div>
+
+        {/* Stackelberg Warfare / Disequilibrium */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--danger)', background: 'rgba(255, 255, 255, 0.01)' }}>
+          <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>ب) تحلیل حالت عدم تعادل استاکلبرگ (Stackelberg Warfare)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            در مدل استاندارد استاکلبرگ فرض می‌شود یکی از بنگاه‌ها نقش «رهبر» و دیگری نقش «پیرو» را ایفا می‌کند. اما اگر تقارن اطلاعاتی وجود داشته باشد یا هر دو بنگاه خود را قوی‌تر فرض کنند، **عدم تعادل یا جنگ استاکلبرگ (Stackelberg Warfare)** رخ می‌دهد. در این حالت:
+          </p>
+          <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', listStyleType: 'disc' }}>
+            <li>هر دو بنگاه تمایل دارند نقش رهبر را بازی کنند و هر کدام فرض می‌کند که رقیبش پیرو خواهد بود.</li>
+            <li>بنابراین بنگاه ۱ مقدار تولید رهبری خود (<InlineMath math="q_1^L" />) و بنگاه ۲ نیز مقدار تولید رهبری خود (<InlineMath math="q_2^L" />) را وارد بازار می‌کنند.</li>
+            <li>در نتیجه، تولید کل در بازار بسیار بیشتر از تعادل کورنو و استاکلبرگ پایدار می‌شود (<InlineMath math="Q = q_1^L + q_2^L" />).</li>
+          </ul>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
+            این مازاد عرضه شدید، قیمت بازار را به شدت کاهش داده و سود هر دو بنگاه را به شدت افت می‌دهد (حتی ممکن است سود به زیر سطح شبه‌رقابتی رسیده یا منفی شود). این وضعیت ناپایدار است و بنگاه‌ها ناچارند یا از طریق ادغام/تبانی به کارتل روی آورند یا یکی از آن‌ها شکست را پذیرفته و به عنوان پیرو عمل کند.
+          </p>
+        </div>
+
+        {/* Critique of Cournot */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--warning)', background: 'rgba(255, 255, 255, 0.01)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>ج) نقد مدل کورنو (Cournot Critique)</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            مدل کورنو به دلیل چند فرض غیرواقع‌بینانه مورد نقد جدی قرار گرفته است:
+          </p>
+          <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', listStyleType: 'decimal' }}>
+            <li>
+              <strong>فرض ثابت بودن تولید رقیب (Naive Expectations):</strong> هسته اصلی مدل کورنو این فرض است که بنگاه‌ها معتقدند تغییر تولید آن‌ها تأثیری روی مقدار تولید رقیب نخواهد داشت (<InlineMath math="\partial q_j / \partial q_i = 0" />). در واقعیت، بنگاه‌ها کوته‌فکر نیستند و رفتار پویا و واکنشی رقیب را در طول زمان یاد می‌گیرند و انتظارات خود را تعدیل می‌کنند.
+            </li>
+            <li>
+              <strong>عدم پویایی واقعی زمان:</strong> تصمیم‌گیری در مدل کورنو به صورت همزمان (Simultaneous) فرض می‌شود، در حالی که در دنیای واقعی بنگاه‌ها تصمیمات خود را به صورت متوالی و بر اساس رصد رفتارهای قبلی رقیب اتخاذ می‌کنند.
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h3 style={{ color: 'var(--accent)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Award size={20} />
-        ۳. جدول مقایسه‌ای نتایج سناریوها
+        ۴. جدول مقایسه‌ای نتایج سناریوها
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
         مقایسه نتایج مدل‌های مختلف به خوبی پویایی و قدرت انحصاری بنگاه‌ها را به تصویر می‌کشد:

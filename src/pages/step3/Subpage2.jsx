@@ -32,6 +32,24 @@ const Subpage2 = () => {
         </ul>
       </div>
 
+      {/* Why Monopoly has no supply curve */}
+      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--primary)', marginBottom: '2.5rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>چرا انحصارگر منحنی عرضه ندارد؟ (فقط نقطه عرضه دارد)</h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          <strong>توضیح شهودی و ریاضی:</strong> در بازار رقابت کامل، بنگاه‌ها قیمت‌گیر هستند و یک رابطه یک‌به‌یک بین هر سطح قیمت بازار و مقدار تولید بهینه بنگاه وجود دارد که «منحنی عرضه» را شکل می‌دهد. اما در بازار انحصار کامل، انحصارگر قیمت‌گذار است و با منحنی تقاضای نزولی مواجه است. تصمیم تولید او نه تنها به هزینه نهایی (<InlineMath math="MC" />) بلکه به کشش تقاضا و شیب منحنی تقاضا بستگی دارد.
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
+          این امر موجب می‌شود که:
+        </p>
+        <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', listStyleType: 'disc' }}>
+          <li>با تغییر در تقاضا، ممکن است انحصارگر <strong>یک مقدار مشخص از کالا را با دو قیمت متفاوت</strong> عرضه کند.</li>
+          <li>یا بالعکس، <strong>دو مقدار متفاوت از کالا را با یک قیمت واحد</strong> در بازار عرضه نماید.</li>
+        </ul>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
+          از آنجا که رابطه یکتا و منحصر‌به‌فردی بین قیمت و مقدار عرضه وجود ندارد، مفهومی به نام منحنی عرضه در انحصار معنی ندارد. انحصارگر صرفاً یک <strong>نقطه عرضه (Supply Point)</strong> دارد که حاصل تقاطع منحنی درآمد نهایی و هزینه نهایی (<InlineMath math="MR = MC" />) و تصویر آن روی منحنی تقاضا است.
+        </p>
+      </div>
+
       <h3 style={{ color: 'var(--warning)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <SplitSquareHorizontal size={20} />
         تبعیض قیمت (Price Discrimination)
@@ -54,6 +72,26 @@ const Subpage2 = () => {
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
             قیمت بر اساس حجم خرید تعیین می‌شود. مصرف‌کنندگانی که حجم بیشتری می‌خرند، قیمت کمتری بابت واحدهای اضافی می‌پردازند (مثل قبض برق یا بسته‌های اینترنت).
           </p>
+          <div style={{ marginTop: '1rem', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
+            <h5 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>مثال عددی کامل تبعیض قیمت درجه دوم (بلوکی):</h5>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+              فرض کنید انحصارگر با تابع تقاضای معکوس <InlineMath math="P = 20 - Q" /> و هزینه نهایی ثابت <InlineMath math="MC = 4" /> روبروست. انحصارگر تصمیم می‌گیرد ساختار قیمت‌گذاری بلوکی زیر را اعمال کند:
+            </p>
+            <ul style={{ paddingRight: '1.2rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+              <li><strong>بلوک اول (پله اول):</strong> فروش ۶ واحد اول با قیمت <InlineMath math="P_1 = 15" /> واحد.</li>
+              <li><strong>بلوک دوم (پله دوم):</strong> فروش ۶ واحد بعدی (از واحد ۷ تا ۱۲) با قیمت <InlineMath math="P_2 = 10" /> واحد.</li>
+            </ul>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7', marginTop: '0.5rem' }}>
+              <strong>تحلیل سود و درآمد انحصارگر:</strong>
+            </p>
+            <ul style={{ paddingRight: '1.2rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7', listStyleType: 'square' }}>
+              <li>درآمد حاصل از بلوک اول: <InlineMath math="TR_1 = 6 \times 15 = 90" /> واحد</li>
+              <li>درآمد حاصل از بلوک دوم: <InlineMath math="TR_2 = (12 - 6) \times 10 = 6 \times 10 = 60" /> واحد</li>
+              <li>درآمد کل: <InlineMath math="TR_{total} = TR_1 + TR_2 = 90 + 60 = 150" /> واحد</li>
+              <li>هزینه کل برای تولید ۱۲ واحد کالا: <InlineMath math="TC = MC \times Q = 4 \times 12 = 48" /> واحد</li>
+              <li>سود کل انحصارگر: <InlineMath math="\pi = TR_{total} - TC = 150 - 48 = 102" /> واحد</li>
+            </ul>
+          </div>
         </div>
 
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>

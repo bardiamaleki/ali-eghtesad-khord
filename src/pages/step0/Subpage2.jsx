@@ -43,12 +43,42 @@ const Subpage2 = () => {
           <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--danger)' }}>
             <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>۲. در مسئله حداقل‌سازی مقید (تابع شبه‌محدب):</h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              دترمینان ماتریس هشین مرزی باید <strong>کوچکتر از صفر</strong> باشد. این شرط معادل با **شبه‌محدب بودن اکید (Strict Quasi-Convexity)** تابع هزینه در نقطه بهینه است:
+              دترمینان ماتریس هشین مرزی باید <strong>کوچکتر از صفر</strong> باشد (برای ۲ متغیر و ۱ قید):
             </p>
             <BlockMath math="|\bar{H}| < 0" />
             <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
               در مسائل حداقل‌سازی هزینه تولید یا مخارج مصرف‌کننده، این شرط منفی بودن تضمین می‌کند که منحنی‌های هم‌هزینه نسبت به مبدأ محدب بوده و نقطه مماس حاصله، هزینه را حداقل می‌کند.
             </p>
+          </div>
+        </div>
+
+        {/* Difference between Bordered and Ordinary Hessian */}
+        <div className="glass-panel" style={{ padding: '1.5rem', marginTop: '1.5rem', borderRight: '4px solid var(--accent)' }}>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>تفاوت هشین مرزی و هشین معمولی</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            در اقتصاد خرد، تفاوت اساسی میان مسائل بهینه‌سازی مقید و نامقید وجود دارد که منجر به استفاده از دو نوع ماتریس هشین متفاوت می‌شود:
+          </p>
+          <ul style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginRight: '1.2rem', listStyleType: 'disc' }}>
+            <li>
+              <strong>هشین معمولی (Ordinary Hessian):</strong> برای مسائل بهینه‌سازی <strong>نامقید</strong> (مانند حداکثرسازی سود بنگاه رقابتی <InlineMath math="\max \pi = TR - TC" />) استفاده می‌شود. در اینجا، شرط مرتبه دوم (S.O.C) به منفی‌معین بودن ماتریس هشین معمولی (برای ماکزیمم) بستگی دارد که در آن نیازی به اضافه کردن محدودیت‌ها نیست و صرفاً مشتقات مرتبه دوم تابع سود نسبت به نهاده‌ها بررسی می‌شوند (<InlineMath math="f_{11} < 0" />، <InlineMath math="f_{22} < 0" /> و <InlineMath math="f_{11}f_{22} - f_{12}^2 > 0" />).
+            </li>
+            <li>
+              <strong>هشین مرزی (Bordered Hessian):</strong> برای مسائل بهینه‌سازی <strong>مقید</strong> (مانند حداکثرسازی مطلوبیت مصرف‌کننده تحت محدودیت بودجه یا حداقل‌سازی هزینه تولید تحت محدودیت مقدار تولید) کاربرد دارد. در این مسائل، به دلیل وجود قید، تغییرات متغیرها مستقل نبوده و از این رو مرزهایی شامل مشتقات تابع محدودیت به هشین معمولی اضافه می‌شوند تا رفتار تابع را روی مرز محدودیت بسنجند.
+            </li>
+          </ul>
+          
+          <h5 style={{ color: 'var(--primary)', marginTop: '1rem', marginBottom: '0.5rem' }}>فرمول صریح بسط دترمینان هشین مرزی در مسئله مصرف‌کننده</h5>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
+            در مسئله حداکثرسازی مطلوبیت مصرف‌کننده با تابع هدف <InlineMath math="U(q_1, q_2)" /> و محدودیت بودجه <InlineMath math="P_1 q_1 + P_2 q_2 = I" />، با تعریف مشتقات تابع مطلوبیت به عنوان <InlineMath math="f_{ij}" /> و قیمت‌ها به عنوان مشتقات قید (<InlineMath math="g_1 = P_1, g_2 = P_2" />)، بسط صریح دترمینان هشین مرزی به شکل زیر حاصل می‌شود:
+          </p>
+          <div className="formula-box">
+            <BlockMath math="|\bar{H}| = 2f_{12}P_1 P_2 - f_{11}P_2^2 - f_{22}P_1^2 > 0" />
+          </div>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
+            در مقابل، برای حداقل‌سازی مقید، شرط کافی به صورت منفی بودن دترمینان ماتریس هشین مرزی تعریف می‌شود:
+          </p>
+          <div className="formula-box">
+            <BlockMath math="|\bar{H}| < 0" />
           </div>
         </div>
 

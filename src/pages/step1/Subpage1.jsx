@@ -8,7 +8,7 @@ const Subpage1 = () => {
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>تاریخ:</strong> ۱۸ فروردین</p>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>علم اقتصاد، علم کمیابی منابع هست و خواسته‌ها نامحدود و باید منابع کمیاب را به خواسته‌های نامحدود اختصاص دهیم.</p>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>اقتصاد خرد: خانوار در مقابل بنگاه (چرخه‌ی چرخشی)</p>
-<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/assets/graph1_1.svg" alt="چرخه جریان دایره‌ای اقتصاد" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', background: 'white', padding: '1rem' }} /></div>
+<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/svg/graph1_1.svg" alt="چرخه جریان دایره‌ای اقتصاد" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }} /></div>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>بازار کالا و خدمات:</strong></p>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>۱- بازار رقابت کامل (حدی)</p>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>۲- بازار رقابت انحصاری</p>
@@ -29,7 +29,7 @@ const Subpage1 = () => {
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>تابع تقاضا نزولی است (مگر در مواقع خاص).</p>
 <div className="formula-box"><BlockMath math={"Q_x^d = a - bP_x \\leadsto P_x = \\frac{a}{b} - \\frac{1}{b}Q_x^d"} /></div>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>*(در جزوه فرمول به صورت <InlineMath math={"P = a - bQ^d"} /> نوشته شده که از نظر ریاضیاتی اگر ضرایب را متمایز در نظر نگیریم دقیق نیست. فرم صحیح تابع تقاضای معکوس <InlineMath math={"P_x = \\frac{a}{b} - \\frac{1}{b}Q_x^d"} /> است که نشانگر رابطه خطی قیمت و مقدار تقاضا است).*</p>
-<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/assets/graph2_1.svg" alt="منحنی تقاضا" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', background: 'white', padding: '1rem' }} /></div>
+<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/svg/graph2_1.svg" alt="منحنی تقاضا" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }} /></div>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>*رابطه قیمت خود کالا با تقاضا <InlineMath math={"\\leftarrow"} /> قانون تقاضا*</p>
 <ul style={{ listStyleType: "disc", paddingRight: "2rem", marginBottom: "1rem", color: "var(--text-muted)", lineHeight: "1.8" }}>
 <li><InlineMath math={"a"} />: عرض از مبدأ</li>
@@ -45,14 +45,14 @@ const Subpage1 = () => {
 </ul>
 <div className="formula-box"><BlockMath math={"Q_x^s = f(P_x) \\uparrow"} /></div>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><InlineMath math={"P_x = a + bQ_x \\implies Q_x^s = -\\frac{a}{b} + \\frac{1}{b}P_x"} /> *(در جزوه نوشته شده <InlineMath math={"Q_x^s = a + bP_x"} /> که به عنوان یک فرم کلی تابع خطی با ضرایب مثبت قابل قبول است).*</p>
-<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/assets/graph2_2.svg" alt="منحنی عرضه" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', background: 'white', padding: '1rem' }} /></div>
+<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/svg/graph2_2.svg" alt="منحنی عرضه" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }} /></div>
 <ul style={{ listStyleType: "disc", paddingRight: "2rem", marginBottom: "1rem", color: "var(--text-muted)", lineHeight: "1.8" }}>
 <li><InlineMath math={"a"} />: عرض از مبدأ</li>
 <li><InlineMath math={"b"} />: شیب مثبت</li>
 <hr style={{ borderTop: "1px solid var(--card-border)", margin: "2rem 0" }} />
 </ul>
 <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}><strong>تعادل بازار:</strong></p>
-<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/assets/graph2_3.svg" alt="تعادل بازار" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', background: 'white', padding: '1rem' }} /></div>
+<div style={{ margin: '2rem 0', textAlign: 'center' }}><img src="/svg/graph2_3.svg" alt="تعادل بازار" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }} /></div>
 <ul style={{ listStyleType: "disc", paddingRight: "2rem", marginBottom: "1rem", color: "var(--text-muted)", lineHeight: "1.8" }}>
 <li><InlineMath math={"e"} />: نقطه وضعیت تعادلی</li>
 <li>عرضه کننده (بنگاه) و متقاضی (مصرف کننده) بازار را تشکیل می‌دهند.</li>

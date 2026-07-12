@@ -1,0 +1,22 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <line x1="50" y1="250" x2="350" y2="250" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="50" y1="250" x2="50" y2="50" stroke="#f1f5f9" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="360" y="255" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">Q</text>
+  <text x="35" y="45" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">P</text>
+  <line x1="80" y1="80" x2="250" y2="220" stroke="blue" stroke-width="2" />
+  <text x="260" y="225" font-family="Tahoma, Arial" font-size="14" fill="blue">D</text>
+  <line x1="80" y1="220" x2="250" y2="80" stroke="red" stroke-width="2" />
+  <text x="260" y="90" font-family="Tahoma, Arial" font-size="14" fill="red">S</text>
+  <line x1="50" y1="150" x2="165" y2="150" stroke="#f1f5f9" stroke-dasharray="5,5" />
+  <line x1="165" y1="250" x2="165" y2="150" stroke="#f1f5f9" stroke-dasharray="5,5" />
+  <circle cx="165" cy="150" r="3" fill="#f1f5f9" />
+  <text x="170" y="138" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">e</text>
+  <text x="30" y="154" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">P<tspan dy="4" font-size="10">e</tspan></text>
+  <text x="160" y="268" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">Q<tspan dy="4" font-size="10">e</tspan></text>
+  <text x="120" y="290" font-family="Tahoma, Arial" font-size="14" fill="#f1f5f9">بازار</text>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f1f5f9" />
+    </marker>
+  </defs>
+</svg>

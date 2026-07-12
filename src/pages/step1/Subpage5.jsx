@@ -104,6 +104,62 @@ const Subpage5 = () => {
         تقسیم این رابطه بر <InlineMath math="P_i" />، تابع تقاضای کالای <InlineMath math="i" /> را می‌دهد. این توابع تقاضا نسبت به درآمد و قیمت‌ها <strong>غیرخطی</strong> هستند، اما تابع مخارج (<InlineMath math="P_i q_i" />) <strong>خطی</strong> است؛ به همین دلیل به آن سیستم مخارج خطی می‌گویند.
       </p>
 
+      {/* Dynamic LES */}
+      <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem' }}>۴. سیستم مخارج خطی پویا (Dynamic LES)</h3>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        در تحلیل‌های سری زمانی، عادت مصرف دوره قبل مصرف‌کننده نقش بسزایی در تعیین حداقل معاش دوره فعلی دارد. در سیستم مخارج خطی پویا (Dynamic LES)، پارامتر حداقل معاش (<InlineMath math="\gamma_i" />) ثابت نبوده و به صورت پویا با رفتار مصرف دوره گذشته مرتبط می‌شود:
+      </p>
+      <div className="formula-box">
+        <BlockMath math="\gamma_{it} = \alpha_i \cdot q_{i, t-1}" />
+      </div>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1.5rem" }}>
+        در این رابطه، <InlineMath math="\gamma_{it}" /> حداقل معاش کالا در دوره <InlineMath math="t" />، <InlineMath math="q_{i, t-1}" /> مقدار مصرف شده از کالا در دوره گذشته و <InlineMath math="\alpha_i" /> ضریب پایداری عادت (Habit Persistence Parameter) است. این مدل‌سازی به خوبی پدیده چسبندگی مصرف و شکل‌گیری عادت در ترجیحات مصرف‌کننده را نشان می‌دهد.
+      </p>
+
+      {/* Solved Numerical Example for LES */}
+      <div className="example-box" style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>مثال عددی حل‌‌شده سیستم مخارج خطی (LES)</h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          فرض کنید در یک اقتصاد دو کالایی، تابع مطلوبیت کلاین-روبین مصرف‌کننده به صورت زیر است:
+          <BlockMath math="U = 0.6 \ln(q_1 - 10) + 0.4 \ln(q_2 - 5)" />
+          قیمت کالاها برابر با <InlineMath math="P_1 = 2" /> و <InlineMath math="P_2 = 4" /> و درآمد مصرف‌کننده برابر با <InlineMath math="I = 100" /> واحد است.
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', fontWeight: 'bold' }}>
+          گام ۱: مشخص کردن پارامترها و محاسبه درآمد معیشتی و فرامعیشتی
+        </p>
+        <ul style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginRight: '1.2rem' }}>
+          <li>حداقل معاش کالای اول: <InlineMath math="\gamma_1 = 10" /></li>
+          <li>حداقل معاش کالای دوم: <InlineMath math="\gamma_2 = 5" /></li>
+          <li>سهم نهایی مخارج کالای اول: <InlineMath math="\beta_1 = 0.6" /></li>
+          <li>سهم نهایی مخارج کالای دوم: <InlineMath math="\beta_2 = 0.4" /></li>
+          <li>مخارج معیشتی کل: <InlineMath math="P_1 \gamma_1 + P_2 \gamma_2 = (2 \times 10) + (4 \times 5) = 20 + 20 = 40" /></li>
+          <li>درآمد فرامعیشتی (مازاد): <InlineMath math="I_{super} = I - (P_1 \gamma_1 + P_2 \gamma_2) = 100 - 40 = 60" /></li>
+        </ul>
+        
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', fontWeight: 'bold', marginTop: '1rem' }}>
+          گام ۲: محاسبه مخارج و مقادیر تقاضای بهینه برای هر کالا
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          مخارج بهینه کالای اول:
+          <BlockMath math="P_1 q_1 = P_1 \gamma_1 + \beta_1 (I - \sum P_j \gamma_j) = 20 + 0.6(60) = 20 + 36 = 56" />
+          مقدار تقاضای کالای اول:
+          <BlockMath math="q_1^* = \frac{56}{P_1} = \frac{56}{2} = 28" />
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+          مخارج بهینه کالای دوم:
+          <BlockMath math="P_2 q_2 = P_2 \gamma_2 + \beta_2 (I - \sum P_j \gamma_j) = 20 + 0.4(60) = 20 + 24 = 44" />
+          مقدار تقاضای کالای دوم:
+          <BlockMath math="q_2^* = \frac{44}{P_2} = \frac{44}{4} = 11" />
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', fontWeight: 'bold' }}>
+          نتیجه‌گیری:
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
+          مصرف‌کننده برای بیشینه‌سازی مطلوبیت خود، ۲۸ واحد از کالای اول و ۱۱ واحد از کالای دوم را تقاضا می‌کند. مطلوبیت کل به دست آمده برابر است با:
+          <BlockMath math="U^* = 0.6 \ln(28 - 10) + 0.4 \ln(11 - 5) = 0.6 \ln(18) + 0.4 \ln(6) \approx 0.6(2.89) + 0.4(1.79) = 1.734 + 0.716 = 2.45" />
+        </p>
+      </div>
+
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginTop: '2.5rem' }}>
         <div className="glass-panel" style={{ flex: '1', minWidth: '300px', borderTop: '3px solid var(--success)' }}>
           <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
