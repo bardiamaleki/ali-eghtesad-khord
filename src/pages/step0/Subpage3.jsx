@@ -20,18 +20,18 @@ const Subpage3 = () => {
             <strong>صورت مسئله:</strong> مصرف‌کننده‌ای دارای تابع مطلوبیت <InlineMath math="U = q_1 q_2" /> است. اگر قیمت کلاه‌ها <InlineMath math="P_1 = 2" />، <InlineMath math="P_2 = 5" /> و درآمد او <InlineMath math="I = 100" /> باشد، سبد مصرفی بهینه کالاها و مقدار ضریب لاگرانژ را پیدا کنید. سپس شرط کافی (S.O.C) را ارزیابی نمایید.
           </p>
 
-          <div className="glass-panel" style={{ padding: '1rem', background: 'rgba(59, 130, 246, 0.03)', borderRight: '4px solid var(--primary)', marginBottom: '1.5rem' }}>
-            <h5 style={{ color: 'var(--primary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-              <Lightbulb size={16} />
+          <div style={{ padding: '1.25rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.02) 100%)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRight: '4px solid var(--primary)', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)' }}>
+            <h5 style={{ color: 'var(--primary)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
+              <Lightbulb size={18} />
               نکته کلیدی حل:
             </h5>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', margin: 0 }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
               در توابع مطلوبیت متقارن مانند <InlineMath math="U = q_1 q_2" />، مصرف‌کننده همیشه درآمد خود را به نسبت مساوی بین کالاها تقسیم می‌کند. یعنی مخارج هر کالا در تعادل برابر با نصف درآمد خواهد بود.
             </p>
           </div>
 
           <p style={{ fontWeight: 'bold', color: 'var(--text-main)', marginTop: '1rem' }}>گام‌های حل تشریحی:</p>
-          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2', display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
             <li>
               <strong>گام ۱. تشکیل خط بودجه و تابع لاگرانژ:</strong>
               <BlockMath math="2 q_1 + 5 q_2 = 100" />
@@ -76,18 +76,18 @@ const Subpage3 = () => {
             <BlockMath math="\min C = P_1 q_1 + P_2 q_2 \quad \text{S.t:} \quad q_1 q_2 = \bar{U}" />
           </p>
 
-          <div className="glass-panel" style={{ padding: '1rem', background: 'rgba(16, 185, 129, 0.03)', borderRight: '4px solid var(--success)', marginBottom: '1.5rem' }}>
-            <h5 style={{ color: 'var(--success)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-              <Lightbulb size={16} />
+          <div style={{ padding: '1.25rem', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.02) 100%)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRight: '4px solid var(--success)', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)' }}>
+            <h5 style={{ color: 'var(--success)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
+              <Lightbulb size={18} />
               نکته کلیدی حل:
             </h5>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', margin: 0 }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
               تقاضای هیکسی فقط به قیمت‌ها و سطح مطلوبیت ثابت بستگی دارد و اثر درآمدی در آن کاملاً جبران شده است.
             </p>
           </div>
 
           <p style={{ fontWeight: 'bold', color: 'var(--text-main)', marginTop: '1rem' }}>گام‌های حل تشریحی:</p>
-          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2', display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
             <li>
               <strong>گام ۱. تشکیل تابع لاگرانژ دوگان:</strong>
               هدف، حداقل کردن مخارج با توجه به قید مطلوبیت ثابت است:
@@ -135,7 +135,7 @@ const Subpage3 = () => {
           </p>
 
           <p style={{ fontWeight: 'bold', color: 'var(--text-main)', marginTop: '1rem' }}>گام‌های حل تشریحی:</p>
-          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+          <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2', display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
             <li>
               <strong>گام ۱. استخراج تابع هزینه کل از مسیر توسعه:</strong>
               با استفاده از رابطه مسیر توسعه بنگاه در تعادل داریم:
