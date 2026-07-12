@@ -55,7 +55,7 @@ const Subpage4 = () => {
         {/* Monopolist */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--danger)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem', fontWeight: 'bold' }}>الف) انحصار فروش (فروشنده مسلط)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '2.1' }}>
             فروشنده قیمت تعیین می‌کند و خریدار پیرو است.
             <br />
             خریدار با حداکثر کردن سود خود، قیمت را معادل ارزش تولید نهایی قرار می‌دهد (منحنی تقاضای نهاده خریدار):
@@ -63,13 +63,13 @@ const Subpage4 = () => {
             فروشنده با جاگذاری این قیمت در سود خود، مقدار تولید را بهینه‌سازی می‌کند:
             <BlockMath math="\max \pi_S = [P_1 h'(q_2)]q_2 - r H(q_2) \implies MR = MC" />
             این تعادل قیمت بالا و مقدار پایینی دارد (نقطه S).
-          </p>
+          </div>
         </div>
 
         {/* Monopsonist */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--warning)' }}>
           <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ب) انحصار خرید (خریدار مسلط)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '2.1' }}>
             خریدار قیمت تعیین می‌کند و فروشنده پیرو است.
             <br />
             فروشنده قیمت را معادل هزینه نهایی خود قرار می‌دهد (منحنی عرضه نهاده فروشنده):
@@ -77,18 +77,18 @@ const Subpage4 = () => {
             خریدار با جاگذاری قیمت در سود خود، خرید را بهینه می‌کند:
             <BlockMath math="\max \pi_B = P_1 h(q_2) - [r H'(q_2)]q_2 \implies VMP = MFC" />
             این تعادل قیمت بسیار پایین و دستمزد ناچیزی دارد (نقطه B).
-          </p>
+          </div>
         </div>
 
         {/* Price-Taker */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--success)' }}>
           <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ج) راه حل شبه‌رقابتی (Price-Taker)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '2.1' }}>
             هر دو طرف قیمت‌پذیر فرض می‌شوند. قیمت و مقدار در تقاطع ارزش تولید نهایی خریدار و هزینه نهایی فروشنده تعیین می‌شود (نقطه C):
             <BlockMath math="P_2 = P_1 h'(q_2) = r H'(q_2) \implies VMP = MC" />
             همواره مقدار تولید شبه‌رقابتی بزرگتر از مقدار انحصار خرید و انحصار فروش است:
             <BlockMath math="q_{2C} > q_{2S} \quad , \quad q_{2C} > q_{2B}" />
-          </p>
+          </div>
         </div>
       </div>
 
@@ -126,18 +126,20 @@ const Subpage4 = () => {
         <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '2' }}>
           <li>
             <strong>حد پایین قیمت (کف مورد قبول فروشنده):</strong> جایی است که سود فروشنده حداقل برابر صفر باشد:
-            <BlockMath math="\pi_S = P_2 \cdot q_2 - r H(q_2) \ge 0 \implies P_2 \ge \frac{r H(q_2)}{q_2} \quad (\text{متوسط هزینه تولید})" />
+            <BlockMath math="\pi_S = P_2 \cdot q_2 - r H(q_2) \ge 0 \implies P_2 \ge \frac{r H(q_2)}{q_2}" />
+            <div style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '-0.5rem', marginBottom: '1rem' }}>(متوسط هزینه تولید)</div>
           </li>
           <li>
             <strong>حد بالای قیمت (سقف مورد قبول خریدار):</strong> جایی است که سود خریدار حداقل برابر صفر باشد:
-            <BlockMath math="\pi_B = P_1 h(q_2) - P_2 \cdot q_2 \ge 0 \implies P_2 \le \frac{P_1 h(q_2)}{q_2} \quad (\text{متوسط ارزش درآمدی})" />
+            <BlockMath math="\pi_B = P_1 h(q_2) - P_2 \cdot q_2 \ge 0 \implies P_2 \le \frac{P_1 h(q_2)}{q_2}" />
+            <div style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '-0.5rem', marginBottom: '1rem' }}>(متوسط ارزش درآمدی)</div>
           </li>
         </ol>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '1rem' }}>
+        <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '1rem' }}>
           بنابراین، بازه نهایی قیمت توافقی چانه‌زنی به صورت زیر خواهد بود:
           <BlockMath math="\frac{r H(q_2)}{q_2} \le P_2 \le \frac{P_1 h(q_2)}{q_2}" />
           قیمت نهایی توافق، در درون این بازه و بر اساس قدرت چانه‌زنی، هنر مذاکره و گزینه‌های خارجی طرفین تعیین خواهد شد.
-        </p>
+        </div>
       </div>
 
     </div>

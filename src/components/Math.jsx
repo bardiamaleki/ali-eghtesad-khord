@@ -1,6 +1,17 @@
 import React, { useMemo } from 'react';
 import katex from 'katex';
 
+// Suppress KaTeX character metric warnings for Persian characters
+// Since KaTeX doesn't officially support Persian fonts, it throws a warning 
+// but correctly falls back to system fonts visually.
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (typeof args[0] === 'string' && args[0].includes("No character metrics for")) {
+    return;
+  }
+  originalWarn(...args);
+};
+
 export const InlineMath = ({ math }) => {
   const html = useMemo(() => {
     try {
@@ -33,9 +44,10 @@ export const BlockMath = ({ math }) => {
   }, [math]);
 
   return (
-    <div 
+    <span 
       className="block-math-container" 
       style={{ 
+        display: 'block',
         overflowX: 'auto', 
         overflowY: 'hidden',
         margin: '1.2rem 0',

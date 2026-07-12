@@ -163,10 +163,10 @@ const Subpage1 = () => {
             <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>حالت اول: حداکثر تولید با هزینه ثابت</h4>
             <BlockMath math="\max_{L, K} f(L, K) \quad \text{S.t:} \quad \bar{C} = w L + r K" />
             <BlockMath math="\mathcal{L}_p = f(L, K) + \lambda [\bar{C} - w L - r K]" />
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', marginTop: '0.5rem' }}>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', marginTop: '0.5rem' }}>
               شرط F.O.C: برابری نرخ نهایی جانشینی فنی (MRTS) با نسبت قیمت نهاده‌ها:
               <BlockMath math="MRTS_{L,K} = \frac{MP_L}{MP_K} = \frac{w}{r}" />
-            </p>
+            </div>
           </div>
 
           <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)' }}>
