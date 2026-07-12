@@ -9,7 +9,7 @@ const PageWithNavigation = ({ children, prevLink, prevTitle, nextLink, nextTitle
         {children}
       </div>
       
-      <div className="glass-panel" style={{ 
+      <div className="glass-panel pagination-container" style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 

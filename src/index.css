@@ -6,19 +6,19 @@
 }
 
 :root {
-  --bg-color: #0b0f19;
-  --bg-color-glass: rgba(11, 15, 25, 0.75);
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
-  --secondary: #ec4899;
-  --accent: #8b5cf6;
-  --card-bg: rgba(30, 41, 59, 0.5);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
+  --bg-color: #080b11;
+  --bg-color-glass: rgba(8, 11, 17, 0.8);
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --secondary: #f472b6;
+  --accent: #a78bfa;
+  --card-bg: rgba(22, 30, 49, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
 }
 
 * {
@@ -34,6 +34,7 @@ body {
   direction: rtl;
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.8;
   background-image: 
     radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
@@ -42,9 +43,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
   color: var(--text-main);
+  line-height: 1.4;
 }
 
 a {
@@ -309,3 +310,108 @@ a {
   color: var(--primary-hover) !important;
 }
 
+/* --- Global Mobile Optimization Overrides --- */
+
+/* Horizontal scrolling for KaTeX math blocks */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Thin premium scrollbars for math formulas and formula boxes */
+.katex-display::-webkit-scrollbar,
+.formula-box::-webkit-scrollbar {
+  height: 4px;
+}
+.katex-display::-webkit-scrollbar-thumb,
+.formula-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.katex-display::-webkit-scrollbar-track,
+.formula-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  /* Force all inline-styled grid layouts inside main content to stack vertically */
+  .main-content div[style*="grid-template-columns"],
+  .main-content div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Optimize glass panels padding on mobile */
+  .main-content .glass-panel {
+    padding: 1.25rem !important;
+  }
+
+  /* Optimize formula and example boxes margin/padding */
+  .main-content .formula-box,
+  .main-content .example-box {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Scale down headings for mobile readability */
+  .main-content h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.4 !important;
+  }
+  .main-content h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  .main-content h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.5 !important;
+    margin-top: 1.5rem !important;
+  }
+  .main-content h4 {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Spacing for lists on mobile */
+  .main-content ul, 
+  .main-content ol {
+    padding-right: 1.25rem !important;
+  }
+
+  /* Optimize footer pagination on mobile */
+  .pagination-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+  }
+  
+  .pagination-container .nav-prev-btn,
+  .pagination-container .nav-next-btn {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.85rem 1rem !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .pagination-container .nav-prev-btn {
+    justify-content: flex-start !important;
+  }
+  
+  .pagination-container .nav-next-btn {
+    justify-content: flex-end !important;
+  }
+  
+  /* Hide the empty placeholder divs in pagination */
+  .pagination-container > div:not([class]) {
+    display: none !important;
+  }
+}
