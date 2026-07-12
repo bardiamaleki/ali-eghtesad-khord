@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Share2, Scissors, Activity, HelpCircle, Lightbulb } from 'lucide-react';
+import { Share2, Scissors, Activity, HelpCircle } from 'lucide-react';
 
 const Subpage3 = () => {
   return (

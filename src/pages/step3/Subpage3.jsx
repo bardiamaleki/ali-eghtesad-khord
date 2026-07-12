@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { DollarSign, Landmark, Coins, HelpCircle } from 'lucide-react';
+import { DollarSign, Landmark, Coins } from 'lucide-react';
 
 const Subpage3 = () => {
   return (
@@ -11,7 +11,7 @@ const Subpage3 = () => {
       </h2>
 
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1.5rem" }}>
-        دولت‌ها از ابزار مالیات برای کنترل سودهای کلان انحصارگران یا جبران ناکارایی‌های بازار استفاده می‌کنند. بررسی ریاضی نشان می‌دهد که نوع طراحی مالیات، تأثیر کاملاً متفاوتی بر روی **مقدار تولید تعادلی (کارایی بازار)** و **سود خالص انحصارگر (توزیع رفاه)** دارد.
+        دولت‌ها از ابزار مالیات برای کنترل سودهای کلان انحصارگران یا جبران ناکارایی‌های بازار استفاده می‌کنند. بررسی ریاضی نشان می‌دهد که نوع طراحی مالیات، تأثیر کاملاً متفاوتی بر روی <strong>مقدار تولید تعادلی (کارایی بازار)</strong> و <strong>سود خالص انحصارگر (توزیع رفاه)</strong> دارد.
       </p>
 
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -24,7 +24,7 @@ const Subpage3 = () => {
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--warning)' }}>
           <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>الف) مالیات مقطوع (Lump-Sum Tax)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            مبلغ ثابت <InlineMath math="T" /> بدون توجه به میزان تولید اخذ می‌شود. این مالیات به عنوان هزینه ثابت عمل کرده و **اثر تخصیصی ندارد**؛ یعنی مقدار تولید و قیمت مصرف‌کننده تغییر نمی‌کند و فقط سود انحصارگر کم می‌شود.
+            مبلغ ثابت <InlineMath math="T" /> بدون توجه به میزان تولید اخذ می‌شود. این مالیات به عنوان هزینه ثابت عمل کرده و <strong>اثر تخصیصی ندارد</strong>؛ یعنی مقدار تولید و قیمت مصرف‌کننده تغییر نمی‌کند و فقط سود انحصارگر کم می‌شود.
           </p>
           <BlockMath math="\max \pi = TR(Q) - TC(Q) - T \implies MR = MC" />
         </div>
@@ -33,7 +33,7 @@ const Subpage3 = () => {
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--danger)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ب) مالیات بر واحد (Specific Tax)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            به ازای هر واحد فروش، مبلغ ثابت <InlineMath math="t" /> اخذ می‌شود. این مالیات هزینه نهایی را بالا برده و **اثر تخصیصی شدیدی دارد**؛ در نتیجه تولید کاهش و قیمت مصرف‌کننده افزایش می‌یابد.
+            به ازای هر واحد فروش، مبلغ ثابت <InlineMath math="t" /> اخذ می‌شود. این مالیات هزینه نهایی را بالا برده و <strong>اثر تخصیصی شدیدی دارد</strong>؛ در نتیجه تولید کاهش و قیمت مصرف‌کننده افزایش می‌یابد.
           </p>
           <BlockMath math="\max \pi = TR(Q) - TC(Q) - t \cdot Q \implies MR = MC + t" />
         </div>
@@ -42,7 +42,7 @@ const Subpage3 = () => {
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--accent)' }}>
           <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ج) مالیات بر ارزش فروش (Sales Tax)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            درصدی از درآمد کل به عنوان مالیات کسر می‌شود. این مالیات نیز **اثر تخصیصی منفی دارد** زیرا درآمد نهایی انحصارگر را تقلیل می‌دهد و باعث کاهش تولید و افزایش قیمت کالا می‌شود.
+            درصدی از درآمد کل به عنوان مالیات کسر می‌شود. این مالیات نیز <strong>اثر تخصیصی منفی دارد</strong> زیرا درآمد نهایی انحصارگر را تقلیل می‌دهد و باعث کاهش تولید و افزایش قیمت کالا می‌شود.
           </p>
           <BlockMath math="\max \pi = TR(Q) \cdot (1-t) - TC(Q) \implies MR(1-t) = MC" />
         </div>
@@ -51,7 +51,7 @@ const Subpage3 = () => {
         <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>
           <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>د) مالیات بر سود خالص (Profit Tax)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            درصدی از سود خالص انحصارگر دریافت می‌شود. این مالیات به دلیل عدم تغییر در شروط تعادل، **فاقد اثر تخصیصی است** و کارایی تخصیصی بازار را حفظ می‌کند:
+            درصدی از سود خالص انحصارگر دریافت می‌شود. این مالیات به دلیل عدم تغییر در شروط تعادل، <strong>فاقد اثر تخصیصی است</strong> و کارایی تخصیصی بازار را حفظ می‌کند:
           </p>
           <BlockMath math="\max \pi = [TR(Q) - TC(Q)] \cdot (1-t) \implies MR = MC" />
         </div>
@@ -88,7 +88,7 @@ const Subpage3 = () => {
           <br />
           چون صورت کسر مثبت (<InlineMath math="MR > 0" />) و مخرج کسر منفی است، کل عبارت منفی خواهد بود:
           <BlockMath math="\frac{dQ}{dt} < 0" />
-          این فرمول به صورت دقیق و قاطع اثبات می‌کند که افزایش نرخ مالیات بر فروش، **همواره باعث کاهش عرضه محصول و افزایش قیمت برای مصرف‌کنندگان می‌شود**.
+          این فرمول به صورت دقیق و قاطع اثبات می‌کند که افزایش نرخ مالیات بر فروش، <strong>همواره باعث کاهش عرضه محصول و افزایش قیمت برای مصرف‌کنندگان می‌شود</strong>.
         </p>
       </div>
 

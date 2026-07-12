@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { HelpCircle, RefreshCw, BarChart2, ShieldAlert } from 'lucide-react';
+import { RefreshCw, BarChart2, ShieldAlert } from 'lucide-react';
 
 const Subpage1 = () => {
   return (
@@ -55,7 +55,7 @@ const Subpage1 = () => {
         </div>
         <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
           <h5 style={{ color: 'var(--primary)', fontWeight: 'bold', marginBottom: '0.5rem' }}>۲. رقابت انحصاری</h5>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.8.rem', lineHeight: '1.6', margin: 0 }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', lineHeight: '1.6', margin: 0 }}>
             تعداد فروشندگان زیاد است اما کالاها متمایز بوده و هر بنگاه دارای مقداری قدرت قیمت‌گذاری است.
           </p>
         </div>

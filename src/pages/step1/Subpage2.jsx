@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { BookOpen, Compass, HelpCircle, CheckSquare } from 'lucide-react';
+import { BookOpen, Compass, HelpCircle } from 'lucide-react';
 
 const Subpage2 = () => {
   return (
@@ -27,7 +27,7 @@ const Subpage2 = () => {
 
       <h3 style={{ color: 'var(--primary)', marginTop: '2rem', marginBottom: '1rem' }}>۱. منحنی‌های بی‌تفاوتی (Indifference Curves)</h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        در یک فضای دو کالایی، منحنی بی‌تفاوتی مکان هندسی سبدهایی از کالاهاست که **سطح مطلوبیت یکسانی** را برای مصرف‌کننده ایجاد می‌کنند.
+        در یک فضای دو کالایی، منحنی بی‌تفاوتی مکان هندسی سبدهایی از کالاهاست که <strong>سطح مطلوبیت یکسانی</strong> را برای مصرف‌کننده ایجاد می‌کنند.
       </p>
       
       <div style={{ margin: '2rem 0', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>

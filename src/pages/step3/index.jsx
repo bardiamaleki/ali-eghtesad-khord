@@ -15,7 +15,7 @@ const Step3Layout = () => {
         <Route path="sub1" element={
           <PageWithNavigation 
             prevLink="/step2/sub3" 
-            prevTitle="انواع توابع تولید و CES" 
+            prevTitle="توابع هزینه، دوگانگی و لم شپارد" 
             nextLink="/step3/sub2" 
             nextTitle="انحصار کامل و تبعیض قیمت"
           >

@@ -62,7 +62,7 @@ const Step1Layout = () => {
             prevLink="/step1/sub4" 
             prevTitle="دوگانگی و مطلوبیت غیرمستقیم" 
             nextLink="/step2/sub1" 
-            nextTitle="گام ۲: رفتار تولیدکننده (تقاضای نهاده)"
+            nextTitle="تولیدکننده و تابع تولید (CES)"
           >
             <Subpage5 />
           </PageWithNavigation>

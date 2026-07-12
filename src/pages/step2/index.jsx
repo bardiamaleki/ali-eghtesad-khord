@@ -16,7 +16,7 @@ const Step2Layout = () => {
             prevLink="/step1/sub5" 
             prevTitle="سیستم مخارج خطی (LES)" 
             nextLink="/step2/sub2" 
-            nextTitle="توابع هزینه و لم شپارد"
+            nextTitle="تقاضای نهاده و محصولات مشترک"
           >
             <Subpage1 />
           </PageWithNavigation>
@@ -25,9 +25,9 @@ const Step2Layout = () => {
         <Route path="sub2" element={
           <PageWithNavigation 
             prevLink="/step2/sub1" 
-            prevTitle="تولیدکننده و تقاضای نهاده" 
+            prevTitle="تولیدکننده و تابع تولید (CES)" 
             nextLink="/step2/sub3" 
-            nextTitle="انواع توابع تولید و CES"
+            nextTitle="توابع هزینه، دوگانگی و لم شپارد"
           >
             <Subpage2 />
           </PageWithNavigation>
@@ -36,7 +36,7 @@ const Step2Layout = () => {
         <Route path="sub3" element={
           <PageWithNavigation 
             prevLink="/step2/sub2" 
-            prevTitle="توابع هزینه و لم شپارد" 
+            prevTitle="تقاضای نهاده و محصولات مشترک" 
             nextLink="/step3/sub1" 
             nextTitle="گام ۳: بازارهای کلاسیک (رقابت کامل)"
           >

@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Users, ShieldAlert, Award, Lightbulb, HelpCircle } from 'lucide-react';
+import { Users, ShieldAlert, Award, Lightbulb } from 'lucide-react';
 
 const Subpage2 = () => {
   return (
@@ -169,7 +169,7 @@ const Subpage2 = () => {
         <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--danger)', background: 'rgba(255, 255, 255, 0.01)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>ب) تحلیل حالت عدم تعادل استاکلبرگ (Stackelberg Warfare)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            در مدل استاندارد استاکلبرگ فرض می‌شود یکی از بنگاه‌ها نقش «رهبر» و دیگری نقش «پیرو» را ایفا می‌کند. اما اگر تقارن اطلاعاتی وجود داشته باشد یا هر دو بنگاه خود را قوی‌تر فرض کنند، **عدم تعادل یا جنگ استاکلبرگ (Stackelberg Warfare)** رخ می‌دهد. در این حالت:
+            در مدل استاندارد استاکلبرگ فرض می‌شود یکی از بنگاه‌ها نقش «رهبر» و دیگری نقش «پیرو» را ایفا می‌کند. اما اگر تقارن اطلاعاتی وجود داشته باشد یا هر دو بنگاه خود را قوی‌تر فرض کنند، <strong>عدم تعادل یا جنگ استاکلبرگ (Stackelberg Warfare)</strong> رخ می‌دهد. در این حالت:
           </p>
           <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', listStyleType: 'disc' }}>
             <li>هر دو بنگاه تمایل دارند نقش رهبر را بازی کنند و هر کدام فرض می‌کند که رقیبش پیرو خواهد بود.</li>

@@ -53,9 +53,9 @@ const MENU_ITEMS = [
     path: '/step2',
     icon: 'producer',
     subpages: [
-      { title: 'تولیدکننده و تقاضای نهاده', path: '/step2/sub1' },
-      { title: 'توابع هزینه و لم شپارد', path: '/step2/sub2' },
-      { title: 'انواع توابع تولید و CES', path: '/step2/sub3' },
+      { title: 'تولیدکننده و تابع تولید (CES)', path: '/step2/sub1' },
+      { title: 'تقاضای نهاده و محصولات مشترک', path: '/step2/sub2' },
+      { title: 'توابع هزینه، دوگانگی و لم شپارد', path: '/step2/sub3' },
     ]
   },
   {

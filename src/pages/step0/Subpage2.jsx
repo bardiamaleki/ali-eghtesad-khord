@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Scale, HelpCircle, ChevronRight, AlertTriangle } from 'lucide-react';
+import { Scale, HelpCircle, AlertTriangle } from 'lucide-react';
 
 const Subpage2 = () => {
   return (
@@ -43,7 +43,7 @@ const Subpage2 = () => {
           <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--success)' }}>
             <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>۱. در مسئله حداکثرسازی مقید (تابع شبه‌مقعر):</h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-              دترمینان ماتریس هشین مرزی باید <strong>بزرگتر از صفر</strong> باشد. این شرط معادل با **شبه‌مقعر بودن اکید (Strict Quasi-Concavity)** تابع در همسایگی نقطه تعادل است:
+              دترمینان ماتریس هشین مرزی باید <strong>بزرگتر از صفر</strong> باشد. این شرط معادل با <strong>شبه‌مقعر بودن اکید (Strict Quasi-Concavity)</strong> تابع در همسایگی نقطه تعادل است:
             </p>
             <BlockMath math="|\bar{H}| > 0" />
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
