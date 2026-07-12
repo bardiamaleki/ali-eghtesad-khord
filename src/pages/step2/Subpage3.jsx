@@ -108,9 +108,9 @@ const Subpage3 = () => {
         </ol>
       </div>
 
-      <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '12px' }}>
-        <img src="/svg/66-expansion-path.svg" alt="مسیر توسعه بنگاه" style={{ maxWidth: '100%', maxHeight: '250px' }} />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>مسیر توسعه بنگاه حاصل اتصال نقاط بهینه تماس در مقیاس‌های مختلف تولید است.</p>
+      <div className="image-showcase">
+        <img src="/svg/66-expansion-path.svg" alt="مسیر توسعه بنگاه" />
+        <div className="image-showcase-caption">مسیر توسعه بنگاه حاصل اتصال نقاط بهینه تماس در مقیاس‌های مختلف تولید است.</div>
       </div>
 
       <h3 style={{ color: 'var(--success)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
