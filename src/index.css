@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap');
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/IRANSansXV.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 :root {
   --bg-color: #0b0f19;
@@ -23,7 +28,7 @@
 }
 
 body {
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  font-family: 'IRANSans', Tahoma, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-main);
   direction: rtl;
@@ -79,51 +84,193 @@ a {
   padding: 2rem 1rem;
   border-left: 1px solid var(--card-border);
   background: var(--bg-color-glass);
-  backdrop-filter: blur(16px);
-  z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  overflow-y: auto;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-content {
   flex: 1;
   margin-right: 280px;
-  padding: 2rem 3rem;
+  padding: 2.5rem 3rem;
   max-width: 1200px;
+  min-width: 0;
+}
+
+/* Mobile Header */
+.mobile-header {
+  display: none;
+}
+
+/* Backdrop for Mobile Drawer */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+    position: fixed;
+    height: 100vh;
+    width: 290px;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
     border-left: none;
-    border-bottom: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+    padding: 1.5rem 1rem;
   }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
   .main-content {
     margin-right: 0;
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
   }
+  
   .app-container {
     flex-direction: column;
   }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: var(--bg-color-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .mobile-close-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .mobile-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 
+.mobile-menu-btn {
+  display: none;
+}
+.mobile-close-btn {
+  display: none;
+}
+
+/* Chapter & Subpage Links */
 .chapter-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
   padding: 12px 16px;
   border-radius: 12px;
   color: var(--text-muted);
   transition: all 0.3s ease;
   font-weight: 600;
+  cursor: pointer;
+  user-select: none;
 }
+
 .chapter-link:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text-main);
 }
+
+.chapter-link.active {
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--primary-hover);
+  border-right: 3px solid var(--primary);
+}
+
+.submenu-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-in-out;
+  margin-right: 1.5rem;
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-right: 0.75rem;
+}
+
+.submenu-container.open {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.subpage-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.subpage-link:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.subpage-link.active {
+  color: var(--primary-hover);
+  font-weight: 600;
+  background: rgba(59, 130, 246, 0.06);
+}
+
 
 .formula-box {
   background: rgba(0, 0, 0, 0.3);
@@ -151,3 +298,14 @@ a {
   font-size: 1.1em !important;
   direction: ltr;
 }
+
+.nav-prev-btn:hover {
+  transform: translateX(4px);
+  color: var(--primary-hover) !important;
+}
+
+.nav-next-btn:hover {
+  transform: translateX(-4px);
+  color: var(--primary-hover) !important;
+}
+
