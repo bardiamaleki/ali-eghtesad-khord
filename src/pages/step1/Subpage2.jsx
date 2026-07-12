@@ -30,9 +30,9 @@ const Subpage2 = () => {
         در یک فضای دو کالایی، منحنی بی‌تفاوتی مکان هندسی سبدهایی از کالاهاست که <strong>سطح مطلوبیت یکسانی</strong> را برای مصرف‌کننده ایجاد می‌کنند.
       </p>
       
-      <div style={{ margin: '2rem 0', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-        <img src="/svg/graph3_1.svg" alt="منحنی‌های بی‌تفاوتی" style={{ maxWidth: '100%', maxHeight: '300px' }} />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>منحنی‌های بی‌تفاوتی با مطلوبیت متفاوت (<InlineMath math="U_3 > U_2 > U_1" />)</p>
+      <div className="image-showcase">
+        <img src="/svg/graph3_1.svg" alt="منحنی‌های بی‌تفاوتی" />
+        <div className="image-showcase-caption">منحنی‌های بی‌تفاوتی با مطلوبیت متفاوت (<InlineMath math="U_3 > U_2 > U_1" />)</div>
       </div>
 
       <p style={{ color: "var(--text-main)", fontWeight: 'bold', marginBottom: "0.75rem" }}>ویژگی‌های اساسی منحنی‌های بی‌تفاوتی:</p>
@@ -98,9 +98,9 @@ const Subpage2 = () => {
         </div>
       </div>
       
-      <div style={{ margin: '2rem 0', textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-        <img src="/svg/13-continuity.svg" alt="اصل پیوستگی ترجیحات" style={{ maxWidth: '100%', maxHeight: '250px' }} />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>پیوستگی ترجیحات نشان‌دهنده نبود رفتارهای پرشی و ناگهانی در تصمیم‌گیری است.</p>
+      <div className="image-showcase">
+        <img src="/svg/13-continuity.svg" alt="اصل پیوستگی ترجیحات" />
+        <div className="image-showcase-caption">پیوستگی ترجیحات نشان‌دهنده نبود رفتارهای پرشی و ناگهانی در تصمیم‌گیری است.</div>
       </div>
 
       <h3 style={{ color: 'var(--accent)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -121,13 +121,13 @@ const Subpage2 = () => {
       </div>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center', margin: '2rem 0' }}>
-        <div className="glass-panel" style={{ padding: '1rem', flex: '1', minWidth: '300px', textAlign: 'center' }}>
-          <img src="/svg/graph4_1.svg" alt="خط بودجه" style={{ maxWidth: '100%', maxHeight: '200px' }} />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>محدودیت خط بودجه: مرز انتخاب‌های ممکن مصرف‌کننده</p>
+        <div className="image-showcase" style={{ flex: '1', minWidth: '300px', margin: '0' }}>
+          <img src="/svg/graph4_1.svg" alt="خط بودجه" />
+          <div className="image-showcase-caption">محدودیت خط بودجه: مرز انتخاب‌های ممکن مصرف‌کننده</div>
         </div>
-        <div className="glass-panel" style={{ padding: '1rem', flex: '1', minWidth: '300px', textAlign: 'center' }}>
-          <img src="/svg/13-equilibrium.svg" alt="تعادل مصرف کننده" style={{ maxWidth: '100%', maxHeight: '200px' }} />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>نقطه تعادل بهینه در نقطه تماس خط بودجه و منحنی بی‌تفاوتی</p>
+        <div className="image-showcase" style={{ flex: '1', minWidth: '300px', margin: '0' }}>
+          <img src="/svg/13-equilibrium.svg" alt="تعادل مصرف کننده" />
+          <div className="image-showcase-caption">نقطه تعادل بهینه در نقطه تماس خط بودجه و منحنی بی‌تفاوتی</div>
         </div>
       </div>
 
@@ -142,8 +142,9 @@ const Subpage2 = () => {
           <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
             با تغییر مداوم قیمت کالای اول (<InlineMath math="P_x" />)، خط بودجه حول محور عمودی چرخیده و نقاط تعادل پی‌درپی شکل می‌گیرند. اتصال این نقاط، منحنی <strong>PCC (Price Consumption Curve)</strong> را می‌سازد. با انتقال این نقاط به فضای قیمت-مقدار، <strong>منحنی تقاضای مارشالی</strong> استخراج می‌شود.
           </p>
-          <div style={{ textAlign: 'center' }}>
-            <img src="/svg/6-pcc-demand.svg" alt="منحنی PCC و استخراج تقاضا" style={{ maxWidth: '100%', maxHeight: '300px' }} />
+          <div className="image-showcase">
+            <img src="/svg/6-pcc-demand.svg" alt="منحنی PCC و استخراج تقاضا" />
+            <div className="image-showcase-caption">استخراج منحنی تقاضا از طریق چرخش خط بودجه</div>
           </div>
         </div>
 
@@ -152,8 +153,9 @@ const Subpage2 = () => {
           <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
             با افزایش متوالی درآمد مصرف‌کننده، خط بودجه به طور موازی به بالا انتقال می‌یابد. اتصال نقاط تعادل بهینه حاصل، منحنی <strong>ICC (Income Consumption Curve)</strong> را ایجاد می‌کند که نشان‌دهنده نوع کالاها (عادی، لوکس یا پست) است.
           </p>
-          <div style={{ textAlign: 'center' }}>
-            <img src="/svg/6-icc.svg" alt="منحنی ICC و مسیر درآمد مصرف" style={{ maxWidth: '100%', maxHeight: '300px' }} />
+          <div className="image-showcase">
+            <img src="/svg/6-icc.svg" alt="منحنی ICC و مسیر درآمد مصرف" />
+            <div className="image-showcase-caption">تاثیر تغییر درآمد بر نقطه تعادل مصرف‌کننده</div>
           </div>
         </div>
       </div>
@@ -186,8 +188,9 @@ const Subpage2 = () => {
             <li>اگر <InlineMath math="\frac{a}{b} < \frac{P_x}{P_y}" />: خرید فقط از کالای دوم (<InlineMath math="x = 0 , y = I/P_y" />).</li>
             <li>اگر شیب‌ها برابر باشند: بی‌نهایت نقطه تعادلی روی خط بودجه وجود دارد.</li>
           </ul>
-          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <img src="/svg/15-nemodar2.svg" alt="ترجیحات جانشین کامل" style={{ maxWidth: '100%', maxHeight: '180px' }} />
+          <div className="image-showcase" style={{ margin: '1.5rem 0 0 0', padding: '1rem' }}>
+            <img src="/svg/15-nemodar2.svg" alt="ترجیحات جانشین کامل" />
+            <div className="image-showcase-caption">ترجیحات جانشین کامل</div>
           </div>
         </div>
 
@@ -202,8 +205,9 @@ const Subpage2 = () => {
             <li>با جایگذاری در خط بودجه، تابع تقاضا به دست می‌آید:</li>
             <BlockMath math="x^* = \frac{I}{P_x + \frac{a}{b} P_y} \quad , \quad y^* = \frac{I}{\frac{b}{a} P_x + P_y}" />
           </ul>
-          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <img src="/svg/15-nemodar3.svg" alt="ترجیحات مکمل کامل" style={{ maxWidth: '100%', maxHeight: '180px' }} />
+          <div className="image-showcase" style={{ margin: '1.5rem 0 0 0', padding: '1rem' }}>
+            <img src="/svg/15-nemodar3.svg" alt="ترجیحات مکمل کامل" />
+            <div className="image-showcase-caption">ترجیحات مکمل کامل</div>
           </div>
         </div>
       </div>

@@ -91,8 +91,9 @@ const Subpage1 = () => {
             رابطه قیمت خود کالا با تقاضا معکوس است (قانون تقاضا). فرم خطی تقاضای معکوس به شکل زیر است:
           </p>
           <BlockMath math="P_x = a - b Q_x^d \quad (b > 0)" />
-          <div style={{ margin: '1rem 0', textAlign: 'center' }}>
-            <img src="/svg/graph2_1.svg" alt="منحنی تقاضا" style={{ maxWidth: '100%', maxHeight: '180px' }} />
+          <div className="image-showcase">
+            <img src="/svg/graph2_1.svg" alt="منحنی تقاضا" />
+            <div className="image-showcase-caption">نمودار منحنی تقاضا</div>
           </div>
         </div>
 
@@ -107,8 +108,9 @@ const Subpage1 = () => {
             رابطه قیمت خود کالا با مقدار عرضه مستقیم است (قانون عرضه). فرم خطی عرضه معکوس به شکل زیر است:
           </p>
           <BlockMath math="P_x = a + b Q_x^s \quad (b > 0)" />
-          <div style={{ margin: '1rem 0', textAlign: 'center' }}>
-            <img src="/svg/graph2_2.svg" alt="منحنی عرضه" style={{ maxWidth: '100%', maxHeight: '180px' }} />
+          <div className="image-showcase">
+            <img src="/svg/graph2_2.svg" alt="منحنی عرضه" />
+            <div className="image-showcase-caption">نمودار منحنی عرضه</div>
           </div>
         </div>
       </div>
@@ -123,9 +125,9 @@ const Subpage1 = () => {
           تعادل جایی شکل می‌گیرد که تمایل مصرف‌کننده برای خرید با تمایل تولیدکننده برای فروش هم‌راستا شود. یعنی مقدار تقاضا با مقدار عرضه برابر گردد:
         </p>
         <BlockMath math="Q_x^d = Q_x^s \implies P^d = P^s" />
-        <div style={{ margin: '1.5rem 0', textAlign: 'center' }}>
-          <img src="/svg/graph2_3.svg" alt="تعادل بازار" style={{ maxWidth: '100%', maxHeight: '250px' }} />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>نقطه تعادل در تلاقی عرضه و تقاضا</p>
+        <div className="image-showcase">
+          <img src="/svg/graph2_3.svg" alt="تعادل بازار" />
+          <div className="image-showcase-caption">نقطه تعادل در تلاقی عرضه و تقاضا</div>
         </div>
       </div>
     </div>

@@ -87,11 +87,11 @@ const Subpage5 = () => {
         </ul>
       </div>
 
-      <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '12px' }}>
-        <img src="/svg/50-nemodar.svg" alt="نمودار سیستم مخارج خطی" style={{ maxWidth: '100%', maxHeight: '300px' }} />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>
+      <div className="image-showcase">
+        <img src="/svg/50-nemodar.svg" alt="نمودار سیستم مخارج خطی" />
+        <div className="image-showcase-caption">
           ویژگی مهم LES: منحنی درآمد-مصرف (ICC) آن یک <strong>خط راست</strong> است که از نقطه حداقل معاش (<InlineMath math="\gamma_1, \gamma_2" />) شروع می‌شود.
-        </p>
+        </div>
       </div>
 
       <h3 style={{ color: 'var(--primary)', marginTop: '2.5rem', marginBottom: '1rem' }}>۳. استخراج تابع تقاضا در سیستم LES</h3>

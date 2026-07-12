@@ -129,8 +129,9 @@ const Subpage3 = () => {
               </div>
             </div>
             
-            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
-              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای نرمال" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            <div className="image-showcase" style={{ flex: '1', minWidth: '300px', margin: '0' }}>
+              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای نرمال" />
+              <div className="image-showcase-caption">اثر قیمت در کالای نرمال</div>
             </div>
           </div>
         </div>
@@ -168,8 +169,9 @@ const Subpage3 = () => {
               </div>
             </div>
             
-            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
-              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای پست" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            <div className="image-showcase" style={{ flex: '1', minWidth: '300px', margin: '0' }}>
+              <img src="/svg/25-nemodar.svg" alt="اثر قیمت در کالای پست" />
+              <div className="image-showcase-caption">اثر قیمت در کالای پست</div>
             </div>
           </div>
         </div>
@@ -207,8 +209,9 @@ const Subpage3 = () => {
               </div>
             </div>
             
-            <div className="glass-panel" style={{ flex: '1', minWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '12px' }}>
-              <img src="/svg/24-nemodar.svg" alt="اثر قیمت در کالای گیفن" style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'contain' }} />
+            <div className="image-showcase" style={{ flex: '1', minWidth: '300px', margin: '0' }}>
+              <img src="/svg/24-nemodar.svg" alt="اثر قیمت در کالای گیفن" />
+              <div className="image-showcase-caption">اثر قیمت در کالای گیفن</div>
             </div>
           </div>
         </div>
