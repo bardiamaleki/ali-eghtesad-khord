@@ -1,166 +1,196 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { BookOpen, TrendingUp } from 'lucide-react';
+import { BookOpen, TrendingUp, HelpCircle } from 'lucide-react';
 
 const Subpage1 = () => {
   return (
     <div className="glass-panel" style={{ padding: '2rem' }}>
-        <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.5rem' }}>
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.5rem', color: 'var(--primary)' }}>
           <BookOpen style={{ color: 'var(--primary)' }} />
           ۱. تشکیل تابع لاگرانژ و شرایط مرتبه اول (F.O.C)
         </h2>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          بهینه‌سازی مقید، یکی از پرکاربردترین مفاهیم ریاضی در اقتصاد خرد است. برای پیدا کردن نقطه بهینه تحت یک یا چند محدودیت، از <strong>روش ضرایب لاگرانژ</strong> استفاده می‌کنیم. این روش مسئله بهینه‌سازی مقید را با وارد کردن ضریب لاگرانژ به یک مسئله بهینه‌سازی بدون قید تبدیل می‌کند.
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          بهینه‌سازی مقید، سنگ بنای اصلی تحلیل‌های ریاضی در اقتصاد خرد است. در دنیای واقعی، خانوارها و بنگاه‌ها همواره با محدودیت‌هایی (مانند بودجه یا منابع تولیدی محدود) مواجه هستند. برای پیدا کردن نقطه بهینه تحت این محدودیت‌ها، از <strong>روش ضرایب لاگرانژ (Lagrange Multipliers Method)</strong> استفاده می‌کنیم. این روش، مسئله بهینه‌سازی مقید را به یک مسئله بدون قیدِ معادل تبدیل می‌کند.
         </p>
+
+        {/* Dynamic Tip Box */}
+        <div className="glass-panel" style={{ padding: '1rem', background: 'rgba(52, 211, 153, 0.05)', borderRight: '4px solid var(--success)', marginBottom: '2rem' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+            <HelpCircle size={18} />
+            فلسفه روش لاگرانژ چیست؟
+          </h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+            در این روش، ما تابع هدف (مثلاً مطلوبیت یا تولید) را با حاصل‌ضرب یک متغیر کمکی به نام <strong>ضریب لاگرانژ (<InlineMath math="\lambda" />)</strong> در قید مسئله (که برابر صفر تنظیم شده) جمع می‌کنیم. ضریب لاگرانژ پیونددهنده ریاضی اهداف با محدودیت‌هاست.
+          </p>
+        </div>
 
         {/* Consumer Optimization */}
-        <h3 style={{ color: 'var(--primary)', marginTop: '1.5rem', marginBottom: '1rem' }}>الف) ریاضیات مصرف‌کننده (حالت مستقیم / تقاضای مارشالی)</h3>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          در این حالت، هدف مصرف‌کننده حداکثر کردن مطلوبیت حاصل از مصرف کالاها با توجه به بودجه محدود خود است:
-        </p>
-        <div className="formula-box">
-          <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>مسئله بهینه‌سازی:</p>
-          <BlockMath math="\max U(q_1, q_2) \quad S.t: \quad I = P_1 q_1 + P_2 q_2" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>تابع لاگرانژ:</p>
-          <BlockMath math="\mathcal{L}(q_1, q_2, \lambda) = U(q_1, q_2) + \lambda [I - P_1 q_1 - P_2 q_2]" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          که در آن <InlineMath math="\lambda" /> ضریب لاگرانژ است و نشان‌دهنده <strong>مطلوبیت نهایی درآمد</strong> (افزایش در مطلوبیت به ازای یک واحد افزایش درآمد) می‌باشد.
-        </p>
-        
-        <p style={{ color: 'var(--text-muted)', fontWeight: 'bold', marginBottom: '0.5rem' }}>شرایط مرتبه اول (F.O.C):</p>
-        <div className="formula-box">
-          <BlockMath math="\begin{aligned} \frac{\partial \mathcal{L}}{\partial q_1} = 0 &\Rightarrow \frac{\partial U}{\partial q_1} - \lambda P_1 = 0 \Rightarrow MU_1 = \lambda P_1 \\ \frac{\partial \mathcal{L}}{\partial q_2} = 0 &\Rightarrow \frac{\partial U}{\partial q_2} - \lambda P_2 = 0 \Rightarrow MU_2 = \lambda P_2 \\ \frac{\partial \mathcal{L}}{\partial \lambda} = 0 &\Rightarrow I - P_1 q_1 - P_2 q_2 = 0 \end{aligned}" />
-        </div>
-        
+        <h3 style={{ color: 'var(--primary)', marginTop: '2rem', marginBottom: '1rem' }}>الف) ریاضیات مصرف‌کننده (رویکرد مستقیم / استخراج تقاضای مارشالی)</h3>
         <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          با تقسیم دو رابطه اول بر هم، شرط تعادل مصرف‌کننده (برابری نرخ جانشینی نهایی با نسبت قیمت‌ها) حاصل می‌شود:
-          <BlockMath math="\frac{MU_1}{MU_2} = \frac{P_1}{P_2} \Rightarrow MRS_{1,2} = \frac{P_1}{P_2} \quad , \quad \lambda = \frac{MU_1}{P_1} = \frac{MU_2}{P_2}" />
-          با حل همزمان این روابط، <strong>توابع تقاضای مارشالی</strong> حاصل می‌شوند:
-          <BlockMath math="q_1^{ND} = q_1(P_1, P_2, I) \quad , \quad q_2^{ND} = q_2(P_1, P_2, I)" />
+          هدف مصرف‌کننده، حداکثر کردن مطلوبیت فیزیکی یا روانی حاصل از مصرف کالاها با توجه به محدودیت بودجه اوست. بیایید این فرآیند را به صورت گام‌به‌گام بررسی کنیم:
         </p>
 
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
+          <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--primary)' }}>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '0.75rem' }}>گام اول: فرمول‌بندی مسئله بهینه‌سازی مقید</h4>
+            <BlockMath math="\max_{q_1, q_2} U(q_1, q_2) \quad \text{S.t:} \quad I = P_1 q_1 + P_2 q_2" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem', lineHeight: '1.6' }}>
+              در اینجا، <InlineMath math="U" /> تابع مطلوبیت، <InlineMath math="q_1" /> و <InlineMath math="q_2" /> مقادیر مصرف کالاها، <InlineMath math="P_1" /> و <InlineMath math="P_2" /> قیمت‌ها و <InlineMath math="I" /> درآمد مصرف‌کننده است.
+            </p>
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--primary)' }}>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '0.75rem' }}>گام دوم: تشکیل تابع لاگرانژ</h4>
+            <BlockMath math="\mathcal{L}(q_1, q_2, \lambda) = U(q_1, q_2) + \lambda [I - P_1 q_1 - P_2 q_2]" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem', lineHeight: '1.6' }}>
+              محدودیت بودجه را به صورت تفاضلی <InlineMath math="[I - P_1 q_1 - P_2 q_2 = 0]" /> درآورده و در ضریب لاگرانژ ضرب می‌کنیم تا تابع لاگرانژ شکل بگیرد.
+            </p>
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--primary)' }}>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '0.75rem' }}>گام سوم: استخراج شرایط مرتبه اول (F.O.C)</h4>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+              از تابع لاگرانژ نسبت به سه متغیر مجهول (<InlineMath math="q_1, q_2, \lambda" />) مشتق جزئی گرفته و برابر صفر قرار می‌دهیم:
+            </p>
+            <BlockMath math="\begin{aligned} \text{۱) } &\frac{\partial \mathcal{L}}{\partial q_1} = 0 \Rightarrow \frac{\partial U}{\partial q_1} - \lambda P_1 = 0 \Rightarrow MU_1 = \lambda P_1 \\ \text{۲) } &\frac{\partial \mathcal{L}}{\partial q_2} = 0 \Rightarrow \frac{\partial U}{\partial q_2} - \lambda P_2 = 0 \Rightarrow MU_2 = \lambda P_2 \\ \text{۳) } &\frac{\partial \mathcal{L}}{\partial \lambda} = 0 \Rightarrow I - P_1 q_1 - P_2 q_2 = 0 \end{aligned}" />
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--primary)' }}>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '0.75rem' }}>گام چهارم: حل سیستم معادلات و استخراج تقاضای مارشالی</h4>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+              با تقسیم رابطه (۱) بر رابطه (۲)، ضریب لاگرانژ حذف شده و شرط تعادل طلایی مصرف‌کننده (برابری نرخ جانشینی نهایی با نسبت قیمت‌ها) حاصل می‌شود:
+            </p>
+            <BlockMath math="\frac{MU_1}{MU_2} = \frac{P_1}{P_2} \Rightarrow MRS_{1,2} = \frac{P_1}{P_2} \quad , \quad \lambda = \frac{MU_1}{P_1} = \frac{MU_2}{P_2}" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
+              با حل همزمان این شرط تعادلی با محدودیت بودجه (معادله ۳)، مقادیر بهینه به صورت توابع قیمت و درآمد به دست می‌آیند که به آن‌ها <strong>توابع تقاضای مارشالی (Ordinary/Marshallian Demand)</strong> می‌گوییم:
+            </p>
+            <BlockMath math="q_1^* = q_1(P_1, P_2, I) \quad , \quad q_2^* = q_2(P_1, P_2, I)" />
+          </div>
+        </div>
+
         {/* Detailed Mathematical Proof of lambda */}
-        <h4 style={{ color: 'var(--primary)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>اثبات ریاضی تفصیلی ضریب لاگرانژ (<InlineMath math="\lambda = \frac{\partial U^*}{\partial I}" />)</h4>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          به منظور اثبات تفصیلی رابطه <InlineMath math="\lambda = \partial U^* / \partial I" /> از شرایط مرتبه اول (F.O.C) با استفاده از دیفرانسیل‌گیری کامل:
-          فرض کنید تابع مطلوبیت غیرمستقیم مصرف‌کننده در نقطه تعادل برابر با <InlineMath math="U^* = U(q_1^*, q_2^*)" /> باشد که در آن <InlineMath math="q_i^*" /> مقادیر تقاضای بهینه مصرف‌کننده هستند. با دیفرانسیل‌گیری کامل نسبت به درآمد (<InlineMath math="I" />) خواهیم داشت:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\frac{\partial U^*}{\partial I} = \frac{\partial U}{\partial q_1} \frac{\partial q_1^*}{\partial I} + \frac{\partial U}{\partial q_2} \frac{\partial q_2^*}{\partial I}" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          با استفاده از شرایط F.O.C حداکثرسازی مطلوبیت، داریم: <InlineMath math="\frac{\partial U}{\partial q_i} = \lambda P_i" />. با جایگذاری این شرایط در رابطه دیفرانسیل کامل:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\frac{\partial U^*}{\partial I} = (\lambda P_1) \frac{\partial q_1^*}{\partial I} + (\lambda P_2) \frac{\partial q_2^*}{\partial I} = \lambda \left[ P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \right]" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          از طرف دیگر، با دیفرانسیل‌گیری کامل نسبت به <InlineMath math="I" /> از محدودیت بودجه در حالت بهینه یعنی <InlineMath math="I = P_1 q_1^* + P_2 q_2^*" /> خواهیم داشت:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\frac{\partial I}{\partial I} = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \Rightarrow 1 = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I}" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          با جایگذاری عبارت فوق در رابطه مطلوبیت غیرمستقیم، اثبات کامل می‌شود:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\frac{\partial U^*}{\partial I} = \lambda \cdot [1] \Rightarrow \lambda = \frac{\partial U^*}{\partial I}" />
+        <div className="example-box" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+          <h4 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <TrendingUp size={20} />
+            اثبات تفصیلی مفهوم اقتصادی ضریب لاگرانژ (<InlineMath math="\lambda = \frac{\partial U^*}{\partial I}" />)
+          </h4>
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+            می‌خواهیم اثبات کنیم ضریب لاگرانژ دقیقاً معادل <strong>مطلوبیت نهایی درآمد</strong> مصرف‌کننده است؛ یعنی نشان می‌دهد که با افزودن یک واحد به درآمد (<InlineMath math="I" />)، سطح مطلوبیت نهایی مصرف‌کننده در تعادل چقدر رشد می‌کند:
+          </p>
+          <div style={{ background: 'rgba(255,255,255,0.01)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--primary)', margin: '1rem 0' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+              <strong>شروع اثبات:</strong> تابع مطلوبیت بهینه را در تعادل در نظر بگیرید: <InlineMath math="U^* = U(q_1^*, q_2^*)" />.
+              با دیفرانسیل‌گیری کامل نسبت به درآمد (<InlineMath math="I" />) داریم:
+            </p>
+            <BlockMath math="\frac{\partial U^*}{\partial I} = \frac{\partial U}{\partial q_1} \frac{\partial q_1^*}{\partial I} + \frac{\partial U}{\partial q_2} \frac{\partial q_2^*}{\partial I}" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+              طبق شرایط مرتبه اول (F.O.C) می‌دانیم که <InlineMath math="\frac{\partial U}{\partial q_i} = \lambda P_i" />. این مقدار را جایگزین می‌کنیم:
+            </p>
+            <BlockMath math="\frac{\partial U^*}{\partial I} = (\lambda P_1) \frac{\partial q_1^*}{\partial I} + (\lambda P_2) \frac{\partial q_2^*}{\partial I} = \lambda \left[ P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \right]" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+              حالا از محدودیت بودجه در نقطه بهینه (<InlineMath math="I = P_1 q_1^* + P_2 q_2^*" />) نسبت به درآمد دیفرانسیل کامل می‌گیریم:
+            </p>
+            <BlockMath math="\frac{\partial I}{\partial I} = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I} \Rightarrow 1 = P_1 \frac{\partial q_1^*}{\partial I} + P_2 \frac{\partial q_2^*}{\partial I}" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+              با قرار دادن این تساوی در معادله مطلوبیت غیرمستقیم، اثبات کامل می‌شود:
+            </p>
+            <BlockMath math="\frac{\partial U^*}{\partial I} = \lambda \cdot [1] \Rightarrow \lambda = \frac{\partial U^*}{\partial I}" />
+          </div>
         </div>
 
         {/* Numerical Example */}
-        <h4 style={{ color: 'var(--primary)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>مثال عددی صریح حداکثرسازی مطلوبیت مارشالی</h4>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          فرض کنید تابع مطلوبیت مصرف‌کننده به صورت <InlineMath math="U(q_1, q_2) = q_1 q_2" /> باشد. قیمت کالاها برابر <InlineMath math="P_1 = 2" /> و <InlineMath math="P_2 = 5" /> و درآمد مصرف‌کننده <InlineMath math="I = 100" /> است:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\max U = q_1 q_2 \quad S.t: \quad 2q_1 + 5q_2 = 100" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>تشکیل تابع لاگرانژ:</p>
-          <BlockMath math="\mathcal{L} = q_1 q_2 + \lambda [100 - 2q_1 - 5q_2]" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرایط مرتبه اول (F.O.C):</p>
-          <BlockMath math="\begin{aligned} \frac{\partial \mathcal{L}}{\partial q_1} = 0 &\Rightarrow q_2 - 2\lambda = 0 \Rightarrow q_2 = 2\lambda \\ \frac{\partial \mathcal{L}}{\partial q_2} = 0 &\Rightarrow q_1 - 5\lambda = 0 \Rightarrow q_1 = 5\lambda \\ \frac{\partial \mathcal{L}}{\partial \lambda} = 0 &\Rightarrow 100 - 2q_1 - 5q_2 = 0 \end{aligned}" />
+        <h4 style={{ color: 'var(--primary)', marginTop: '2rem', marginBottom: '1rem' }}>مثال عددی تشریحی حداکثرسازی مطلوبیت مارشالی (صفحه ۱۶ جزوه)</h4>
+        <div className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.01)', marginBottom: '2.5rem' }}>
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
+            فرض کنید تابع مطلوبیت به صورت ضربی (کاب-داگلاس ساده) <InlineMath math="U(q_1, q_2) = q_1 q_2" /> باشد. قیمت کالاها برابر با <InlineMath math="P_1 = 2" /> و <InlineMath math="P_2 = 5" /> و کل درآمد مصرف‌کننده <InlineMath math="I = 100" /> واحد است:
+          </p>
+          <div style={{ marginTop: '1rem' }}>
+            <BlockMath math="\max U = q_1 q_2 \quad \text{S.t:} \quad 2q_1 + 5q_2 = 100" />
+            <p style={{ color: 'var(--text-main)', fontWeight: 'bold', marginTop: '1rem' }}>مراحل حل تشریحی:</p>
+            <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2' }}>
+              <li><strong>تشکیل لاگرانژ:</strong> <InlineMath math="\mathcal{L} = q_1 q_2 + \lambda [100 - 2q_1 - 5q_2]" /></li>
+              <li>
+                <strong>شرط اول F.O.C:</strong>
+                <BlockMath math="\frac{\partial \mathcal{L}}{\partial q_1} = 0 \Rightarrow q_2 = 2\lambda \quad , \quad \frac{\partial \mathcal{L}}{\partial q_2} = 0 \Rightarrow q_1 = 5\lambda" />
+              </li>
+              <li><strong>حذف ضریب لاگرانژ:</strong> با تقسیم دو رابطه به تساوی <InlineMath math="\frac{q_2}{q_1} = \frac{2}{5} \implies q_1 = 2.5 q_2" /> می‌رسیم.</li>
+              <li>
+                <strong>جایگذاری در قید بودجه:</strong>
+                <BlockMath math="2(2.5 q_2) + 5 q_2 = 100 \Rightarrow 10 q_2 = 100 \Rightarrow q_2^* = 10" />
+                <BlockMath math="q_1^* = 2.5(10) = 25 \quad , \quad \lambda^* = \frac{q_2^*}{2} = 5" />
+              </li>
+            </ol>
+            <p style={{ color: 'var(--success)', fontWeight: 'bold', marginTop: '1rem', textAlign: 'center' }}>
+              مطلوبیت نهایی در بهینه برابر است با <InlineMath math="U^* = 25 \times 10 = 250" /> و افزایش ۱ واحد درآمد مطلوبیت را به اندازه ۵ واحد افزایش می‌دهد (<InlineMath math="\lambda^* = 5" />).
+            </p>
+          </div>
         </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          با تقسیم دو رابطه اول داریم: <InlineMath math="\frac{q_2}{q_1} = \frac{2}{5} \Rightarrow q_2 = 0.4 q_1" />.
-          با جایگذاری در محدودیت بودجه:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="2q_1 + 5(0.4 q_1) = 100 \Rightarrow 4q_1 = 100 \Rightarrow q_1^* = 25" />
-          <BlockMath math="q_2^* = 0.4(25) = 10" />
-          <BlockMath math="\lambda^* = \frac{q_2^*}{2} = 5" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          در این حالت، مطلوبیت حداکثر برابر است با <InlineMath math="U^* = 25 \times 10 = 250" /> و ضریب لاگرانژ بهینه <InlineMath math="\lambda^* = 5" /> است که نشان می‌دهد به ازای یک واحد افزایش در درآمد، مطلوبیت به اندازه ۵ واحد افزایش می‌یابد.
-        </p>
 
         {/* Consumer Dual Optimization */}
-        <h3 style={{ color: 'var(--primary)', marginTop: '2rem', marginBottom: '1rem' }}>ب) ریاضیات مصرف‌کننده (حالت دوگان / تقاضای جبرانی هیکسی)</h3>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          در حالت دوگان، مصرف‌کننده به دنبال حداقل کردن هزینه‌های خود برای دستیابی به یک سطح مطلوبیت معین (<InlineMath math="\bar{U}" />) است:
+        <h3 style={{ color: 'var(--primary)', marginTop: '2.5rem', marginBottom: '1rem' }}>ب) ریاضیات مصرف‌کننده (رویکرد دوگان / تقاضای جبرانی هیکسی)</h3>
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          در حالت دوگان (Dual)، ما مسئله را از دیدگاه هزینه‌ها نگاه می‌کنیم. هدف، حداقل کردن مخارج کل برای دستیابی به یک سطح مطلوبیت هدف (<InlineMath math="\bar{U}" />) است. پاسخ‌های بهینه این مسئله، تقاضای جبرانی هیکسی را می‌سازند:
         </p>
-        <div className="formula-box">
-          <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>مسئله بهینه‌سازی:</p>
-          <BlockMath math="\min P_1 q_1 + P_2 q_2 \quad S.t: \quad U(q_1, q_2) = \bar{U}" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>تابع لاگرانژ:</p>
-          <BlockMath math="\mathcal{L}(q_1, q_2, \mu) = P_1 q_1 + P_2 q_2 + \mu [\bar{U} - U(q_1, q_2)]" />
+
+        <div className="formula-box" style={{ marginBottom: '2rem' }}>
+          <p style={{ fontWeight: 'bold', color: 'var(--text-main)' }}>مسئله بهینه‌سازی و لاگرانژ دوگان:</p>
+          <BlockMath math="\min_{q_1, q_2} P_1 q_1 + P_2 q_2 \quad \text{S.t:} \quad U(q_1, q_2) = \bar{U}" />
+          <BlockMath math="\mathcal{L}_d(q_1, q_2, \mu) = P_1 q_1 + P_2 q_2 + \mu [\bar{U} - U(q_1, q_2)]" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+            در اینجا <InlineMath math="\mu" /> ضریب لاگرانژ دوگان است و نشان‌دهنده <strong>هزینه نهایی دستیابی به یک واحد مطلوبیت اضافی</strong> است.
+          </p>
         </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          که در آن <InlineMath math="\mu" /> ضریب لاگرانژ است و نشان‌دهنده <strong>هزینه نهایی دسترسی به یک واحد مطلوبیت اضافی</strong> است.
-        </p>
-        
-        <p style={{ color: 'var(--text-muted)', fontWeight: 'bold', marginBottom: '0.5rem' }}>شرایط مرتبه اول (F.O.C):</p>
-        <div className="formula-box">
-          <BlockMath math="\begin{aligned} \frac{\partial \mathcal{L}}{\partial q_1} = 0 &\Rightarrow P_1 - \mu MU_1 = 0 \\ \frac{\partial \mathcal{L}}{\partial q_2} = 0 &\Rightarrow P_2 - \mu MU_2 = 0 \\ \frac{\partial \mathcal{L}}{\partial \mu} = 0 &\Rightarrow \bar{U} - U(q_1, q_2) = 0 \end{aligned}" />
+
+        <p style={{ color: 'var(--text-muted)', fontWeight: 'bold', marginBottom: '0.5rem' }}>شرایط مرتبه اول (F.O.C) دوگان:</p>
+        <div className="formula-box" style={{ marginBottom: '2rem' }}>
+          <BlockMath math="\begin{aligned} \frac{\partial \mathcal{L}_d}{\partial q_1} = 0 &\Rightarrow P_1 - \mu MU_1 = 0 \Rightarrow P_1 = \mu MU_1 \\ \frac{\partial \mathcal{L}_d}{\partial q_2} = 0 &\Rightarrow P_2 - \mu MU_2 = 0 \Rightarrow P_2 = \mu MU_2 \\ \frac{\partial \mathcal{L}_d}{\partial \mu} = 0 &\Rightarrow \bar{U} - U(q_1, q_2) = 0 \end{aligned}" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem', textAlign: 'center' }}>
+            در تعادل هیکسی نیز داریم: <InlineMath math="\frac{P_1}{P_2} = \frac{MU_1}{MU_2}" /> و ضریب لاگرانژ بهینه <InlineMath math="\mu^* = \frac{P_i}{MU_i}" /> است.
+          </p>
         </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          از شرایط بالا به رابطه زیر می‌رسیم که تعادل را توصیف می‌کند:
-          <BlockMath math="\frac{P_1}{P_2} = \frac{MU_1}{MU_2} \quad , \quad \mu = \frac{P_1}{MU_1} = \frac{P_2}{MU_2}" />
-          با حل سیستم فوق، <strong>توابع تقاضای جبرانی (هیکسی)</strong> به دست می‌آیند:
-          <BlockMath math="q_1^{CD} = q_1(P_1, P_2, \bar{U}) \quad , \quad q_2^{CD} = q_2(P_1, P_2, \bar{U})" />
-        </p>
-        
-        <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', marginTop: '2rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.5rem' }}>
+
+        {/* Section 2: Producer */}
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', marginTop: '3rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.5rem', color: 'var(--secondary)' }}>
           <TrendingUp style={{ color: 'var(--secondary)' }} />
           ۲. بهینه‌سازی مقید و سود تولیدکننده
         </h2>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1rem' }}>
-          در تئوری تولید نیز همانند مصرف‌کننده، مسائل بهینه‌سازی مقید به دو روش مستقیم و دوگان حل می‌شوند.
+        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          در تئوری رفتار تولیدکننده نیز دقیقاً از همین ساختارهای بهینه‌سازی مقید و نامقید استفاده می‌شود:
         </p>
 
-        <h3 style={{ color: 'var(--secondary)', marginTop: '1.5rem', marginBottom: '1rem' }}>حالت اول: حداکثرسازی تولید با هزینه ثابت</h3>
-        <div className="formula-box">
-          <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>مسئله و تابع لاگرانژ:</p>
-          <BlockMath math="\max Q = f(L, K) \quad S.t: \quad \bar{C} = P_L L + P_K K" />
-          <BlockMath math="V(L, K, \lambda) = f(L, K) + \lambda [\bar{C} - P_L L - P_K K]" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرط تعادل نهایی (برابری نسبت بهره‌وری نهایی با نسبت قیمت‌ها):</p>
-          <BlockMath math="\frac{f_L}{f_K} = \frac{P_L}{P_K} \Rightarrow \frac{MP_L}{MP_K} = \frac{P_L}{P_K} \Rightarrow MRTS_{L,K} = \frac{P_L}{P_K}" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--primary)' }}>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>حالت اول: حداکثر تولید با هزینه ثابت</h4>
+            <BlockMath math="\max_{L, K} f(L, K) \quad \text{S.t:} \quad \bar{C} = w L + r K" />
+            <BlockMath math="\mathcal{L}_p = f(L, K) + \lambda [\bar{C} - w L - r K]" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', marginTop: '0.5rem' }}>
+              شرط F.O.C: برابری نرخ نهایی جانشینی فنی (MRTS) با نسبت قیمت نهاده‌ها:
+              <BlockMath math="MRTS_{L,K} = \frac{MP_L}{MP_K} = \frac{w}{r}" />
+            </p>
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)' }}>
+            <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>حالت دوم: حداقل هزینه با تولید ثابت</h4>
+            <BlockMath math="\min_{L, K} w L + r K \quad \text{S.t:} \quad f(L, K) = \bar{Q}" />
+            <BlockMath math="\mathcal{L}_c = w L + r K + \mu [\bar{Q} - f(L, K)]" />
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', marginTop: '0.5rem' }}>
+              در اینجا، ضریب لاگرانژ بهینه (<InlineMath math="\mu" />) دقیقاً معادل <strong>هزینه نهایی (MC)</strong> تولید یک واحد کالای اضافی است.
+            </p>
+          </div>
         </div>
 
-        <h3 style={{ color: 'var(--secondary)', marginTop: '2rem', marginBottom: '1rem' }}>حالت دوم: حداقل‌سازی هزینه با تولید ثابت</h3>
-        <div className="formula-box">
-          <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>مسئله و تابع لاگرانژ:</p>
-          <BlockMath math="\min C = P_L L + P_K K \quad S.t: \quad f(L, K) = \bar{Q}" />
-          <BlockMath math="Z(L, K, \mu) = P_L L + P_K K + \mu [\bar{Q} - f(L, K)]" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرط تعادل نهایی:</p>
-          <BlockMath math="\frac{P_L}{P_K} = \frac{f_L}{f_K} \Rightarrow \frac{MP_L}{MP_K} = \frac{P_L}{P_K}" />
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--accent)' }}>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '0.75rem' }}>حالت سوم: حداکثرسازی سود بدون محدودیت</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            اگر بنگاه محدودیتی در مقدار هزینه یا سقف تولید نداشته باشد، سود خود را مستقیماً حداکثر می‌کند:
+          </p>
+          <BlockMath math="\max_{Q} \pi = TR(Q) - TC(Q)" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
+            شرط اول (F.O.C): مشتق سود نسبت به Q برابر صفر باشد: <InlineMath math="MR = MC" />.
+            <br />
+            شرط دوم (S.O.C): مشتق دوم سود نسبت به Q منفی باشد: <InlineMath math="\frac{\partial MR}{\partial Q} < \frac{\partial MC}{\partial Q}" /> (یعنی شیب درآمد نهایی کمتر از شیب هزینه نهایی باشد).
+          </p>
         </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          در این حالت، ضریب لاگرانژ <InlineMath math="\mu" /> معادل <strong>هزینه نهایی (MC)</strong> تولید یک واحد کالای اضافی است.
-        </p>
-
-        <h3 style={{ color: 'var(--secondary)', marginTop: '2rem', marginBottom: '1rem' }}>حالت سوم: حداکثرسازی سود بدون محدودیت</h3>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          اگر بنگاه محدودیتی در مقدار هزینه یا تولید نداشته باشد، به دنبال حداکثرسازی سود کل است:
-        </p>
-        <div className="formula-box">
-          <BlockMath math="\max \pi = TR(Q) - TC(Q)" />
-          <p style={{ margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرایط بهینه مرتبه اول و دوم (F.O.C & S.O.C):</p>
-          <BlockMath math="\text{F.O.C:} \quad \frac{\partial \pi}{\partial Q} = 0 \Rightarrow MR = MC" />
-          <BlockMath math="\text{S.O.C:} \quad \frac{\partial^2 \pi}{\partial Q^2} \le 0 \Rightarrow \frac{\partial MR}{\partial Q} \le \frac{\partial MC}{\partial Q}" />
-        </div>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          این بدین معنی است که در نقطه تعادل، شیب درآمد نهایی باید کمتر از شیب هزینه نهایی باشد تا سود واقعاً حداکثر شود.
-        </p>
     </div>
   );
 };

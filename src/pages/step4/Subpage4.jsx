@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { ArrowLeftRight, Shield, Landmark } from 'lucide-react';
+import { ArrowLeftRight, Shield, Landmark, Lightbulb } from 'lucide-react';
 
 const Subpage4 = () => {
   return (
@@ -10,15 +10,29 @@ const Subpage4 = () => {
         ۴. انحصار دوجانبه (Bilateral Monopoly) و چانه‌زنی
       </h2>
 
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        زمانی که در یک بازار تنها با <strong>یک فروشنده انحصاری (Monopolist)</strong> در مقابل <strong>یک خریدار انحصاری (Monopsonist)</strong> روبرو هستیم، ساختار بازار را <strong>انحصار دوجانبه</strong> می‌گویند. در این بازار دیگر منحنی‌های عرضه و تقاضای مستقلی وجود ندارند که نقطه تعادل را تعیین کنند، بلکه چانه‌زنی و قدرت استراتژیک طرفین تعیین‌کننده قیمت خواهد بود.
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1.5rem" }}>
+        زمانی که در یک بازار تنها با <strong>یک فروشنده انحصاری (Monopolist)</strong> در مقابل <strong>یک خریدار انحصاری (Monopsonist)</strong> روبرو هستیم، ساختار بازار را <strong>انحصار دوجانبه</strong> می‌گویند. در این بازار دیگر منحنی‌های عرضه و تقاضای مستقلی وجود ندارند که نقطه تعادل را به صورت خودکار تعیین کنند، بلکه چانه‌زنی، هنر مذاکره و قدرت استراتژیک طرفین تعیین‌کننده نهایی قیمت خواهد بود.
       </p>
+
+      {/* Conceptual Duality Box */}
+      <div className="glass-panel" style={{ padding: '1rem', background: 'rgba(59, 130, 246, 0.03)', borderRight: '4px solid var(--primary)', marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          <Lightbulb size={18} />
+          مثال ملموس انحصار دوجانبه در دنیای واقعی:
+        </h4>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+          یکی از بهترین مثال‌ها، رابطه بین **اتحادیه‌های کارگری قدرتمند (تنها فروشنده نیروی کار)** و **یک هلدینگ صنعتی بزرگ (تنها خریدار نیروی کار در منطقه)** است. قیمت کار (دستمزد) در اینجا نه با قوانین عرضه و تقاضای رقابتی، بلکه بر اساس قراردادهای جمعی ناشی از چانه‌زنی و اعتصابات احتمالی طرفین تعیین می‌شود.
+        </p>
+      </div>
 
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Landmark size={20} />
         ۱. مدل پایه و فرضیات ریاضی (صفحه ۱۲۰ جزوه)
       </h3>
-      <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
+        ساختار کلی ریاضی انحصار دوجانبه را با فرضیات زیر تعریف می‌کنیم:
+      </p>
+      <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1.5rem', listStyleType: 'square' }}>
         <li>فروشنده انحصاری، کالای واسطه‌ای به نام <InlineMath math="q_2" /> تولید می‌کند.</li>
         <li>خریدار انحصاری از این کالا به عنوان نهاده تولید استفاده کرده و محصول نهایی <InlineMath math="q_1 = h(q_2)" /> را تولید می‌کند.</li>
         <li>خریدار محصول نهایی خود را در بازار رقابت کامل با قیمت ثابت <InlineMath math="P_1" /> می‌فروشد. سود خریدار:
@@ -34,12 +48,13 @@ const Subpage4 = () => {
         ۲. سه راه حل مرجع (Reference Solutions)
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        بسته به اینکه کدام طرف مسلط بر بازار باشد، سه سناریوی مختلف شکل می‌گیرد (صفحات ۱۲۱-۱۲۵ جزوه):
+        بسته به اینکه قدرت چانه‌زنی دست کدام بنگاه باشد، سه سناریوی مختلف شکل می‌گیرد (صفحات ۱۲۱-۱۲۵ جزوه):
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--danger)' }}>
-          <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>الف) انحصار فروش (فروشنده مسلط)</h4>
+        {/* Monopolist */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--danger)' }}>
+          <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem', fontWeight: 'bold' }}>الف) انحصار فروش (فروشنده مسلط)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
             فروشنده قیمت تعیین می‌کند و خریدار پیرو است.
             <br />
@@ -47,13 +62,13 @@ const Subpage4 = () => {
             <BlockMath math="P_2 = P_1 h'(q_2)" />
             فروشنده با جاگذاری این قیمت در سود خود، مقدار تولید را بهینه‌سازی می‌کند:
             <BlockMath math="\max \pi_S = [P_1 h'(q_2)]q_2 - r H(q_2) \implies MR = MC" />
-            <BlockMath math="\implies P_1 h'(q_2) + P_1 h''(q_2) q_2 = r H'(q_2)" />
             این تعادل قیمت بالا و مقدار پایینی دارد (نقطه S).
           </p>
         </div>
 
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--warning)' }}>
-          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>ب) انحصار خرید (خریدار مسلط)</h4>
+        {/* Monopsonist */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ب) انحصار خرید (خریدار مسلط)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
             خریدار قیمت تعیین می‌کند و فروشنده پیرو است.
             <br />
@@ -61,13 +76,13 @@ const Subpage4 = () => {
             <BlockMath math="P_2 = r H'(q_2)" />
             خریدار با جاگذاری قیمت در سود خود، خرید را بهینه می‌کند:
             <BlockMath math="\max \pi_B = P_1 h(q_2) - [r H'(q_2)]q_2 \implies VMP = MFC" />
-            <BlockMath math="\implies P_1 h'(q_2) = r H'(q_2) + r H''(q_2) q_2" />
             این تعادل قیمت بسیار پایین و دستمزد ناچیزی دارد (نقطه B).
           </p>
         </div>
 
-        <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)' }}>
-          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>ج) راه حل شبه‌رقابتی (Price-Taker)</h4>
+        {/* Price-Taker */}
+        <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>ج) راه حل شبه‌رقابتی (Price-Taker)</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7' }}>
             هر دو طرف قیمت‌پذیر فرض می‌شوند. قیمت و مقدار در تقاطع ارزش تولید نهایی خریدار و هزینه نهایی فروشنده تعیین می‌شود (نقطه C):
             <BlockMath math="P_2 = P_1 h'(q_2) = r H'(q_2) \implies VMP = MC" />
@@ -78,9 +93,9 @@ const Subpage4 = () => {
       </div>
 
       <div style={{ textAlign: 'center', margin: '2rem 0', background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '12px' }}>
-        <img src="/svg/125-bilateral-monopoly.svg" alt="نمودار تعادل انحصار دوجانبه" style={{ maxWidth: '100%', maxHeight: '300px' }} />
+        <img src="/svg/125-bilateral-monopoly.svg" alt="نمودار تعادل انحصار دوجانبه" style={{ maxWidth: '100%', maxHeight: '250px' }} />
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>
-          نقطه S (تعادل انحصار فروش)، نقطه B (تعادل انحصار خرید) و نقطه C (تعادل شبه‌رقابتی)؛ مقدار تعادلی رقابتی همواره بزرگترین است.
+          نقطه S (تعادل انحصار فروش)، نقطه B (تعادل انحصار خرید) و نقطه C (تعادل شبه‌رقابتی).
         </p>
       </div>
 
@@ -89,29 +104,36 @@ const Subpage4 = () => {
         ۳. راه حل چانه‌زنی و بازه قیمتی توافق (Bargaining)
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        از آنجا که هر یک از حالت‌های انحصار خرید یا فروش سود یکی از طرفین را به شدت کاهش می‌دهد، در دنیای واقعی طرفین معمولاً بر سر <strong>ادغام یا تبانی</strong> سازش می‌کنند. در این حالت سودهای خود را جمع کرده و یک کارتل یکپارچه تشکیل می‌دهند (صفحه ۱۲۶ جزوه):
+        از آنجا که هر یک از حالت‌های انحصار خرید یا فروش سود یکی از طرفین را به شدت کاهش می‌دهد، در دنیای واقعی طرفین معمولاً بر سر <strong>ادغام یا تبانی</strong> سازش می‌کنند. در این حالت سودهای خود را جمع کرده و یک کارتل یکپارچه تشکیل می‌دهند:
       </p>
 
-      <div className="formula-box">
-        <p style={{ color: 'var(--text-main)', textAlign: 'center', marginBottom: '0.5rem' }}>سود کل صنعت:</p>
+      <div className="formula-box" style={{ marginBottom: '1.5rem' }}>
+        <p style={{ color: 'var(--text-main)', textAlign: 'center', marginBottom: '0.5rem', fontWeight: 'bold' }}>سود کل صنعت:</p>
         <BlockMath math="\pi_T = \pi_B + \pi_S = P_1 h(q_2) - r H(q_2)" />
-        <p style={{ color: 'var(--text-main)', textAlign: 'center', margin: '1rem 0 0.5rem 0' }}>شرط حداکثرسازی سود کل:</p>
+        <p style={{ color: 'var(--text-main)', textAlign: 'center', margin: '1rem 0 0.5rem 0', fontWeight: 'bold' }}>شرط حداکثرسازی سود کل:</p>
         <BlockMath math="\frac{\partial \pi_T}{\partial q_2} = 0 \implies P_1 h'(q_2) - r H'(q_2) = 0 \implies VMP = MC" />
       </div>
 
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginTop: "1rem" }}>
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "2rem" }}>
         مشاهده می‌شود که بهینه‌سازی مشترک، دقیقاً به <strong>مقدار تولید شبه‌رقابتی (<InlineMath math="q_{2C}" />)</strong> منجر می‌شود؛ یعنی در تبانی، کارایی تخصیصی جامعه به حداکثر می‌رسد. با این حال، قیمت انتقالی نهاده (<InlineMath math="P_2" />) نامعین مانده و باید از طریق چانه‌زنی تعیین شود.
       </p>
 
-      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--primary)', marginTop: '1.5rem' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>بازه قیمت مورد توافق در چانه‌زنی:</h4>
+      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--primary)', marginBottom: '2.5rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>بازه قیمت مورد توافق در چانه‌زنی:</h4>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
           قیمت توافقی باید به گونه‌ای باشد که سود هر دو طرف صفر یا مثبت باشد (هیچ‌کس حاضر به تحمل ضرر نیست):
-          <br />
-          - حد پایین قیمت (کف مورد قبول فروشنده برای سود صفر): <InlineMath math="\pi_S = 0 \implies P_2 = \frac{r H(q_2)}{q_2}" /> (میانگین هزینه تولید).
-          <br />
-          - حد بالای قیمت (سقف مورد قبول خریدار برای سود صفر): <InlineMath math="\pi_B = 0 \implies P_2 = \frac{P_1 h(q_2)}{q_2}" /> (متوسط ارزش درآمدی).
-          <br /><br />
+        </p>
+        <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '2' }}>
+          <li>
+            <strong>حد پایین قیمت (کف مورد قبول فروشنده):</strong> جایی است که سود فروشنده حداقل برابر صفر باشد:
+            <BlockMath math="\pi_S = P_2 \cdot q_2 - r H(q_2) \ge 0 \implies P_2 \ge \frac{r H(q_2)}{q_2} \quad (\text{متوسط هزینه تولید})" />
+          </li>
+          <li>
+            <strong>حد بالای قیمت (سقف مورد قبول خریدار):</strong> جایی است که سود خریدار حداقل برابر صفر باشد:
+            <BlockMath math="\pi_B = P_1 h(q_2) - P_2 \cdot q_2 \ge 0 \implies P_2 \le \frac{P_1 h(q_2)}{q_2} \quad (\text{متوسط ارزش درآمدی})" />
+          </li>
+        </ol>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginTop: '1rem' }}>
           بنابراین، بازه نهایی قیمت توافقی چانه‌زنی به صورت زیر خواهد بود:
           <BlockMath math="\frac{r H(q_2)}{q_2} \le P_2 \le \frac{P_1 h(q_2)}{q_2}" />
           قیمت نهایی توافق، در درون این بازه و بر اساس قدرت چانه‌زنی، هنر مذاکره و گزینه‌های خارجی طرفین تعیین خواهد شد.

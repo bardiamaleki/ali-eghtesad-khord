@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineMath, BlockMath } from '../../components/Math';
-import { Scale, RefreshCw, BarChart2, Zap } from 'lucide-react';
+import { Scale, RefreshCw, BarChart2, Zap, HelpCircle, AlertCircle } from 'lucide-react';
 
 const Subpage1 = () => {
   return (
@@ -10,53 +10,70 @@ const Subpage1 = () => {
         تعادل بازار و رقابت کامل
       </h2>
 
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        در اقتصاد خرد، تعادل زمانی رخ می‌دهد که عرضه و تقاضا برابر شوند. اگر از تعادل خارج شویم، نیروهای بازار ما را مجدداً به تعادل برمی‌گردانند. اما اینکه این بازگشت به چه شکلی و با چه سرعتی رخ دهد، بحث <strong>پایداری تعادل (Stability of Equilibrium)</strong> را مطرح می‌کند.
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1.5rem" }}>
+        تعادل زمانی رخ می‌دهد که تمایل مصرف‌کننده برای خرید با تمایل تولیدکننده برای فروش هم‌راستا شود. در این نقطه، مقدار عرضه با مقدار تقاضا برابر است. اما مسئله مهم‌تر، پایداری تعادل است؛ یعنی اگر بازار به دلایلی از تعادل خارج شود، آیا مکانیسم درونی بازار آن را مجدداً به تعادل برمی‌گرداند یا خیر؟
       </p>
 
       <h3 style={{ color: 'var(--secondary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <RefreshCw size={20} />
-        ۱. تفاوت دیدگاه مارشال و والراس در تعادل
+        ۱. تفاوت‌های بنیادی دیدگاه تعادل مارشال و والراس
       </h3>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--success)' }}>
-          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>تعادل والراسی (Walrasian)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            لئون والراس <strong>قیمت (Price)</strong> را عامل تنظیم‌کننده بازار می‌دانست. در این دیدگاه، اگر مازاد عرضه داشته باشیم، قیمت‌ها کاهش می‌یابند تا بازار تسویه شود. 
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--success)' }}>
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>رویکرد والراسی (تنظیم با قیمت):</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1rem' }}>
+            والراس اعتقاد داشت که قیمت عامل محرک تعادل است. اگر در بازار مازاد تقاضا داشته باشیم، خریداران قیمت را بالا می‌برند و اگر مازاد عرضه داشته باشیم، فروشندگان قیمت را کاهش می‌دهند:
           </p>
           <BlockMath math="E(P) = D(P) - S(P)" />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
-            مازاد تقاضا (<InlineMath math="E(P) > 0" />) باعث افزایش قیمت می‌شود.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            - اگر <InlineMath math="E(P) > 0" /> باشد: قیمت صعودی است.
+            <br />
+            - اگر <InlineMath math="E(P) < 0" /> باشد: قیمت نزولی است.
           </p>
         </div>
-        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--warning)' }}>
-          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>تعادل مارشالی (Marshallian)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-            آلفرد مارشال <strong>مقدار (Quantity)</strong> را عامل تنظیم‌کننده می‌دانست. تولیدکنندگان بر اساس تفاوت قیمت تقاضا و قیمت عرضه، مقدار تولید خود را تنظیم می‌کنند.
+        <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--warning)' }}>
+          <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>رویکرد مارشالی (تنظیم با مقدار):</h4>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1rem' }}>
+            مارشال مقدار تولید را عامل تنظیم‌کننده می‌دانست. اگر قیمت تقاضا (حداکثر تمایل به پرداخت) از قیمت عرضه بیشتر باشد، تولیدکننده مقدار تولید خود را زیاد می‌کند و بالعکس:
           </p>
           <BlockMath math="P_D(Q) \neq P_S(Q)" />
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+            - اگر <InlineMath math="P_D > P_S" /> باشد: مقدار تولید صعودی است.
+            <br />
+            - اگر <InlineMath math="P_D < P_S" /> باشد: مقدار تولید نزولی است.
+          </p>
         </div>
       </div>
 
-      <div className="glass-panel" style={{ padding: '1rem', background: 'rgba(255,255,255,0.02)', borderLeft: '4px solid var(--primary)', marginBottom: '2rem' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>شرط پایداری تعادل والراسی:</h4>
-        <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-          تعادل والراسی زمانی باثبات (پایدار) است که شیب منحنی عرضه بزرگتر از شیب منحنی تقاضا باشد:
-        </p>
-        <BlockMath math="\delta = D'(p) - S'(p) < 0 \quad \text{(شیب تقاضا منهای شیب عرضه منفی باشد)}" />
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>به زبان ساده: در قیمت‌های بالاتر از تعادل، باید مازاد عرضه داشته باشیم و در قیمت‌های پایین‌تر، مازاد تقاضا.</p>
+      <div className="glass-panel" style={{ padding: '1.2rem', background: 'rgba(59, 130, 246, 0.03)', borderRight: '4px solid var(--primary)', marginBottom: '2rem' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          <HelpCircle size={18} />
+          شرط پایداری تعادل والراسی چیست؟
+        </h4>
+        <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', margin: 0 }}>
+          تعادل والراسی در صورتی پایدار است که تغییرات مازاد تقاضا نسبت به قیمت منفی باشد. به عبارت دیگر، با افزایش قیمت، مازاد تقاضا کاهش یابد:
+          <BlockMath math="\frac{d E(P)}{dP} = D'(P) - S'(P) < 0" />
+          در بازارهای عادی با تقاضای نزولی (<InlineMath math="D' < 0" />) و عرضه صعودی (<InlineMath math="S' > 0" />)، این شرط همواره برقرار است.
+        </div>
       </div>
 
-      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--accent)', marginBottom: '2.5rem' }}>
-        <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>حالت‌های خاص عدم وجود یا چندگانگی تعادل (صفحه ۸۱ جزوه):</h4>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-          در برخی بازارهای واقعی ممکن است نقطه تقاطع عرضه و تقاضا تشکیل نشود یا در قیمت‌های خاصی باشد:
-        </p>
-        <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
-          <li><strong>کالاهای مجانی (Free Goods):</strong> اگر در قیمت صفر، عرضه بیشتر از تقاضا باشد، کالا به عنوان کالای مجانی توزیع می‌شود (مثل اکسیژن در محیط طبیعی) و تعادل در قیمت صفر رخ می‌دهد.</li>
-          <li><strong>کالاهای فوق‌لوکس (Luxury Goods):</strong> اگر حتی در حداقل قیمت عرضه، تقاضا صفر باشد (منحنی تقاضا کاملاً سمت چپ منحنی عرضه قرار گیرد)، هیچ تعادلی شکل نمی‌گیرد (مثل فضاپیماهای تفریحی خصوصی).</li>
-          <li><strong>چندین نقطه تعادل:</strong> اگر منحنی‌های عرضه و تقاضا غیرخطی و مواج باشند، ممکن است چندین نقطه تعادل متقاطع داشته باشیم که برخی پایدار و برخی ناپایدار هستند.</li>
+      {/* Special Cases */}
+      <div className="glass-panel" style={{ padding: '1.5rem', borderRight: '4px solid var(--danger)', marginBottom: '2.5rem' }}>
+        <h4 style={{ color: 'var(--danger)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          <AlertCircle size={18} />
+          حالات خاص عدم وجود یا چندگانگی تعادل (صفحه ۸۱ جزوه):
+        </h4>
+        <ul style={{ paddingRight: '1.2rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', margin: 0 }}>
+          <li>
+            <strong>کالاهای مجانی (Free Goods):</strong> زمانی رخ می‌دهد که در قیمت صفر نیز عرضه بیشتر از تقاضا باشد (مثل اکسیژن در جو). نقطه تعادل ریاضی در قیمت صفر خواهد بود.
+          </li>
+          <li style={{ marginTop: '0.5rem' }}>
+            <strong>کالاهای فوق‌لوکس (Luxury Goods):</strong> در این حالت، حتی در پایین‌ترین قیمت ممکن عرضه نیز تقاضا صفر است (تقاضا و عرضه با هم متقاطع نمی‌شوند)، بنابراین هیچ تعادلی شکل نمی‌گیرد (مثل بلیط گردشگری خصوصی به فضا).
+          </li>
+          <li style={{ marginTop: '0.5rem' }}>
+            <strong>چند تعادل همزمان:</strong> اگر توابع عرضه یا تقاضا غیرخطی و نوسانی باشند، ممکن است چند تعادل متقاطع داشته باشیم که برخی به صورت متناوب پایدار و ناپایدار هستند.
+          </li>
         </ul>
       </div>
 
@@ -64,126 +81,119 @@ const Subpage1 = () => {
         <BarChart2 size={20} />
         ۲. تعادل پویای بازار (با وقفه و پیوسته)
       </h3>
-      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        وقتی <strong>زمان (Time)</strong> وارد مدل می‌شود، تعادل از حالت ایستا به پویا تبدیل می‌گردد. در اینجا بررسی می‌کنیم که آیا مسیر حرکت قیمت در طول زمان به سمت تعادل همگرا می‌شود یا خیر.
+      <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1.5rem" }}>
+        وقتی عامل <strong>زمان (Time)</strong> وارد مدل می‌شود، متغیرها به صورت پویا (پیوسته یا گسسته) رفتار می‌کنند:
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        {/* Cobweb Model */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--danger)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>الف) مدل تار عنکبوتی (با وقفه / گسسته)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
-            مخصوص محصولات کشاورزی. عرضه امسال بر اساس قیمت سال گذشته شکل می‌گیرد، اما تقاضا به قیمت امسال بستگی دارد.
-          </p>
-          <BlockMath math="\begin{cases} D_t = aP_t + b \\ S_t = AP_{t-1} + B \end{cases}" />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
-            از حل معادلات تفاضلی مرتبه اول به مسیر قیمت می‌رسیم. شرط همگرایی (تعادل پایدار) این است که شیب تقاضا (قدر مطلق) از شیب عرضه کمتر باشد:
-          </p>
-          <BlockMath math="a < A \quad (\text{یا در واقع } |a| > A)" />
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginBottom: '1rem' }}>
+            این مدل مخصوص بازارهایی با دوره تولید طولانی (مثل کشاورزی) است. عرضه امسال بر اساس قیمت دوره قبل شکل می‌گیرد، در حالی که تقاضای امسال به قیمت امسال بستگی دارد:
+            <BlockMath math="\begin{cases} D_t = aP_t + b \\ S_t = AP_{t-1} + B \end{cases}" />
+            با مساوی قرار دادن عرضه و تقاضا، معادله تفاضلی قیمت حاصل می‌شود. شرط همگرایی قیمت به تعادل این است که قدر مطلق شیب تقاضا بیشتر از عرضه باشد:
+            <BlockMath math="|a| > A" />
+          </div>
         </div>
 
+        {/* Continuous Dynamic */}
         <div className="glass-panel" style={{ padding: '1.5rem', borderTop: '3px solid var(--success)' }}>
-          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>ب) تعادل پویا پیوسته (حل دیفرانسیل با عامل انتگرال‌ساز)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8' }}>
-            سرعت تغییر قیمت، متناسب با میزان مازاد تقاضا در همان لحظه است (صفحه ۸۷ جزوه):
-          </p>
-          <BlockMath math="\frac{dP}{dt} = k \cdot E(P_t) = k(D_t - S_t)" />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginTop: '0.5rem' }}>
-            با فرض توابع تقاضا و عرضه خطی <InlineMath math="D_t = a P_t + b" /> و <InlineMath math="S_t = A P_t + B" />، معادله دیفرانسیل به شکل زیر در می‌آید:
+          <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>ب) تعادل پویا پیوسته (حل دیفرانسیلی)</h4>
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.8', marginBottom: '1rem' }}>
+            سرعت تغییر قیمت در طول زمان متناسب با میزان مازاد تقاضا در هر لحظه است (صفحه ۸۷ جزوه):
+            <BlockMath math="\frac{dP}{dt} = k \cdot E(P_t) = k(D_t - S_t)" />
+            با توابع خطی <InlineMath math="D_t = a P_t + b" /> و <InlineMath math="S_t = A P_t + B" />، معادله دیفرانسیل به شکل زیر حاصل می‌شود:
             <BlockMath math="\frac{dP}{dt} - k(a - A) P_t = k(b - B)" />
-            عامل انتگرال‌ساز برای حل این معادله مرتبه اول عبارت است از <InlineMath math="e^{-k(a-A)t}" />. با ضرب طرفین در این عامل و انتگرال‌گیری، مسیر قیمت به دست می‌آید:
+            با اعمال عامل انتگرال‌ساز <InlineMath math="e^{-k(a-A)t}" /> و انتگرال‌گیری، مسیر قیمت به شکل زیر است:
             <BlockMath math="P_t = P_e + (P_0 - P_e) \cdot e^{k(a-A)t}" />
-            که در آن قیمت تعادلی پایدار <InlineMath math="P_e = \frac{B - b}{a - A}" /> است.
-            زمانی که <InlineMath math="t \to \infty" />، اگر <InlineMath math="a - A < 0" /> باشد (چون شیب تقاضا <InlineMath math="a" /> منفی و عرضه <InlineMath math="A" /> مثبت است، این شرط همواره برقرار است)، قیمت به تعادل همگرا می‌شود.
-          </p>
-        </div>
-      </div>
-
-      {/* Comparative Analysis of the Three Types of Stability */}
-      <div className="glass-panel" style={{ padding: '1.5rem', marginBottom: '2.5rem' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>تحلیل مقایسه‌ای سه نوع پایداری در مدل تار عنکبوتی (صفحه ۸۳ جزوه)</h4>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          در تحلیل پویای گسسته بازار (مدل تار عنکبوتی)، بر اساس شیب نسبی منحنی‌های عرضه (<InlineMath math="A" />) و تقاضا (<InlineMath math="|a|" />)، سه سناریوی مختلف برای نوسانات قیمت و پایداری تعادل وجود دارد:
-        </p>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-          {/* Case 1: Convergent */}
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--success)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
-            <h5 style={{ color: 'var(--success)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۱. پایداری همگرا (نوسانات میرا)</h5>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
-              اگر کشش تقاضا بیشتر از عرضه باشد یا به عبارتی قدر مطلق شیب تقاضا کمتر از شیب عرضه باشد (<InlineMath math="|a| > A" />)، دامنه نوسانات قیمت دوره به دوره کوچکتر شده و به سمت قیمت تعادلی همگرا می‌شود.
-            </p>
-            <img src="/svg/81-nemodar.svg" alt="پایداری همگرا" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
-          </div>
-
-          {/* Case 2: Continuous */}
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--warning)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
-            <h5 style={{ color: 'var(--warning)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۲. نوسان مستمر (خنثی)</h5>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
-              اگر قدر مطلق شیب تقاضا دقیقاً برابر با شیب عرضه باشد (<InlineMath math="|a| = A" />)، نوسانات قیمت با دامنه‌ای ثابت و به صورت مداوم دور تعادل تکرار می‌شود و بازار نه همگرا می‌شود و نه واگرا.
-            </p>
-            <img src="/svg/82-nemodar.svg" alt="نوسانات مستمر خنثی" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
-          </div>
-
-          {/* Case 3: Divergent */}
-          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '3px solid var(--danger)', textAlign: 'center', background: 'rgba(255, 255, 255, 0.01)' }}>
-            <h5 style={{ color: 'var(--danger)', marginBottom: '0.5rem', fontWeight: 'bold' }}>۳. پایداری واگرا (نوسانات فزاینده)</h5>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', minHeight: '80px', textAlign: 'right' }}>
-              اگر کشش عرضه بیشتر از تقاضا باشد یا به عبارتی قدر مطلق شیب تقاضا بزرگتر از شیب عرضه باشد (<InlineMath math="|a| < A" />)، نوسانات قیمت هر دوره بزرگتر شده و مسیر از قیمت تعادلی واگرا می‌شود.
-            </p>
-            <img src="/svg/83-nemodar.svg" alt="پایداری واگرا" style={{ maxWidth: '100%', maxHeight: '180px', marginTop: '1rem' }} />
+            قیمت زمانی به قیمت تعادلی <InlineMath math="P_e" /> همگرا می‌شود که داشته باشیم <InlineMath math="a - A < 0" /> که با توجه به نزولی بودن تقاضا (<InlineMath math="a<0" />) و صعودی بودن عرضه (<InlineMath math="A>0" />) این شرط همواره برقرار است.
           </div>
         </div>
       </div>
 
-      <h3 style={{ color: 'var(--primary)', marginTop: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      {/* Comparative analysis */}
+      <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem', background: 'rgba(255, 255, 255, 0.02)' }}>
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.75rem' }}>
+          تحلیل مقایسه‌ای سه نوع پایداری در مدل تار عنکبوتی (صفحه ۸۳ جزوه)
+        </h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--success)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(16, 185, 129, 0.02)' }}>
+            <h5 style={{ color: 'var(--success)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۱. پایداری همگرا (نوسانات میرا)</h5>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
+                اگر قدر مطلق شیب تقاضا بیشتر از شیب عرضه باشد (<InlineMath math="|a| > A" />)، نوسانات قیمت به مرور ضعیف شده و قیمت به تعادل متمایل می‌شود.
+              </p>
+              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
+                <img src="/svg/81-nemodar.svg" alt="پایداری همگرا" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--warning)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245, 158, 11, 0.02)' }}>
+            <h5 style={{ color: 'var(--warning)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۲. نوسان مستمر (خنثی)</h5>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
+                اگر قدر مطلق شیب تقاضا با شیب عرضه برابر باشد (<InlineMath math="|a| = A" />)، دامنه نوسان قیمت ثابت مانده و نوسان مستمر دور تعادل ایجاد می‌شود.
+              </p>
+              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
+                <img src="/svg/82-nemodar.svg" alt="نوسانات مستمر خنثی" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-panel" style={{ padding: '1.2rem', borderTop: '4px solid var(--danger)', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(239, 68, 68, 0.02)' }}>
+            <h5 style={{ color: 'var(--danger)', marginBottom: '0.75rem', fontWeight: 'bold' }}>۳. پایداری واگرا (نوسانات فزاینده)</h5>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6', textAlign: 'justify', margin: 0, minHeight: '65px' }}>
+                اگر قدر مطلق شیب تقاضا کمتر از شیب عرضه باشد (<InlineMath math="|a| < A" />)، دامنه نوسان قیمت سال به سال افزایش یافته و از تعادل دور می‌شود.
+              </p>
+              <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '90px', height: '90px' }}>
+                <img src="/svg/83-nemodar.svg" alt="پایداری واگرا" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style={{ color: 'var(--primary)', marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Zap size={20} />
         ۳. بازار رقابت کامل (Perfect Competition)
       </h3>
       <p style={{ color: "var(--text-muted)", lineHeight: "1.8", marginBottom: "1rem" }}>
-        بازار رقابت کامل یک مدل حدی و ایده‌آل است که خصوصیات زیر را دارد:
+        این بازار مظهر کارایی کامل در اقتصاد است که بنگاه‌ها در آن قیمت‌پذیر هستند:
       </p>
-      
-      <ul style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-        <li>تعداد بسیار زیاد خریدار و فروشنده (بنگاه‌ها <strong>قیمت‌گیر</strong> هستند).</li>
-        <li>کالای همگن (تمایزی بین محصول بنگاه‌ها وجود ندارد).</li>
-        <li>ورود و خروج آزادانه به صنعت.</li>
-        <li>اطلاعات کامل و شفاف.</li>
-      </ul>
 
       <div className="glass-panel" style={{ padding: '1.5rem', borderColor: 'var(--primary)', marginBottom: '1.5rem' }}>
-        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>شرایط تعادل بنگاه در کوتاه‌مدت:</h4>
-        <BlockMath math="\text{Max } \pi = TR - TC = P \cdot Q - TC" />
+        <h4 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>شرط تعادل بهینه در کوتاه‌مدت:</h4>
+        <BlockMath math="\text{Max } \pi = P \cdot Q - TC" />
         <ol style={{ paddingRight: '1.5rem', color: 'var(--text-muted)', lineHeight: '2' }}>
           <li>
-            <strong>شرط مرتبه اول (FOC):</strong> مشتق سود برابر صفر:
-            <BlockMath math="P - \frac{\partial TC}{\partial Q} = 0 \implies P = MC" />
+            <strong>شرط مرتبه اول (FOC):</strong> مشتق اول سود نسبت به مقدار برابر صفر:
+            <BlockMath math="P = MC" />
           </li>
           <li>
-            <strong>شرط مرتبه دوم (SOC):</strong> مشتق دوم منفی (منحنی MC باید صعودی باشد):
-            <BlockMath math="\frac{\partial^2 \pi}{\partial Q^2} < 0 \implies -\frac{\partial MC}{\partial Q} < 0 \implies \frac{\partial MC}{\partial Q} > 0" />
+            <strong>شرط مرتبه دوم (SOC):</strong> مشتق دوم منفی (شیب هزینه نهایی باید مثبت و صعودی باشد):
+            <BlockMath math="\frac{\partial MC}{\partial Q} > 0" />
           </li>
         </ol>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-        <div className="glass-panel" style={{ padding: '1rem', borderRight: '4px solid var(--danger)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--danger)' }}>
           <h4 style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>نقطه تعطیلی بنگاه (Shutdown Point)</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
-            اگر قیمت از حداقل هزینه متغیر متوسط (AVC) کمتر شود، بنگاه تولید را متوقف می‌کند.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7', margin: 0 }}>
+            اگر قیمت بازار از حداقل هزینه متغیر متوسط (AVC) کمتر شود، بنگاه برای کاهش زیان کل، تولید خود را به طور کامل متوقف می‌کند. در این حالت، زیان بنگاه فقط برابر هزینه‌های ثابت (FC) خواهد بود.
           </p>
-          <BlockMath math="P \ge \text{Min } AVC" />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>منحنی عرضه بنگاه در کوتاه‌مدت، همان منحنی MC از نقطه مینیمم AVC به بالا است.</p>
         </div>
-        <div className="glass-panel" style={{ padding: '1rem', borderRight: '4px solid var(--warning)' }}>
+        <div className="glass-panel" style={{ padding: '1.2rem', borderRight: '4px solid var(--warning)' }}>
           <h4 style={{ color: 'var(--warning)', marginBottom: '0.5rem' }}>تعادل بلندمدت رقابت کامل</h4>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>
-            به دلیل ورود و خروج آزادانه، در بلندمدت تمام سودهای اقتصادی صفر می‌شود (<InlineMath math="\pi = 0" />).
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.7', margin: 0 }}>
+            به دلیل ورود آزادانه بنگاه‌های جدید در صورت وجود سود، یا خروج بنگاه‌ها در صورت وجود زیان، در بلندمدت سود اقتصادی کل صفر می‌شود:
+            <BlockMath math="P = LMC = \text{Min } LAC" />
           </p>
-          <BlockMath math="P = LMC = \text{Min } LAC" />
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>این تنها بازاری است که در آن کارایی اقتصادی به طور کامل محقق می‌شود.</p>
         </div>
       </div>
-
     </div>
   );
 };
